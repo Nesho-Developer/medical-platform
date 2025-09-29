@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
-import { routes } from 'src/app/shared/routes/routes';
+import { routes } from '../../../shared/routes/routes';
 import { DoctorBreadcrumbComponent } from '../common/doctor-breadcrumb/doctor-breadcrumb.component';
 @Component({
     selector: 'app-add-billing',
@@ -14,7 +14,7 @@ export class AddBillingComponent {
   public routes = routes;
   public content1 = [0]
   public content2 = [0]
-  
+
   addItem(){
     this.content1.push(1);
   }

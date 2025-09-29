@@ -4,7 +4,7 @@ import { RouterLink } from '@angular/router';
 import { LightgalleryModule } from 'lightgallery/angular';
 import { BeforeSlideDetail } from 'lightgallery/lg-events';
 import lgZoom from 'lightgallery/plugins/zoom';
-import { routes } from 'src/app/shared/routes/routes';
+import { routes } from '../../../../shared/routes/routes';
 import { PatientBreadcrumbComponent } from '../../common/patient-breadcrumb/patient-breadcrumb.component';
 
 @Component({

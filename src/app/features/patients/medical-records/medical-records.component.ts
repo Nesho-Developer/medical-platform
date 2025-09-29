@@ -3,10 +3,10 @@ import { CommonModule } from '@angular/common';
 import { Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router, RouterLink } from '@angular/router';
-import { PaginationService, pageSelection, tablePageSize } from 'src/app/shared/custom-pagination/pagination.service';
-import { DataService } from 'src/app/shared/data/data.service';
-import { apiResultFormat, medicalrecords } from 'src/app/shared/models/models';
-import { routes } from 'src/app/shared/routes/routes';
+import { PaginationService, pageSelection, tablePageSize } from '../../../shared/custom-pagination/pagination.service';
+import { DataService } from '../../../shared/data/data.service';
+import { apiResultFormat, medicalrecords } from '../../../shared/models/models';
+import { routes } from '../../../shared/routes/routes';
 import { PatientSidebarComponent } from '../common/patient-sidebar/patient-sidebar.component';
 import { PatientBreadcrumbComponent } from '../common/patient-breadcrumb/patient-breadcrumb.component';
 
@@ -21,7 +21,7 @@ export class MedicalRecordsComponent {
   public routes = routes;
   public tableData: Array<medicalrecords> = [];
   public tableData2: Array<medicalrecords> = [];
-  
+
   // pagination variables
   public pageSize = 10;
   public serialNumberArray: Array<number> = [];
@@ -48,7 +48,7 @@ export class MedicalRecordsComponent {
         this.pageSize = res.pageSize;
       }
     });
-    
+
   }
   private getTableData(pageOption: pageSelection): void {
     this.data.getMedicalRecords1().subscribe((apiRes: apiResultFormat) => {
@@ -100,7 +100,7 @@ export class MedicalRecordsComponent {
       });
     });
   }
- 
+
 
   public sortData(sort: Sort) {
     const data = this.tableData.slice();
@@ -117,7 +117,7 @@ export class MedicalRecordsComponent {
   }
   public sortData2(sort: Sort) {
     const data = this.tableData2.slice();
-  
+
     if (!sort.active || sort.direction === '') {
       this.tableData2 = data;
     } else {
@@ -128,6 +128,6 @@ export class MedicalRecordsComponent {
       });
     }
   }
- 
+
 
 }

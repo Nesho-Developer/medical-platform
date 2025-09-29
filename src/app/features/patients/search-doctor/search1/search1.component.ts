@@ -5,7 +5,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import { RouterLink } from '@angular/router';
 import lgZoom from 'lightgallery/plugins/zoom';
 import { BeforeSlideDetail } from 'lightgallery/lg-events';
-import { routes } from 'src/app/shared/routes/routes';
+import { routes } from '../../../../shared/routes/routes';
 import { BreadcrumbSearchComponent } from '../../common/breadcrumb-search/breadcrumb-search.component';
 import { LightgalleryModule } from 'lightgallery/angular';
 import { MatSelectModule } from '@angular/material/select';
@@ -32,7 +32,7 @@ export class Search1Component implements OnInit{
     this.myDateValue = new Date();
   }
 
-  onDateChange(newDate: Date) {
+  onDateChange(_: Date) {
     // console.log(newDate);
   }
 filterOpen():void{

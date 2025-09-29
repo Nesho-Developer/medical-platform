@@ -3,10 +3,10 @@ import { Component } from '@angular/core';
 import { Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router, RouterLink } from '@angular/router';
-import { PaginationService, tablePageSize } from 'src/app/shared/custom-pagination/pagination.service';
-import { DataService } from 'src/app/shared/data/data.service';
-import { dependentList, apiResultFormat, pageSelection } from 'src/app/shared/models/models';
-import { routes } from 'src/app/shared/routes/routes';
+import { PaginationService, tablePageSize } from '../../../../shared/custom-pagination/pagination.service';
+import { DataService } from '../../../../shared/data/data.service';
+import { dependentList, apiResultFormat, pageSelection } from '../../../../shared/models/models';
+import { routes } from '../../../../shared/routes/routes';
 import { PatientSidebarComponent } from '../../common/patient-sidebar/patient-sidebar.component';
 import { PatientBreadcrumbComponent } from '../../common/patient-breadcrumb/patient-breadcrumb.component';
 

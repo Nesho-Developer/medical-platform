@@ -4,13 +4,13 @@ import { RouterLink } from '@angular/router';
 import { MatSortModule, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
-import { PaginationService, tablePageSize } from 'src/app/shared/custom-pagination/pagination.service';
-import { DataService } from 'src/app/shared/data/data.service';
-import { doctorList, pageSelection, apiResultFormat } from 'src/app/shared/models/models';
-import { routes } from 'src/app/shared/routes/routes';
-import { CustomPaginationComponent } from 'src/app/shared/custom-pagination/custom-pagination.component';
+import { PaginationService, tablePageSize } from '../../shared/custom-pagination/pagination.service';
+import { DataService } from '../../shared/data/data.service';
+import { doctorList, pageSelection, apiResultFormat } from '../../shared/models/models';
+import { routes } from '../../shared/routes/routes';
+import { CustomPaginationComponent } from '../../shared/custom-pagination/custom-pagination.component';
 import { FormsModule } from '@angular/forms';
-import { PaginationHeaderComponent } from 'src/app/shared/pagination-header/pagination-header.component';
+import { PaginationHeaderComponent } from '../../shared/pagination-header/pagination-header.component';
 
 @Component({
     selector: 'app-doctor-list',
@@ -22,7 +22,7 @@ export class DoctorListComponent {
   public routes = routes;
   public tableData: Array<doctorList> = [];
   initChecked = false;
-  
+
   // pagination variables
   public pageSize = 10;
   public serialNumberArray: Array<number> = [];

@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
-import { routes } from 'src/app/shared/routes/routes';
+import { routes } from '../../shared/routes/routes';
 import intlTelInput from 'intl-tel-input';
 @Component({
     selector: 'app-patient-signup',
@@ -31,6 +31,6 @@ export class PatientSignupComponent {
     input.addEventListener('input', () => {
       input.value = input.value.replace(/[^0-9+()-\s]/g, ''); // Removes any character not allowed
     });
-        
+
   }
 }

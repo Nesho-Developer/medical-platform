@@ -1,5 +1,5 @@
     import { Component } from '@angular/core';
-import { routes } from 'src/app/shared/routes/routes';
+import { routes } from '../../../shared/routes/routes';
 import lgZoom from 'lightgallery/plugins/zoom';
 import { BeforeSlideDetail } from 'lightgallery/lg-events';
 import { CommonModule } from '@angular/common';

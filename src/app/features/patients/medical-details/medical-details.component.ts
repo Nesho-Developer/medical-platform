@@ -3,10 +3,10 @@ import { Component } from '@angular/core';
 import { Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router, RouterLink } from '@angular/router';
-import { PaginationService, pageSelection, tablePageSize } from 'src/app/shared/custom-pagination/pagination.service';
-import { DataService } from 'src/app/shared/data/data.service';
-import { apiResultFormat, medicalDetails } from 'src/app/shared/models/models';
-import { routes } from 'src/app/shared/routes/routes';
+import { PaginationService, pageSelection, tablePageSize } from '../../../shared/custom-pagination/pagination.service';
+import { DataService } from '../../../shared/data/data.service';
+import { apiResultFormat, medicalDetails } from '../../../shared/models/models';
+import { routes } from '../../../shared/routes/routes';
 import { PatientSidebarComponent } from '../common/patient-sidebar/patient-sidebar.component';
 import { PatientBreadcrumbComponent } from '../common/patient-breadcrumb/patient-breadcrumb.component';
 
@@ -16,7 +16,7 @@ import { PatientBreadcrumbComponent } from '../common/patient-breadcrumb/patient
     styleUrls: ['./medical-details.component.scss'],
     imports:[CommonModule,RouterLink,PatientSidebarComponent,PatientBreadcrumbComponent]
 })
-export class MedicalDetailsComponent {  
+export class MedicalDetailsComponent {
   public routes = routes;
   public tableData: Array<medicalDetails> = [];
 
@@ -39,7 +39,7 @@ export class MedicalDetailsComponent {
         this.pageSize = res.pageSize;
       }
     });
-   
+
   }
   private getTableData(pageOption: pageSelection): void {
     this.data.getMedicalDetails().subscribe((apiRes: apiResultFormat) => {
@@ -79,5 +79,5 @@ export class MedicalDetailsComponent {
       });
     }
   }
-  
+
 }

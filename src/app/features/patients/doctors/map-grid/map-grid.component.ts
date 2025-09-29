@@ -2,7 +2,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { routes } from 'src/app/shared/routes/routes';
+import { routes } from '../../../../shared/routes/routes';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { BreadcrumbSearchComponent } from '../../common/breadcrumb-search/breadcrumb-search.component';
 import { MatSelectModule } from '@angular/material/select';
@@ -21,7 +21,6 @@ export class MapGridComponent implements OnInit {
   public isClassAdded: boolean[] = [false];
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   slider: any;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   private infowindow!: google.maps.InfoWindow;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   doc_name: any;

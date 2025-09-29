@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { CommonService } from 'src/app/shared/common/common.service';
-import { DataService } from 'src/app/shared/data/data.service';
-import { adminSidebar } from 'src/app/shared/models/sidebar-model';
-import { SidebarService } from 'src/app/shared/sidebar/sidebar.service';
-import { routes } from 'src/app/shared/routes/routes';
+import { CommonService } from '../../../shared/common/common.service';
+import { DataService } from '../../../shared/data/data.service';
+import { adminSidebar } from '../../../shared/models/sidebar-model';
+import { SidebarService } from '../../../shared/sidebar/sidebar.service';
+import { routes } from '../../../shared/routes/routes';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { NgScrollbarModule } from 'ngx-scrollbar';

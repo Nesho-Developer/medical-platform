@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { routes } from 'src/app/shared/routes/routes';
+import { routes } from '../shared/routes/routes';
 import { SidebarService } from '../shared/sidebar/sidebar.service';
 @Component({
     selector: 'app-authentication',

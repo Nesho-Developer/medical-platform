@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
-import { routes } from 'src/app/shared/routes/routes';
+import { routes } from '../../../shared/routes/routes';
 @Component({
     selector: 'app-chat',
     templateUrl: './chat.component.html',

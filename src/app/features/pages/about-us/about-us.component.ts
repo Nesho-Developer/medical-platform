@@ -3,9 +3,9 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CountUpModule } from 'ngx-countup';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
-import { DataService } from 'src/app/shared/data/data.service';
-import { aboutUs } from 'src/app/shared/models/models';
-import { routes } from 'src/app/shared/routes/routes';
+import { DataService } from '../../../shared/data/data.service';
+import { aboutUs } from '../../../shared/models/models';
+import { routes } from '../../../shared/routes/routes';
 
 @Component({
     selector: 'app-about-us',

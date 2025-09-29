@@ -2,7 +2,7 @@ import { CommonModule, DatePipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
-import { routes } from 'src/app/shared/routes/routes';
+import { routes } from '../../../../shared/routes/routes';
 import { DoctorSidebarComponent } from '../../common/doctor-sidebar/doctor-sidebar.component';
 import { DoctorBreadcrumbComponent } from '../../common/doctor-breadcrumb/doctor-breadcrumb.component';
 import { MatSelectModule } from '@angular/material/select';
@@ -36,13 +36,13 @@ export class DoctorBusinessSettingsComponent {
   endTime6 = new Date();
   endTime7 = new Date();
   myDateValue!: Date ;
-  constructor( private datePipe: DatePipe) { 
+  constructor( private datePipe: DatePipe) {
     this.selectDay('Monday');
     this.selectDay('Friday');
     this.selectDay('Tuesday');
     this.selectDay('Wednesday');
     this.selectDay('Thursday');
-    
+
   }
   toggleTimePicker(value: string): void {
 
@@ -57,8 +57,8 @@ export class DoctorBusinessSettingsComponent {
     return this.datePipe.transform(selectedDate, 'h:mm a')
   }
   days: string[] = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-  
-  
+
+
   selectDay(day: string): void {
     if (!this.selectedDays.includes(day)) {
       this.selectedDays.push(day);

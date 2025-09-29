@@ -2,13 +2,13 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { OwlOptions } from 'ngx-owl-carousel-o';
-import { DataService } from 'src/app/shared/data/data.service';
+import { DataService } from '../../shared/data/data.service';
 import {
   newPassword,
   passwordResponce,
   register,
-} from 'src/app/shared/models/models';
-import { routes } from 'src/app/shared/routes/routes';
+} from '../../shared/models/models';
+import { routes } from '../../shared/routes/routes';
 @Component({
     selector: 'app-reset-password',
     templateUrl: './reset-password.component.html',

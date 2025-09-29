@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { DatePipe } from '@angular/common';
 import { routes } from '../../../shared/routes/routes';
-import { DatePicker } from 'primeng/datepicker';
 import { CommonModule } from '@angular/common';
 import { FooterComponent } from './common/footer/footer.component';
 import { HeaderComponent } from './common/header/header.component';
@@ -35,7 +34,7 @@ export class Home6Component implements OnInit {
   date = new Date();
   myTime: Date = new Date();
   myDateValue!: Date ;
-  
+
 
   public specialOptions: OwlOptions = {
     loop:true,
@@ -43,7 +42,7 @@ export class Home6Component implements OnInit {
     dots: true,
     nav:false,
     smartSpeed: 2000,
-    navText: [ '<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>' ], 
+    navText: [ '<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>' ],
     responsive:{
       0:{
         items:1
@@ -68,7 +67,7 @@ export class Home6Component implements OnInit {
     dots: true,
     nav:true,
     smartSpeed: 2000,
-    navText: [ '<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>' ], 
+    navText: [ '<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>' ],
     responsive:{
       0:{
         items:1
@@ -93,7 +92,7 @@ export class Home6Component implements OnInit {
     dots: true,
     nav:false,
     smartSpeed: 2000,
-    navText: [ '<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>' ], 
+    navText: [ '<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>' ],
     responsive:{
       0:{
         items:1
@@ -134,7 +133,7 @@ export class Home6Component implements OnInit {
     dots: true,
     nav:false,
     smartSpeed: 2000,
-    navText: [ '<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>' ], 
+    navText: [ '<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>' ],
     responsive:{
       0:{
         items:1
@@ -159,7 +158,7 @@ export class Home6Component implements OnInit {
     dots: true,
     nav:false,
     smartSpeed: 2000,
-    navText: [ '<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>' ], 
+    navText: [ '<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>' ],
     responsive:{
       0:{
         items:1
@@ -184,7 +183,7 @@ export class Home6Component implements OnInit {
     dots: true,
     nav:false,
     smartSpeed: 2000,
-    navText: [ '<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>' ], 
+    navText: [ '<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>' ],
     responsive:{
       0:{
         items:1
@@ -209,7 +208,7 @@ export class Home6Component implements OnInit {
     dots: true,
     nav:false,
     smartSpeed: 2000,
-    navText: [ '<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>' ], 
+    navText: [ '<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>' ],
     responsive:{
       0:{
         items:1
@@ -234,7 +233,7 @@ export class Home6Component implements OnInit {
     dots: true,
     nav:false,
     smartSpeed: 2000,
-    navText: [ '<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>' ], 
+    navText: [ '<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>' ],
     responsive:{
       0:{
         items:1
@@ -259,7 +258,7 @@ export class Home6Component implements OnInit {
     dots: true,
     nav:false,
     smartSpeed: 2000,
-    navText: [ '<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>' ], 
+    navText: [ '<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>' ],
     responsive:{
       0:{
         items:1
@@ -298,7 +297,7 @@ export class Home6Component implements OnInit {
     { value: 'Online' },
     { value: 'Offline' },
   ];
-  constructor( private datePipe: DatePipe) { 
+  constructor( private datePipe: DatePipe) {
   }
   toggleTimePcker(value: string): void {
 

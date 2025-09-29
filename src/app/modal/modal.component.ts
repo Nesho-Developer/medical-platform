@@ -325,7 +325,7 @@ export class ModalComponent implements OnInit {
     this.myDateValue = new Date();
 
   }
-  onDateChange(newDate: Date) {
+  onDateChange(_: Date) {
     // console.log(newDate);
   }
   prescription: any[] = [{}];

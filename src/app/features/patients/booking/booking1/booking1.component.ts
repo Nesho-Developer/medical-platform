@@ -3,8 +3,8 @@ import { Component, OnDestroy, Renderer2 } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
-import { CommonService } from 'src/app/shared/common/common.service';
-import { routes } from 'src/app/shared/routes/routes';
+import { CommonService } from '../../../../shared/common/common.service';
+import { routes } from '../../../../shared/routes/routes';
 import { PatientBreadcrumbComponent } from '../../common/patient-breadcrumb/patient-breadcrumb.component';
 @Component({
     selector: 'app-booking1',

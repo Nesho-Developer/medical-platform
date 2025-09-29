@@ -106,6 +106,15 @@
       },
       "defaultConfiguration": "development"
     },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "options": {
+        "lintFilePatterns": [
+          "src/**/*.ts",
+          "src/**/*.html"
+        ]
+      }
+    },
     "extract-i18n": {
       "executor": "@angular/build:extract-i18n"
     },

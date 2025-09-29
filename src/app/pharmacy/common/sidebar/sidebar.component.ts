@@ -1,11 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive, RouterModule } from '@angular/router';
-import { CommonService } from 'src/app/shared/common/common.service';
-import { DataService } from 'src/app/shared/data/data.service';
-import { pharmacySidebar } from 'src/app/shared/models/sidebar-model';
-import { SidebarService } from 'src/app/shared/sidebar/sidebar.service';
-import { routes } from 'src/app/shared/routes/routes';
+import { RouterLink, RouterLinkActive } from '@angular/router';
+import { CommonService } from '../../../shared/common/common.service';
+import { DataService } from '../../../shared/data/data.service';
+import { pharmacySidebar } from '../../../shared/models/sidebar-model';
+import { SidebarService } from '../../../shared/sidebar/sidebar.service';
+import { routes } from '../../../shared/routes/routes';
 import { NgScrollbarModule } from 'ngx-scrollbar';
 @Component({
     selector: 'app-sidebar',

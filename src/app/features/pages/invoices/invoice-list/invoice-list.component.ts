@@ -3,12 +3,12 @@ import { Component } from '@angular/core';
 import { Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router, RouterLink } from '@angular/router';
-import { DoctorBreadcrumbComponent } from 'src/app/features/doctors/common/doctor-breadcrumb/doctor-breadcrumb.component';
-import { DoctorSidebarComponent } from 'src/app/features/doctors/common/doctor-sidebar/doctor-sidebar.component';
-import { PaginationService, pageSelection, tablePageSize } from 'src/app/shared/custom-pagination/pagination.service';
-import { DataService } from 'src/app/shared/data/data.service';
-import { apiResultFormat, invoice } from 'src/app/shared/models/models';
-import { routes } from 'src/app/shared/routes/routes';
+import { DoctorBreadcrumbComponent } from '../../../doctors/common/doctor-breadcrumb/doctor-breadcrumb.component';
+import { DoctorSidebarComponent } from '../../../doctors/common/doctor-sidebar/doctor-sidebar.component';
+import { PaginationService, pageSelection, tablePageSize } from '../../../../shared/custom-pagination/pagination.service';
+import { DataService } from '../../../../shared/data/data.service';
+import { apiResultFormat, invoice } from '../../../../shared/models/models';
+import { routes } from '../../../../shared/routes/routes';
 
 @Component({
     selector: 'app-invoice-list',
@@ -39,7 +39,7 @@ export class InvoiceListComponent {
         this.pageSize = res.pageSize;
       }
     });
-   
+
   }
 
   private getTableData(pageOption: pageSelection): void {
@@ -68,7 +68,7 @@ export class InvoiceListComponent {
     });
   }
 
-  
+
    public sortData(sort: Sort) {
     const data = this.tableData.slice();
 
@@ -82,6 +82,6 @@ export class InvoiceListComponent {
       });
     }
   }
-  
+
 
 }

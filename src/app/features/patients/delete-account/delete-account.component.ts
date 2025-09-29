@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
-import { routes } from 'src/app/shared/routes/routes';
+import { RouterLink } from '@angular/router';
+import { routes } from '../../../shared/routes/routes';
 import { PatientSidebarComponent } from '../common/patient-sidebar/patient-sidebar.component';
 import { PatientBreadcrumbComponent } from '../common/patient-breadcrumb/patient-breadcrumb.component';
 

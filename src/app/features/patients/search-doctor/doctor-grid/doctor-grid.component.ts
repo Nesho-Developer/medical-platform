@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatSliderModule } from '@angular/material/slider';
 import { RouterLink } from '@angular/router';
-import { routes } from 'src/app/shared/routes/routes';
+import { routes } from '../../../../shared/routes/routes';
 import { BreadcrumbSearchComponent } from '../../common/breadcrumb-search/breadcrumb-search.component';
 import { LightgalleryModule } from 'lightgallery/angular';
 import { MatSelectModule } from '@angular/material/select';

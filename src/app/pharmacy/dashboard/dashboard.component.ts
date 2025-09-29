@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Component, ViewChild } from '@angular/core';
-import { routes } from 'src/app/shared/routes/routes';
+import { routes } from '../../shared/routes/routes';
 import {
   ChartComponent,
   ApexAxisChartSeries,
@@ -13,7 +13,6 @@ import {
   ApexLegend,
   NgApexchartsModule,
 } from "ng-apexcharts";
-import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 export type ChartOptions = {

@@ -3,8 +3,8 @@ import { DatePipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
-import { routes } from 'src/app/shared/routes/routes';
-import intlTelInput from 'intl-tel-input';  
+import { routes } from '../../../../shared/routes/routes';
+import intlTelInput from 'intl-tel-input';
 @Component({
     selector: 'app-doctor-register',
     templateUrl: './doctor-register.component.html',
@@ -34,6 +34,6 @@ export class DoctorRegisterComponent {
     input.addEventListener('input', () => {
       input.value = input.value.replace(/[^0-9+()-\s]/g, ''); // Removes any character not allowed
     });
-        
+
   }
 }

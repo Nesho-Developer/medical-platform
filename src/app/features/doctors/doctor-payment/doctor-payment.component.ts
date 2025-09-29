@@ -15,8 +15,8 @@ import { MatSliderModule } from '@angular/material/slider';
     ]
 })
 export class DoctorPaymentComponent {
-  activeBox: number = 2;
+  activeBox = 2;
   toggleActive(boxNumber: number): void {
-    this.activeBox = boxNumber; 
+    this.activeBox = boxNumber;
   }
 }

@@ -2,8 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { MatSelectModule } from '@angular/material/select';
 import { Router, RouterLink, RouterModule } from '@angular/router';
-import { CommonService } from 'src/app/shared/common/common.service';
-import { routes } from 'src/app/shared/routes/routes';
+import { CommonService } from '../../../../shared/common/common.service';
+import { routes } from '../../../../shared/routes/routes';
 
 @Component({
     selector: 'app-doctor-sidebar',

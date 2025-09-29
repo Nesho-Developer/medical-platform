@@ -3,8 +3,8 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
-import { CommonService } from 'src/app/shared/common/common.service';
-import { routes } from 'src/app/shared/routes/routes';
+import { CommonService } from '../../../../shared/common/common.service';
+import { routes } from '../../../../shared/routes/routes';
 
 @Component({
   selector: 'app-breadcrumb-search',

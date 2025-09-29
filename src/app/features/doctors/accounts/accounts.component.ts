@@ -4,11 +4,11 @@ import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { DataService } from 'src/app/shared/data/data.service';
-import { accounts, apiResultFormat, pageSelection } from 'src/app/shared/models/models';
-import { routes } from 'src/app/shared/routes/routes';
+import { DataService } from '../../../shared/data/data.service';
+import { accounts, apiResultFormat, pageSelection } from '../../../shared/models/models';
+import { routes } from '../../../shared/routes/routes';
 import { Router } from '@angular/router';
-import { PaginationService, tablePageSize } from 'src/app/shared/custom-pagination/pagination.service';
+import { PaginationService, tablePageSize } from '../../../shared/custom-pagination/pagination.service';
 import { DoctorSidebarComponent } from '../common/doctor-sidebar/doctor-sidebar.component';
 import { DoctorBreadcrumbComponent } from '../common/doctor-breadcrumb/doctor-breadcrumb.component';
 

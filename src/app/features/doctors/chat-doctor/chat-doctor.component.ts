@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
-import { routes } from 'src/app/shared/routes/routes';
+import { routes } from '../../../shared/routes/routes';
 @Component({
     selector: 'app-chat-doctor',
     templateUrl: './chat-doctor.component.html',

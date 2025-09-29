@@ -33,7 +33,7 @@ public navigation() {
 ngOnInit() {
   this.myDateValue = new Date();
 }
-onDateChange(newDate: Date) {
+onDateChange(_: Date) {
   // console.log(newDate);
 }
 public ourServiceOption: OwlOptions = {
@@ -42,7 +42,7 @@ public ourServiceOption: OwlOptions = {
   dots: false,
   nav:true,
   smartSpeed: 2000,
-  navText: [ '<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>' ], 
+  navText: [ '<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>' ],
   responsive:{
     0:{
       items:1

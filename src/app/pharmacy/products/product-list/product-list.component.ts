@@ -3,12 +3,12 @@ import { Component } from '@angular/core';
 import { MatSortModule, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router, RouterModule } from '@angular/router';
-import { CustomPaginationComponent } from 'src/app/shared/custom-pagination/custom-pagination.component';
-import { PaginationService, tablePageSize } from 'src/app/shared/custom-pagination/pagination.service';
-import { DataService } from 'src/app/shared/data/data.service';
-import { productList, apiResultFormat, pageSelection } from 'src/app/shared/models/models';
-import { routes } from 'src/app/shared/routes/routes';
-import { PaginationHeaderComponent } from 'src/app/shared/pagination-header/pagination-header.component';
+import { CustomPaginationComponent } from '../../../shared/custom-pagination/custom-pagination.component';
+import { PaginationService, tablePageSize } from '../../../shared/custom-pagination/pagination.service';
+import { DataService } from '../../../shared/data/data.service';
+import { productList, apiResultFormat, pageSelection } from '../../../shared/models/models';
+import { routes } from '../../../shared/routes/routes';
+import { PaginationHeaderComponent } from '../../../shared/pagination-header/pagination-header.component';
 
 @Component({
     selector: 'app-product-list',
@@ -19,7 +19,7 @@ import { PaginationHeaderComponent } from 'src/app/shared/pagination-header/pagi
 export class ProductListComponent {
   public routes = routes;
   public tableData: Array<productList> = [];
-  
+
   // pagination variables
   public pageSize = 10;
   public serialNumberArray: Array<number> = [];

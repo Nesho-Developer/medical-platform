@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { MatSelectModule } from '@angular/material/select';
 import { RouterLink } from '@angular/router';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
-import { routes } from 'src/app/shared/routes/routes';
+import { routes } from '../../../shared/routes/routes';
 
 @Component({
   selector: 'app-booking',

@@ -7,10 +7,10 @@ import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { Router } from '@angular/router';
-import { PaginationService, pageSelection, tablePageSize } from 'src/app/shared/custom-pagination/pagination.service';
-import { DataService } from 'src/app/shared/data/data.service';
-import { apiResultFormat, patientProfile,  } from 'src/app/shared/models/models';
-import { routes } from 'src/app/shared/routes/routes';
+import { PaginationService, pageSelection, tablePageSize } from '../../../shared/custom-pagination/pagination.service';
+import { DataService } from '../../../shared/data/data.service';
+import { apiResultFormat, patientProfile,  } from '../../../shared/models/models';
+import { routes } from '../../../shared/routes/routes';
 import { DoctorSidebarComponent } from '../common/doctor-sidebar/doctor-sidebar.component';
 import { DoctorBreadcrumbComponent } from '../common/doctor-breadcrumb/doctor-breadcrumb.component';
 
@@ -26,17 +26,17 @@ export class PatientProfileComponent {
   public tableData2: Array<patientProfile> = [];
   public tableData3: Array<patientProfile> = [];
   public tableData4: Array<patientProfile> = [];
- 
-  
+
+
   // pagination variables
   public pageSize = 10;
   public serialNumberArray: Array<number> = [];
   public totalData = 0;
   showFilter = false;
   dataSource!: MatTableDataSource<patientProfile>;
-  
+
   public searchDataValue = '';
-  
+
   // pagination variables end
 
   constructor(
@@ -107,7 +107,7 @@ export class PatientProfileComponent {
             this.serialNumberArray.push(serialNumber);
           }
         });
-       
+
         this.pagination.calculatePageSize.next({
           totalData: this.totalData,
           pageSize: this.pageSize,
@@ -132,7 +132,7 @@ export class PatientProfileComponent {
             this.serialNumberArray.push(serialNumber);
           }
         });
-       
+
         this.pagination.calculatePageSize.next({
           totalData: this.totalData,
           pageSize: this.pageSize,
@@ -157,7 +157,7 @@ export class PatientProfileComponent {
             this.serialNumberArray.push(serialNumber);
           }
         });
-       
+
         this.pagination.calculatePageSize.next({
           totalData: this.totalData,
           pageSize: this.pageSize,
@@ -169,12 +169,12 @@ export class PatientProfileComponent {
         });
       });
     }
-   
+
 
 
     public sortData(sort: Sort) {
       const data = this.tableData.slice();
-  
+
       if (!sort.active || sort.direction === '') {
         this.tableData = data;
       } else {
@@ -187,7 +187,7 @@ export class PatientProfileComponent {
     }
     public sortData2(sort: Sort) {
       const data = this.tableData2.slice();
-    
+
       if (!sort.active || sort.direction === '') {
         this.tableData2 = data;
       } else {
@@ -200,7 +200,7 @@ export class PatientProfileComponent {
     }
     public sortData3(sort: Sort) {
       const data = this.tableData2.slice();
-    
+
       if (!sort.active || sort.direction === '') {
         this.tableData2 = data;
       } else {
@@ -213,7 +213,7 @@ export class PatientProfileComponent {
     }
     public sortData4(sort: Sort) {
       const data = this.tableData2.slice();
-    
+
       if (!sort.active || sort.direction === '') {
         this.tableData2 = data;
       } else {
@@ -224,6 +224,6 @@ export class PatientProfileComponent {
         });
       }
     }
-  
+
 
 }

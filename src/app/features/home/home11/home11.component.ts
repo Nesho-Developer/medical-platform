@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
-import {  Component,  Renderer2, ViewChild, } from '@angular/core';
+import {  Component,  Renderer2 } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { CarouselComponent, CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
+import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { routes } from '../../../shared/routes/routes';
 import { FooterComponent } from './common/footer/footer.component';
 import { HeaderComponent } from './common/header/header.component';
@@ -12,10 +12,10 @@ import { HeaderComponent } from './common/header/header.component';
     templateUrl: './home11.component.html',
     styleUrls: ['./home11.component.scss'],
     imports: [CommonModule,RouterLink,FooterComponent,HeaderComponent,CarouselModule],
-  
+
 })
 export class Home11Component  {
-  
+
   routes = routes;
   constructor(private renderer: Renderer2) { }
   public discoverSliderOptions: OwlOptions = {
@@ -121,7 +121,7 @@ export class Home11Component  {
     dots: true,
     nav:false,
     smartSpeed: 2000,
-    navText: [ '<i class="fa-solid fa-arrow-left"></i>', '<i class="fa-solid fa-arrow-right"></i>' ], 
+    navText: [ '<i class="fa-solid fa-arrow-left"></i>', '<i class="fa-solid fa-arrow-right"></i>' ],
     responsive:{
       0:{
         items:1
@@ -160,10 +160,10 @@ export class Home11Component  {
         items: 4.5
       }
     },
-    
+
   };
   // onCarouselChange(event: any) {
-    
+
   //   this.brandSliderClasses();
   // }
   carouselImages = [
@@ -172,9 +172,9 @@ export class Home11Component  {
     { src: 'assets/img/cosmetic-banner-img2.png' },
     { src: 'assets/img/cosmetic-banner-img.png' },
     { src: 'assets/img/cosmetic-banner-img4.png' },
-   
-    
-   
+
+
+
   ];
   // brandSliderClasses() {
   //   const brandSlider = document.querySelector('.banner-sliderssurgery');
@@ -189,7 +189,7 @@ export class Home11Component  {
   //     });
   //   }
   // }
-  onCarouselTranslated(event: any) {
+  onCarouselTranslated(_: any) {
     this.brandSliderClasses();
   }
   brandSliderClasses() {

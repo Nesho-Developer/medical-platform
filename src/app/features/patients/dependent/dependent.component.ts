@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterModule } from '@angular/router';
-import { routes } from 'src/app/shared/routes/routes';
+import { RouterModule } from '@angular/router';
+import { routes } from '../../../shared/routes/routes';
 @Component({
     selector: 'app-dependent',
     templateUrl: './dependent.component.html',
@@ -10,4 +10,4 @@ import { routes } from 'src/app/shared/routes/routes';
 export class DependentComponent {
   public routes = routes;
 
-} 
+}

@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { Router, RouterLink, RouterModule } from '@angular/router';
-import { routes } from 'src/app/shared/routes/routes';
-import { SidebarService } from 'src/app/shared/sidebar/sidebar.service';
+import { Router, RouterLink } from '@angular/router';
+import { routes } from '../../../shared/routes/routes';
+import { SidebarService } from '../../../shared/sidebar/sidebar.service';
 
 @Component({
     selector: 'app-header',
@@ -13,7 +13,7 @@ import { SidebarService } from 'src/app/shared/sidebar/sidebar.service';
 export class HeaderComponent {
   public routes = routes;
   public miniSidebar = false;
-  
+
   constructor(public router: Router,private sidebar: SidebarService) {
     this.sidebar.toggleSideBar.subscribe((res: string) => {
       if (res == 'true') {
@@ -23,7 +23,7 @@ export class HeaderComponent {
       }
     });
   }
-  
+
   public miniSideBarMouseHover(position: string): void {
     if (position == 'over') {
       this.sidebar.expandSideBar.next(true);

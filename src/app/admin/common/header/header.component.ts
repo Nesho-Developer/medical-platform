@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
-import { routes } from 'src/app/shared/routes/routes';
-import { SidebarService } from 'src/app/shared/sidebar/sidebar.service';
+import { routes } from '../../../shared/routes/routes';
+import { SidebarService } from '../../../shared/sidebar/sidebar.service';
 
 @Component({
     selector: 'app-header',
@@ -23,7 +23,7 @@ export class HeaderComponent {
       }
     });
   }
-  
+
   public miniSideBarMouseHover(position: string): void {
     if (position == 'over') {
       this.sidebar.expandSideBar.next(true);
@@ -33,7 +33,7 @@ export class HeaderComponent {
   }
   public toggleAdminSideBar(): void {
     this.sidebar.switchAdminSideMenuPosition();
-    
+
   }
   public toggleAdminMobileSideBar(): void {
     this.sidebar.switchAdminMobileSideBarPosition();

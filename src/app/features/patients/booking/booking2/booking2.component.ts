@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
-import { DataService } from 'src/app/shared/data/data.service';
-import { booking2 } from 'src/app/shared/models/models';
-import { routes } from 'src/app/shared/routes/routes';
+import { DataService } from '../../../../shared/data/data.service';
+import { booking2 } from '../../../../shared/models/models';
+import { routes } from '../../../../shared/routes/routes';
 import { PatientBreadcrumbComponent } from '../../common/patient-breadcrumb/patient-breadcrumb.component';
 @Component({
     selector: 'app-booking2',

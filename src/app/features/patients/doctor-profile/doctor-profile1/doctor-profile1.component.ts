@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
-import { routes } from 'src/app/shared/routes/routes';
+import { routes } from '../../../../shared/routes/routes';
 import { PatientBreadcrumbComponent } from '../../common/patient-breadcrumb/patient-breadcrumb.component';
 
 @Component({
@@ -18,7 +18,7 @@ export class DoctorProfile1Component {
 			margin: 24,
 			dots: false,
 			nav: true,
-			smartSpeed: 2000,			
+			smartSpeed: 2000,
 			navText: ['<i class="fa-solid fa-chevron-left "></i>', '<i class="fa-solid fa-chevron-right"></i>'],
     responsive: {
       0: {
@@ -40,7 +40,7 @@ export class DoctorProfile1Component {
 			margin: 24,
 			dots: false,
 			nav: true,
-			smartSpeed: 2000,		
+			smartSpeed: 2000,
 			navText: ['<i class="fa-solid fa-chevron-left "></i>', '<i class="fa-solid fa-chevron-right"></i>'],
       responsive: {
 				0: {
@@ -65,8 +65,8 @@ export class DoctorProfile1Component {
     margin: 24,
     dots: false,
     nav: true,
-    smartSpeed: 2000,	
-    
+    smartSpeed: 2000,
+
 			navText: ['<i class="fa-solid fa-chevron-left "></i>', '<i class="fa-solid fa-chevron-right"></i>'],
       responsive: {
 				0: {
@@ -86,7 +86,7 @@ export class DoctorProfile1Component {
 				}
 			}
   };
-  activeTab: string = 'doc_bio';
+  activeTab = 'doc_bio';
 
   setActiveTab(tabName: string) {
     this.activeTab = tabName;

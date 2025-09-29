@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { BeforeSlideDetail } from 'lightgallery/lg-events';
-import { routes } from 'src/app/shared/routes/routes';
+import { routes } from '../../../../shared/routes/routes';
 import { Lightbox, LightboxModule } from 'ngx-lightbox';
 import lgZoom from 'lightgallery/plugins/zoom';
 import { GoogleMapsModule } from '@angular/google-maps';
@@ -35,7 +35,6 @@ settings = {
   public albumsOne: any = [];
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   slider: any;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   private infowindow!: google.maps.InfoWindow;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   doc_name: any;
@@ -261,7 +260,7 @@ settings = {
       } while (next == this.current);
     }
     this.current = next;
-    
+
     // eslint-disable-next-line prefer-const
     marker = this.locations[next];
     this.setInfo(marker);
@@ -351,9 +350,8 @@ settings = {
   constructor(private _lightbox: Lightbox) {
     for (let i = 1; i <= 4; i++) {
       const src = 'assets/img/features/feature-' + i + '.jpg';
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars
-      const caption = 'Image ' + i + ' caption here';
-      
+      // const caption = 'Image ' + i + ' caption here';
+
       this.albumsOne.push({ src: src });
     }
   }

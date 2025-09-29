@@ -59,15 +59,22 @@
     "@angular-eslint/template-parser": "20.3.0",
     "@angular/cli": "~20.3.2",
     "@angular/compiler-cli": "^20.3.1",
+    "@eslint/js": "^9.36.0",
     "@nx/angular": "21.5.3",
+    "@nx/eslint": "^21.5.3",
+    "@nx/eslint-plugin": "^21.5.3",
     "@nx/workspace": "21.5.3",
     "@schematics/angular": "~20.3.2",
     "@types/file-saver": "^2.0.7",
     "@types/jasmine": "~5.1.9",
     "@typescript-eslint/eslint-plugin": "8.44.1",
     "@typescript-eslint/parser": "8.44.1",
+    "@typescript-eslint/utils": "^8.45.0",
+    "angular-eslint": "^20.3.0",
     "apexcharts": "^5.3.5",
     "eslint": "^9.36.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-playwright": "^2.2.2",
     "jasmine-core": "~5.10.0",
     "karma": "~6.4.4",
     "karma-chrome-launcher": "~3.2.0",
@@ -75,7 +82,8 @@
     "karma-jasmine": "^5.1.0",
     "karma-jasmine-html-reporter": "^2.1.0",
     "nx": "21.5.3",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.45.0"
   },
   "overrides": {
     "ngx-slick-carousel": {

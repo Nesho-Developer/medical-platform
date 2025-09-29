@@ -2,8 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component, Renderer2, ViewChild } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Router } from '@angular/router';
-import { patientDashboard } from 'src/app/shared/models/models';
-import { routes } from 'src/app/shared/routes/routes';
+import { patientDashboard } from '../../../shared/models/models';
+import { routes } from '../../../shared/routes/routes';
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import {
   ApexAxisChartSeries,

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
-import { routes } from 'src/app/shared/routes/routes';
+import { routes } from '../../../../shared/routes/routes';
 @Component({
     selector: 'app-pharmacy-register-step2',
     templateUrl: './pharmacy-register-step2.component.html',

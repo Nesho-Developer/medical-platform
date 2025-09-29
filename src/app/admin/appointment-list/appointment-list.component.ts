@@ -1,18 +1,18 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { DataService } from 'src/app/shared/data/data.service';
+import { DataService } from '../../shared/data/data.service';
 import {
   apiResultFormat,
   appointmentList,
   pageSelection,
-} from 'src/app/shared/models/models';
-import { routes } from 'src/app/shared/routes/routes';
+} from '../../shared/models/models';
+import { routes } from '../../shared/routes/routes';
 import { MatSortModule, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router, RouterLink } from '@angular/router';
-import { PaginationService, tablePageSize } from 'src/app/shared/custom-pagination/pagination.service';
-import { CustomPaginationComponent } from 'src/app/shared/custom-pagination/custom-pagination.component';
-import { PaginationHeaderComponent } from 'src/app/shared/pagination-header/pagination-header.component';
+import { PaginationService, tablePageSize } from '../../shared/custom-pagination/pagination.service';
+import { CustomPaginationComponent } from '../../shared/custom-pagination/custom-pagination.component';
+import { PaginationHeaderComponent } from '../../shared/pagination-header/pagination-header.component';
 import { FormsModule } from '@angular/forms';
 @Component({
     selector: 'app-appointment-list',

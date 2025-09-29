@@ -4,12 +4,12 @@ import { RouterLink } from '@angular/router';
 import { MatSortModule, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
-import { CustomPaginationComponent } from 'src/app/shared/custom-pagination/custom-pagination.component';
-import { PaginationService, tablePageSize } from 'src/app/shared/custom-pagination/pagination.service';
-import { DataService } from 'src/app/shared/data/data.service';
-import { pageSelection, apiResultFormat, specialities } from 'src/app/shared/models/models';
-import { routes } from 'src/app/shared/routes/routes';
-import { PaginationHeaderComponent } from 'src/app/shared/pagination-header/pagination-header.component';
+import { CustomPaginationComponent } from '../../shared/custom-pagination/custom-pagination.component';
+import { PaginationService, tablePageSize } from '../../shared/custom-pagination/pagination.service';
+import { DataService } from '../../shared/data/data.service';
+import { pageSelection, apiResultFormat, specialities } from '../../shared/models/models';
+import { routes } from '../../shared/routes/routes';
+import { PaginationHeaderComponent } from '../../shared/pagination-header/pagination-header.component';
 
 @Component({
     selector: 'app-specialities',

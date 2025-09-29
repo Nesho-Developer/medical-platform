@@ -2,10 +2,10 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
-import { DataService } from 'src/app/shared/data/data.service';
-import { partnersSlider } from 'src/app/shared/models/models';
+import { DataService } from '../../../shared/data/data.service';
+import { partnersSlider } from '../../../shared/models/models';
 
-import { routes } from 'src/app/shared/routes/routes';
+import { routes } from '../../../shared/routes/routes';
 import { PharmacyfooterComponent } from '../../common/pharmacyfooter/pharmacyfooter.component';
 import { FormsModule } from '@angular/forms';
 import { PharmacyheaderComponent } from '../../common/pharmacyheader/pharmacyheader.component';

@@ -2,13 +2,13 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { MatSortModule, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { Router, RouterModule, RouterLink } from '@angular/router';
-import { CustomPaginationComponent } from 'src/app/shared/custom-pagination/custom-pagination.component';
-import { PaginationService, tablePageSize } from 'src/app/shared/custom-pagination/pagination.service';
-import { DataService } from 'src/app/shared/data/data.service';
-import { pageSelection, apiResultFormat, dataTables } from 'src/app/shared/models/models';
-import { PaginationHeaderComponent } from 'src/app/shared/pagination-header/pagination-header.component';
-import { routes } from 'src/app/shared/routes/routes';
+import { Router, RouterLink } from '@angular/router';
+import { CustomPaginationComponent } from '../../../../shared/custom-pagination/custom-pagination.component';
+import { PaginationService, tablePageSize } from '../../../../shared/custom-pagination/pagination.service';
+import { DataService } from '../../../../shared/data/data.service';
+import { pageSelection, apiResultFormat, dataTables } from '../../../../shared/models/models';
+import { PaginationHeaderComponent } from '../../../../shared/pagination-header/pagination-header.component';
+import { routes } from '../../../../shared/routes/routes';
 
 @Component({
     selector: 'app-data-tables',

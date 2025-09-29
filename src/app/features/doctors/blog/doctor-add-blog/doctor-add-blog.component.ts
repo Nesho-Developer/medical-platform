@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { DoctorSidebarComponent } from '../../common/doctor-sidebar/doctor-sidebar.component';
 import { DoctorBreadcrumbComponent } from '../../common/doctor-breadcrumb/doctor-breadcrumb.component';
-import { routes } from 'src/app/shared/routes/routes';
+import { routes } from '../../../../shared/routes/routes';
 @Component({
     selector: 'app-doctor-add-blog',
     templateUrl: './doctor-add-blog.component.html',

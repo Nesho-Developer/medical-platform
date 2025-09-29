@@ -1,4 +1,4 @@
-// src/app/shared/pipes/format-time.pipe.ts
+// ../../shared/pipes/format-time.pipe.ts
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({

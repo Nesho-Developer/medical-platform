@@ -2,10 +2,10 @@ import { Component, ViewChild } from '@angular/core';
 import { Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router, RouterLink } from '@angular/router';
-import { PaginationService, tablePageSize } from 'src/app/shared/custom-pagination/pagination.service';
-import { DataService } from 'src/app/shared/data/data.service';
-import { doctorDashboard, apiResultFormat, pageSelection } from 'src/app/shared/models/models';
-import { routes } from 'src/app/shared/routes/routes';
+import { PaginationService, tablePageSize } from '../../../shared/custom-pagination/pagination.service';
+import { DataService } from '../../../shared/data/data.service';
+import { doctorDashboard, apiResultFormat, pageSelection } from '../../../shared/models/models';
+import { routes } from '../../../shared/routes/routes';
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import {
   ApexAxisChartSeries,
@@ -15,8 +15,8 @@ import {
   ApexXAxis,
   ApexPlotOptions,
   NgApexchartsModule,
-  
-  
+
+
 } from "ng-apexcharts";
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -32,8 +32,8 @@ export type ChartOptions = {
   dataLabels: ApexDataLabels | any;
   plotOptions: ApexPlotOptions | any;
   xaxis: ApexXAxis | any;
-  
-  
+
+
 };
 
 @Component({
@@ -98,7 +98,7 @@ export class DoctorDashboardComponent {
           horizontal: false,
           columnWidth: '50%',
           endingShape: 'rounded',
-          borderRadius: 7, 
+          borderRadius: 7,
         }
       },
       dataLabels: {
@@ -119,7 +119,7 @@ export class DoctorDashboardComponent {
         type: "bar",
         height: 220,
         stacked: true,
-        endingShape: 'rounded',  
+        endingShape: 'rounded',
         toolbar: {
           show: false,
         }
@@ -129,7 +129,7 @@ export class DoctorDashboardComponent {
           horizontal: false,
           columnWidth: '50%',
           endingShape: 'rounded',
-          borderRadius: 7, 
+          borderRadius: 7,
         }
       },
       dataLabels: {
@@ -138,7 +138,7 @@ export class DoctorDashboardComponent {
       xaxis: {
         categories: ['M','T', 'W', 'T','F','S','S'],
     },
-    
+
     };
   }
 
@@ -209,7 +209,7 @@ export class DoctorDashboardComponent {
   }
   public sortData2(sort: Sort) {
     const data = this.tableData2.slice();
-  
+
     if (!sort.active || sort.direction === '') {
       this.tableData2 = data;
     } else {

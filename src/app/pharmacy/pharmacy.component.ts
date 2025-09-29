@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { Router, NavigationStart, Event as RouterEvent } from '@angular/router';
 import { CommonService } from '../shared/common/common.service';
-import { routes } from 'src/app/shared/routes/routes';
+import { routes } from '../..../../shared/routes/routes';
 import { url } from '../shared/models/models';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';

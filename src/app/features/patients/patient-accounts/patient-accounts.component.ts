@@ -3,10 +3,10 @@ import { CommonModule } from '@angular/common';
 import { Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
-import { PaginationService, tablePageSize } from 'src/app/shared/custom-pagination/pagination.service';
-import { DataService } from 'src/app/shared/data/data.service';
-import { patientAccounts, pageSelection, apiResultFormat } from 'src/app/shared/models/models';
-import { routes } from 'src/app/shared/routes/routes';
+import { PaginationService, tablePageSize } from '../../../shared/custom-pagination/pagination.service';
+import { DataService } from '../../../shared/data/data.service';
+import { patientAccounts, pageSelection, apiResultFormat } from '../../../shared/models/models';
+import { routes } from '../../../shared/routes/routes';
 import { PatientSidebarComponent } from '../common/patient-sidebar/patient-sidebar.component';
 import { PatientBreadcrumbComponent } from '../common/patient-breadcrumb/patient-breadcrumb.component';
 @Component({
@@ -115,7 +115,7 @@ export class PatientAccountsComponent {
   }
   public sortData2(sort: Sort) {
     const data = this.tableData2.slice();
-  
+
     if (!sort.active || sort.direction === '') {
       this.tableData2 = data;
     } else {
