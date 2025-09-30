@@ -1,3 +1,4 @@
+
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @use "@angular/material" as mat;
@@ -5,6 +6,18 @@
 @use "assets/scss/main.scss";
 @use "../src/assets/scss/utils/mixins.scss" as *;
 // Plus imports for other components in your app.
+
+@import "node_modules/primeicons/primeicons.css";
+@import "src/assets/admin/css/feathericon.min.css";
+@import "node_modules/@fortawesome/fontawesome-free/css/all.min.css";
+@import "src/assets/css/feather.css";
+@import "node_modules/ngx-bootstrap/datepicker/bs-datepicker.css";
+@import "node_modules/ngx-owl-carousel-o/lib/styles/scss/owl.carousel.scss";
+@import "node_modules/ngx-owl-carousel-o/lib/styles/scss/owl.theme.default.scss";
+@import "src/assets/css/iconsax.css";
+@import "node_modules/intl-tel-input/build/css/intlTelInput.css";
+@import "node_modules/bootstrap/dist/css/bootstrap.min.css";
+@import "node_modules/aos/dist/aos.css";
 
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
@@ -191,7 +204,7 @@ body {
         margin: 0 auto;
         height: auto;
   }
-     
+
     }
   }
 }
@@ -1224,7 +1237,7 @@ mat-chip-row {
     }
   }
 }
-.mat-mdc-option.mdc-list-item--selected:not(.mdc-list-item--disabled):not(.mat-mdc-option-multiple) 
+.mat-mdc-option.mdc-list-item--selected:not(.mdc-list-item--disabled):not(.mat-mdc-option-multiple)
 .mdc-list-item__primary-text {
   color: white;
 }
@@ -2356,12 +2369,12 @@ div.p-chips .p-chips-multiple-container .p-chips-token {
   flex-direction: column;
   position: relative;
   top: 68px;
-  
+
 }
 
 .circle-progress-percent {
   font-size: 14px;
- 
+
 }
 
 .custom-mat-select.img-mat-select-custom mat-select-trigger img {
@@ -2423,7 +2436,7 @@ app-doctor-appointment-start mat-select.custom-mat-select .mat-mdc-select-trigge
     top: 50%;
     transform: translateY(-50%);
     -webkit-transform: translateY(-50%);
-    
+
 }
 .slider-service .owl-theme .owl-nav div.owl-next,
 .doctor-slider-ten .owl-theme .owl-nav div.owl-next,
@@ -2520,7 +2533,7 @@ mat-select.custom-mat-select.home14 .mat-mdc-select-trigger {
 .home14 .mat-mdc-select-placeholder{
   color:#ffffff;
 }
- 
+
 mat-select.custom-mat-select.home14 .mat-mdc-select-trigger .mat-mdc-select-value{
   padding-right:6px;
 }
@@ -2614,7 +2627,7 @@ mat-select.custom-mat-select.home14 .mat-mdc-select-trigger .mat-mdc-select-valu
     height: 15px;
     background: #0E82FD;
     border-radius: 40px;
-  } 
+  }
   span{
     visibility: hidden;
   }
@@ -2698,7 +2711,7 @@ div.mat-mdc-select-panel{
 }
 .fas.fa-star:first-child{
   margin: 0 4px 0 0;
-} 
+}
 .fas.fa-star:not(:first-child){
   margin: 0 2px 0 2px;
 }
