@@ -69,4 +69,4 @@ export const routes: Routes = [
     redirectTo: 'error/error404',
     pathMatch: 'full',
   },
-] as const;
+];

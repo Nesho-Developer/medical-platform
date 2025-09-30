@@ -1,4 +1,4 @@
-// // declare var $: any;
-// declare var JQuery: any;
-// declare var JQuerySlickOptions: any;
-// /// <reference types="jquery" />
+// declare var $: any;
+declare var JQuery: any;
+declare var JQuerySlickOptions: any;
+/// <reference types="jquery" />

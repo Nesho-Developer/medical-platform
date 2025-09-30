@@ -50,3 +50,5 @@ Thumbs.db
 
 /dist
 .vscode
+package-lock.json
+.nx

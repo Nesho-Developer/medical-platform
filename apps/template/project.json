@@ -11,43 +11,38 @@
   },
   "targets": {
     "build": {
-      "executor": "@angular-devkit/build-angular:application",
+      "executor": "@nx/angular:webpack-browser",
       "options": {
         "outputPath": "dist/template",
         "allowedCommonJsDependencies": [
           "intl-tel-input",
           "aos",
-          "file-saver"
+          "file-saver",
+          "'@module-federation/enhanced/runtime"
         ],
         "polyfills": [
           "zone.js"
         ],
         "index": "apps/template/src/index.html",
-        "browser": "apps/template/src/main.ts",
+        "main": "apps/template/src/main.ts",
         "tsConfig": "apps/template/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "stylePreprocessorOptions": {
-          "sass": {
-            "silenceDeprecations": [
-              "mixed-decls",
-              "color-functions",
-              "global-builtin",
-              "import"
-            ]
-          }
+          "includePaths": [
+            "apps/template/src/styles"
+          ]
         },
         "assets": [
-            {
-              "glob": "**/*",
-              "input": "apps/template/public/assets",
-              "output": "/assets"
-            },
-            {
-              "glob": "**/*",
-              "input": "apps/template/src/assets",
-              "output": "/assets"
-            }
-
+          {
+            "glob": "**/*",
+            "input": "apps/template/public",
+            "output": "/assets"
+          },
+          {
+            "glob": "**/*",
+            "input": "apps/template/src/assets",
+            "output": "/assets"
+          }
         ],
         "styles": [
           "apps/template/src/styles.scss"
@@ -56,7 +51,10 @@
           "node_modules/intl-tel-input/build/js/intlTelInput.min.js",
           "node_modules/aos/dist/aos.js",
           "node_modules/bootstrap/dist/js/bootstrap.bundle.js"
-        ]
+        ],
+        "customWebpackConfig": {
+          "path": "apps/template/webpack.config.ts"
+        }
       },
       "configurations": {
         "production": {
@@ -91,7 +89,7 @@
       ]
     },
     "serve": {
-      "executor": "@angular/build:dev-server",
+      "executor": "@nx/angular:module-federation-dev-server",
       "configurations": {
         "production": {
           "buildTarget": "template:build:production"
@@ -100,7 +98,11 @@
           "buildTarget": "template:build:development"
         }
       },
-      "defaultConfiguration": "development"
+      "defaultConfiguration": "development",
+      "options": {
+        "port": 2400,
+        "publicHost": "http://localhost:2400"
+      }
     },
     "lint": {
       "executor": "@nx/eslint:lint",

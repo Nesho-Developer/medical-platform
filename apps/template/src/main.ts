@@ -1,8 +1,9 @@
+import { registerRemotes } from '@module-federation/enhanced/runtime';
 
-import "zone.js";
-import { bootstrapApplication } from '@angular/platform-browser';
-import { appConfig } from './app/app.config';
-import { AppComponent } from './app/app.component';
-
-bootstrapApplication(AppComponent, appConfig)
-  .catch((err) => console.error(err));
+fetch('/assets/module-federation.manifest.json')
+  .then((res) => res.json())
+  .then((remotes: Record<string, string>) =>
+    Object.entries(remotes).map(([name, entry]) => ({ name, entry })),
+  )
+  .then((remotes) => registerRemotes(remotes))
+  .then(() => import('./bootstrap').catch((err) => console.error(err)));

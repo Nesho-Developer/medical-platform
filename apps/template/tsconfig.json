@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
+    "target": "ES2022",
     "forceConsistentCasingInFileNames": true,
     "esModuleInterop": true,
     "strict": true,
@@ -22,5 +23,12 @@
     "strictInputAccessModifiers": true,
     "strictTemplates": true
   },
-  "extends": "../../tsconfig.base.json"
+  "extends": "../../tsconfig.base.json",
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "src/test.ts",
+    "**/*.spec.ts"
+  ]
 }
