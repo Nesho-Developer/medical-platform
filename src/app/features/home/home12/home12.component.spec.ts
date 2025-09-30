@@ -8,8 +8,8 @@ describe('Home12Component', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [Home12Component]
-    });
+    imports: [Home12Component]
+});
     fixture = TestBed.createComponent(Home12Component);
     component = fixture.componentInstance;
     fixture.detectChanges();

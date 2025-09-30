@@ -8,8 +8,8 @@ describe('ExpiredComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ExpiredComponent ]
-    })
+    imports: [ExpiredComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(ExpiredComponent);

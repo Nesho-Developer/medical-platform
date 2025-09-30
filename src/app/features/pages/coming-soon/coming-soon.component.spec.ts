@@ -8,8 +8,8 @@ describe('ComingSoonComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ComingSoonComponent ]
-    })
+    imports: [ComingSoonComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(ComingSoonComponent);

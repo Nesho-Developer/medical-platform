@@ -8,8 +8,8 @@ describe('VoiceCallComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ VoiceCallComponent ]
-    })
+    imports: [VoiceCallComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(VoiceCallComponent);

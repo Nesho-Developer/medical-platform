@@ -8,8 +8,8 @@ describe('MobileOtpComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MobileOtpComponent ]
-    })
+    imports: [MobileOtpComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(MobileOtpComponent);

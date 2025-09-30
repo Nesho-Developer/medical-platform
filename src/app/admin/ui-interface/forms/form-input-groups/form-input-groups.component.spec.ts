@@ -8,8 +8,8 @@ describe('FormInputGroupsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FormInputGroupsComponent ]
-    })
+    imports: [FormInputGroupsComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(FormInputGroupsComponent);

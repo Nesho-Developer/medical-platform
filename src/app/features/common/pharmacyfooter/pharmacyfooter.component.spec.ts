@@ -8,8 +8,8 @@ describe('PharmacyfooterComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [PharmacyfooterComponent]
-    });
+    imports: [PharmacyfooterComponent]
+});
     fixture = TestBed.createComponent(PharmacyfooterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

@@ -8,8 +8,8 @@ describe('AddSupplierComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AddSupplierComponent ]
-    })
+    imports: [AddSupplierComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(AddSupplierComponent);

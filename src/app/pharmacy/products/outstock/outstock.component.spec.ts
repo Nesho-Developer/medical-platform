@@ -8,8 +8,8 @@ describe('OutstockComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ OutstockComponent ]
-    })
+    imports: [OutstockComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(OutstockComponent);

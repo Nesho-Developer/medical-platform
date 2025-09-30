@@ -8,8 +8,8 @@ describe('MapListAvailabilityComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [MapListAvailabilityComponent]
-    })
+    imports: [MapListAvailabilityComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(MapListAvailabilityComponent);

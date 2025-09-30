@@ -8,8 +8,8 @@ describe('SignupSuccessComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SignupSuccessComponent ]
-    })
+    declarations: [SignupSuccessComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(SignupSuccessComponent);

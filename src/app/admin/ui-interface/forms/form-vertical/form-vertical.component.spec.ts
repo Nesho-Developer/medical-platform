@@ -8,8 +8,8 @@ describe('FormVerticalComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FormVerticalComponent ]
-    })
+    imports: [FormVerticalComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(FormVerticalComponent);

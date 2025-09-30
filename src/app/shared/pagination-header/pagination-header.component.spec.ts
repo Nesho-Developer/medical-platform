@@ -8,8 +8,8 @@ describe('PaginationHeaderComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PaginationHeaderComponent ]
-    })
+    imports: [PaginationHeaderComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(PaginationHeaderComponent);

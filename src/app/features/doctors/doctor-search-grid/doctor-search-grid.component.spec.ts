@@ -8,8 +8,8 @@ describe('DoctorSearchGridComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DoctorSearchGridComponent ]
-    })
+    imports: [DoctorSearchGridComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(DoctorSearchGridComponent);

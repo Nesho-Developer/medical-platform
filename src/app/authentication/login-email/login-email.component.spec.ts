@@ -8,8 +8,8 @@ describe('LoginEmailComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LoginEmailComponent ]
-    })
+    imports: [LoginEmailComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(LoginEmailComponent);

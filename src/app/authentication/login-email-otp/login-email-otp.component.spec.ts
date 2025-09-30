@@ -8,8 +8,8 @@ describe('LoginEmailOtpComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LoginEmailOtpComponent ]
-    })
+    imports: [LoginEmailOtpComponent]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(LoginEmailOtpComponent);
