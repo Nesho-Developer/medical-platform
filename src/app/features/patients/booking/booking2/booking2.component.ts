@@ -1,5 +1,5 @@
 
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
@@ -15,6 +15,8 @@ import { PatientBreadcrumbComponent } from '../../common/patient-breadcrumb/pati
     imports: [RouterLink, SlickCarouselModule, FormsModule, BsDatepickerModule, PatientBreadcrumbComponent]
 })
 export class Booking2Component {
+  private data = inject(DataService);
+
   public routes = routes;
   bsValue = new Date();
   bsRangeValue: Date[];
@@ -66,7 +68,7 @@ export class Booking2Component {
       }
     ]
   };
-  constructor(private data: DataService) {
+  constructor() {
     this.maxDate.setDate(this.maxDate.getDate() + 7);
     this.bsRangeValue = [this.bsValue, this.maxDate];
     this.booking2 = this.data.booking2

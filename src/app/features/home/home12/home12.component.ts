@@ -1,4 +1,4 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, ViewEncapsulation } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, ViewEncapsulation, inject } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { DataService } from '../../../shared/data/data.service';
 import { swiperCarousel } from '../../../shared/model/models';
@@ -36,6 +36,8 @@ interface data {
     ]
 })
 export class Home12Component {
+  private data = inject(DataService);
+
   public activeTab: Array<string> = [''];
   public routes = routes;
   public popularTestSlider: OwlOptions = {
@@ -277,7 +279,7 @@ export class Home12Component {
   
 
   public swiperCarousel: swiperCarousel[] = [];
-  constructor(private data: DataService) {
+  constructor() {
     this.swiperCarousel = this.data.swiperCarousel;
   }
 }

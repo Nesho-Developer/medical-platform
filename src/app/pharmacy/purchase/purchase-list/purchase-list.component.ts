@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
@@ -19,6 +19,10 @@ import { PaginationHeaderComponent } from '../../../shared/pagination-header/pag
     imports: [RouterModule, MatSortModule, CustomPaginationComponent, PaginationHeaderComponent]
 })
 export class PurchaseListComponent {
+  private data = inject(DataService);
+  private pagination = inject(PaginationService);
+  private router = inject(Router);
+
   public routes = routes;
   public tableData: Array<purchaseList> = [];
 
@@ -31,11 +35,7 @@ export class PurchaseListComponent {
   public searchDataValue = '';
   // pagination variables end
 
-  constructor(
-    private data: DataService,
-    private pagination: PaginationService,
-    private router: Router
-  ) {
+  constructor() {
     this.pagination.tablePageSize.subscribe((res: tablePageSize) => {
       if (this.router.url == this.routes.purchaseList) {
         this.getTableData({ skip: res.skip, limit: res.limit });

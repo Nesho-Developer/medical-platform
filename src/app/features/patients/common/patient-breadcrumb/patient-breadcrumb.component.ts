@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CommonService } from '../../../../shared/common/common.service';
 import { routes } from '../../../../shared/routes/routes';
@@ -11,12 +11,14 @@ import { routes } from '../../../../shared/routes/routes';
     imports:[CommonModule,RouterLink]
 })
 export class PatientBreadcrumbComponent {
+  private common = inject(CommonService);
+
   public routes = routes;
 
   base = '';
   page = '';
   last = '';
-  constructor(private common: CommonService) {
+  constructor() {
     this.common.base.subscribe((res: string) => {
       this.base = res?.replaceAll('-', ' ');
     });

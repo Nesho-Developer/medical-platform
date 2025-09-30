@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild, inject } from '@angular/core';
 import { routes } from '../shared/routes/routes';
 import { CommonService } from '../shared/common/common.service';
 import { NavigationStart, Router, Event as RouterEvent, RouterModule } from '@angular/router';
@@ -15,6 +15,11 @@ import { SidebarService } from '../shared/sidebar/sidebar.service';
   styleUrl: './features.component.scss'
 })
 export class FeaturesComponent {
+  private common = inject(CommonService);
+  private router = inject(Router);
+  private elementRef = inject(ElementRef);
+  private sidebar = inject(SidebarService);
+
   public routes = routes;
   public footerActive = false;
   public headerActive = false;
@@ -27,7 +32,9 @@ export class FeaturesComponent {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     
   }
-  constructor(private common: CommonService, private router: Router, private elementRef: ElementRef,private sidebar:SidebarService) {
+  constructor() {
+    const router = this.router;
+
     router.events.subscribe((event: RouterEvent) => {
       if (event instanceof NavigationStart) {
         this.getRoutes(event);

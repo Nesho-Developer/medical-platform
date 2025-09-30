@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { DatePipe } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { routes } from '../../../../shared/routes/routes';
@@ -12,8 +12,9 @@ import intlTelInput from 'intl-tel-input';
     imports:[CommonModule,FormsModule,RouterLink]
 })
 export class DoctorRegisterComponent {
+  private router = inject(Router);
+
   public routes = routes;
-  constructor(private router: Router) {}
 
   public navigation() {
     this.router.navigate([routes.doctorRegisterStep1]);

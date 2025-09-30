@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { routes } from '../../../shared/routes/routes';
@@ -16,6 +16,8 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
     imports: [RouterLink, FooterComponent, HeaderComponent, CarouselModule, MatSelectModule, CountUpModule, BsDatepickerModule]
 })
 export class Home7Component implements OnInit{
+  private router = inject(Router);
+
   
   public routes = routes;
   myDateValue!: Date ;
@@ -148,7 +150,6 @@ export class Home7Component implements OnInit{
 				}
 			}
   };
-  constructor(private router: Router) {}
 
   public navigation() {
     this.router.navigate([routes.search1]);

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { DataService } from '../../shared/data/data.service';
@@ -16,6 +16,8 @@ import { routes } from '../../shared/routes/routes';
     imports: [CommonModule,FormsModule]
 })
 export class ResetPasswordComponent {
+  private DataService = inject(DataService);
+
   public routes = routes;
   public togglePasswordClass = false;
   public togglePasswordClass2 = false;
@@ -47,7 +49,7 @@ export class ResetPasswordComponent {
     },
   };
 
-  constructor(private DataService: DataService) {
+  constructor() {
     this.newPassword = this.DataService.newPassword;
   }
 

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
@@ -14,12 +14,15 @@ import { routes } from '../../../../shared/routes/routes';
   imports:[CommonModule,FormsModule,BsDatepickerModule]
 })
 export class BreadcrumbSearchComponent {
+private common = inject(CommonService);
+private router = inject(Router);
+
 public routes = routes;
 
   base = '';
   page = '';
   last = '';
-  constructor(private common: CommonService,private router:Router ) {
+  constructor() {
     this.common.base.subscribe((res: string) => {
       this.base = res?.replaceAll('-', ' ');
     });

@@ -1,4 +1,4 @@
-import { Injectable, Renderer2, RendererFactory2 } from '@angular/core';
+import { Injectable, Renderer2, RendererFactory2, inject } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { CommonService } from '../common/common.service';
 import { SidebarService } from '../sidebar/sidebar.service';
@@ -8,6 +8,9 @@ import { SidebarService } from '../sidebar/sidebar.service';
   providedIn: 'root',
 })
 export class SettingsService {
+  private common = inject(CommonService);
+  sidebar = inject(SidebarService);
+
 
   private renderer: Renderer2;
   base = '';
@@ -66,7 +69,9 @@ export class SettingsService {
   );
 
 
-  constructor(rendererFactory: RendererFactory2,private common: CommonService,public sidebar:SidebarService) {
+  constructor() {
+    const rendererFactory = inject(RendererFactory2);
+
     this.renderer = rendererFactory.createRenderer(null, null);
     this.common.base.subscribe((res: string) => {
       this.base = res;

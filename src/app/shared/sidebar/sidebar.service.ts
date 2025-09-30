@@ -1,4 +1,4 @@
-import { Injectable, Renderer2, RendererFactory2 } from '@angular/core';
+import { Injectable, Renderer2, RendererFactory2, inject } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { DataService } from '../data/data.service';
 
@@ -6,6 +6,8 @@ import { DataService } from '../data/data.service';
   providedIn: 'root'
 })
 export class SidebarService {
+  private data = inject(DataService);
+
   private renderer: Renderer2;
 
   public toogleUserSidebar: BehaviorSubject<string> = new BehaviorSubject<string>(
@@ -27,7 +29,9 @@ export class SidebarService {
 
   public expandSideBar: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
-  constructor(rendererFactory: RendererFactory2,private data: DataService) {
+  constructor() {
+    const rendererFactory = inject(RendererFactory2);
+
     this.renderer = rendererFactory.createRenderer(null, null);
     
   }

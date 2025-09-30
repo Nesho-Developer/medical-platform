@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, inject } from '@angular/core';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { CommonService } from '../../../../../shared/common/common.service';
 import { DataService } from '../../../../../shared/data/data.service';
@@ -14,6 +14,11 @@ import { SidebarService } from '../../../../../shared/sidebar/sidebar.service';
     imports: [CommonModule,RouterLink,RouterLinkActive],
 })
 export class HeaderComponent {
+  private common = inject(CommonService);
+  private data = inject(DataService);
+  sidebar = inject(SidebarService);
+  private router = inject(Router);
+
   public searchField  = false;
   public routes = routes;
   public header: header[];
@@ -44,12 +49,7 @@ export class HeaderComponent {
     }
   }
   
-  constructor(
-    private common: CommonService,
-    private data: DataService,
-    public sidebar: SidebarService,
-    private router: Router
-  ) {
+  constructor() {
     this.common.base.subscribe((res: string) => {
       this.base = res;
     });

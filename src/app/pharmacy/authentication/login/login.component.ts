@@ -1,5 +1,5 @@
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { routes } from '../../../shared/routes/routes';
 
@@ -10,8 +10,9 @@ import { routes } from '../../../shared/routes/routes';
     imports: [RouterLink]
 })
 export class LoginComponent implements OnInit{
+  private router = inject(Router);
+
   public routes = routes;
-  constructor(private router: Router) {}
 
   public navigation() {
     this.router.navigate([routes.pharmacyDashboard]);

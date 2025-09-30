@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, signal } from '@angular/core';
+import { Component, signal, inject } from '@angular/core';
 import { NavigationEnd, NavigationStart, Router, Event as RouterEvent, RouterOutlet } from '@angular/router';
 import { routes } from './shared/routes/routes';
 import { CommonService } from './shared/common/common.service';
@@ -15,6 +15,11 @@ import { ModalComponent } from './modal/modal.component';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
+  private common = inject(CommonService);
+  private router = inject(Router);
+  private data = inject(DataService);
+  private sidebar = inject(SidebarService);
+
   public routes = routes;
   protected readonly title = signal('template');
   base = '';
@@ -25,12 +30,7 @@ export class AppComponent {
   public mobileSidebar = false;
   public showMiniSidebar = false;
 
-  constructor(
-    private common: CommonService,
-    private router: Router,
-    private data: DataService,
-    private sidebar: SidebarService
-  ) {
+  constructor() {
     this.common.base.subscribe((res: string) => {
       this.base = res;
     });

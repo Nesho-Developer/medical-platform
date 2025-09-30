@@ -1,5 +1,5 @@
 
-import {  Component,  Renderer2 } from '@angular/core';
+import { Component, Renderer2, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { routes } from '../../../shared/routes/routes';
@@ -15,9 +15,10 @@ import { HeaderComponent } from './common/header/header.component';
 
 })
 export class Home11Component  {
+  private renderer = inject(Renderer2);
+
 
   routes = routes;
-  constructor(private renderer: Renderer2) { }
   public discoverSliderOptions: OwlOptions = {
     loop: true,
 			margin: 10,

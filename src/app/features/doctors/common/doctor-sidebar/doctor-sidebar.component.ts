@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MatSelectModule } from '@angular/material/select';
 import { Router, RouterLink, RouterModule } from '@angular/router';
 import { CommonService } from '../../../../shared/common/common.service';
@@ -12,12 +12,15 @@ import { routes } from '../../../../shared/routes/routes';
     imports:[CommonModule,RouterModule,RouterLink,MatSelectModule]
 })
 export class DoctorSidebarComponent {
+  private common = inject(CommonService);
+  private router = inject(Router);
+
   routes = routes;
   public base = '';
   public page = '';
   public last = '';
 
-  constructor(private common: CommonService, private router: Router) {
+  constructor() {
     this.common.base.subscribe((res: string) => {
       this.base = res;
     });

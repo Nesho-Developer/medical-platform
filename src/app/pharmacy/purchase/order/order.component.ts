@@ -1,5 +1,5 @@
 
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MatSortModule, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router, RouterModule } from '@angular/router';
@@ -17,6 +17,10 @@ import { PaginationHeaderComponent } from '../../../shared/pagination-header/pag
     imports: [RouterModule, MatSortModule, CustomPaginationComponent, PaginationHeaderComponent]
 })
 export class OrderComponent {
+  private data = inject(DataService);
+  private pagination = inject(PaginationService);
+  private router = inject(Router);
+
   public routes = routes;
   public tableData: Array<order> = [];
 
@@ -29,11 +33,7 @@ export class OrderComponent {
   public searchDataValue = '';
   // pagination variables end
 
-  constructor(
-    private data: DataService,
-    private pagination: PaginationService,
-    private router: Router
-  ) {
+  constructor() {
     this.pagination.tablePageSize.subscribe((res: tablePageSize) => {
       if (this.router.url == this.routes.order) {
         this.getTableData({ skip: res.skip, limit: res.limit });

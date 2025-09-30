@@ -1,5 +1,5 @@
 
-import { Component, Renderer2 } from '@angular/core';
+import { Component, Renderer2, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { routes } from '../../../shared/routes/routes';
 import { DoctorSidebarComponent } from '../common/doctor-sidebar/doctor-sidebar.component';
@@ -13,11 +13,13 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
     imports: [FormsModule, DoctorSidebarComponent, DoctorBreadcrumbComponent, MatSelectModule, BsDatepickerModule]
 })
 export class ReviewsComponent {
+  private renderer = inject(Renderer2);
+
   public routes = routes;
   bsValue = new Date();
   bsRangeValue: Date[];
   maxDate = new Date();
-  constructor(private renderer: Renderer2) {
+  constructor() {
     this.maxDate.setDate(this.maxDate.getDate() + 7);
     this.bsRangeValue = [this.bsValue, this.maxDate];
 

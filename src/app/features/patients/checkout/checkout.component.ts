@@ -1,5 +1,5 @@
 
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { routes } from '../../../shared/routes/routes';
 import { PatientBreadcrumbComponent } from '../common/patient-breadcrumb/patient-breadcrumb.component';
@@ -11,8 +11,9 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     imports: [RouterLink, PatientBreadcrumbComponent, CarouselModule]
 })
 export class CheckoutComponent {
+  private router = inject(Router);
+
   public routes = routes;
-  constructor(private router: Router) {}
 
   public navigation() {
     this.router.navigate([routes.bookingSuccess]);

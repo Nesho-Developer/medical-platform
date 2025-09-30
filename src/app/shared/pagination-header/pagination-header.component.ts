@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {
   PaginationService,
   pageSelection,
@@ -16,6 +16,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     imports: [FormsModule, ReactiveFormsModule],
 })
 export class PaginationHeaderComponent {
+  private pagination = inject(PaginationService);
+
   public routes = routes;
   public pageSize = 10;
   public tableData: Array<string> = [];
@@ -32,7 +34,7 @@ export class PaginationHeaderComponent {
   public totalPages = 0;
   // pagination variables end
 
-  constructor(private pagination: PaginationService) {
+  constructor() {
     this.tableData = [];
     this.pagination.calculatePageSize.subscribe((res: pageSizeCal) => {
       this.calculateTotalPages(

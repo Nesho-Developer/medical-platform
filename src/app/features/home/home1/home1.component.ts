@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { DataService } from '../../../shared/data/data.service';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { routes } from '../../../shared/routes/routes';
@@ -19,6 +19,9 @@ import { HeaderComponent } from './common/header/header.component';
     imports: [RouterLink, FooterComponent, HeaderComponent, CarouselModule, SlickCarouselModule, CountUpModule, BsDatepickerModule],
 })
 export class Home1Component implements OnInit {
+  private data = inject(DataService);
+  private router = inject(Router);
+
   public routes = routes;
   date = new Date();
   public specialitiesSliderOne: specialitiesSliderOne[];
@@ -67,7 +70,7 @@ export class Home1Component implements OnInit {
       },
     ],
   };
-  constructor(private data: DataService, private router: Router) {
+  constructor() {
     this.specialitiesSliderOne = this.data.specialitiesSliderOne;
     this.doctorSliderOne = this.data.doctorSliderOne;
     this.aboutUs = this.data.aboutUs;

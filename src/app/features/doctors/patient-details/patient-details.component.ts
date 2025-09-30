@@ -1,5 +1,5 @@
 
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { MatSelectModule } from '@angular/material/select';
@@ -14,6 +14,8 @@ interface data {
     imports: [FormsModule, RouterLink, MatSelectModule]
 })
 export class PatientDetailsComponent {
+  private router = inject(Router);
+
   public routes = routes;
   public selectedValue1 = '';
   selectedList1: data[] = [
@@ -23,7 +25,6 @@ export class PatientDetailsComponent {
     { value: 'Dependent 03' },
     { value: 'Dependent 04' },
   ];
-  constructor(private router: Router) {}
 
   public navigation() {
     this.router.navigate([routes.consultation]);

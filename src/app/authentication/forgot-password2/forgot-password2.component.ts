@@ -1,5 +1,5 @@
 
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { routes } from '../../shared/routes/routes';
 
@@ -10,8 +10,9 @@ import { routes } from '../../shared/routes/routes';
     imports: [RouterLink]
 })
 export class ForgotPassword2Component {
+  private router = inject(Router);
+
   public routes = routes;
-  constructor(private router: Router) {}
 
   navigation() {
     this.router.navigate([routes.loginEmail]);

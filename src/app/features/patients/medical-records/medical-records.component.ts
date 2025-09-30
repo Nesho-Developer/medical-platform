@@ -1,5 +1,5 @@
 
-  import { Component } from '@angular/core';
+  import { Component, inject } from '@angular/core';
 import { Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router, RouterLink } from '@angular/router';
@@ -17,6 +17,10 @@ import { PatientBreadcrumbComponent } from '../common/patient-breadcrumb/patient
     imports: [RouterLink, PatientSidebarComponent, PatientBreadcrumbComponent]
 })
 export class MedicalRecordsComponent {
+  private data = inject(DataService);
+  private pagination = inject(PaginationService);
+  private router = inject(Router);
+
   public routes = routes;
   public tableData: Array<medicalrecords> = [];
   public tableData2: Array<medicalrecords> = [];
@@ -30,11 +34,7 @@ export class MedicalRecordsComponent {
   public searchDataValue = '';
   // pagination variables end
 
-  constructor(
-    private data: DataService,
-    private pagination: PaginationService,
-    private router: Router
-  ) {
+  constructor() {
     this.pagination.tablePageSize.subscribe((res: tablePageSize) => {
       if (this.router.url == this.routes.medicalrecords) {
         this.getTableData({ skip: res.skip, limit: res.limit });

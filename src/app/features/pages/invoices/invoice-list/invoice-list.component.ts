@@ -1,5 +1,5 @@
 
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router, RouterLink } from '@angular/router';
@@ -17,6 +17,10 @@ import { routes } from '../../../../shared/routes/routes';
     imports: [RouterLink, DoctorSidebarComponent, DoctorBreadcrumbComponent]
 })
 export class InvoiceListComponent {
+  private data = inject(DataService);
+  private pagination = inject(PaginationService);
+  private router = inject(Router);
+
   public routes = routes;
   public tableData: Array<invoice> = [];
 
@@ -28,11 +32,7 @@ export class InvoiceListComponent {
   dataSource!: MatTableDataSource<invoice>;
   public searchDataValue = '';
   // pagination variables end
-  constructor(
-    private data: DataService,
-    private pagination: PaginationService,
-    private router: Router
-  ) {
+  constructor() {
     this.pagination.tablePageSize.subscribe((res: tablePageSize) => {
       if (this.router.url == this.routes.invoice) {
         this.getTableData({ skip: res.skip, limit: res.limit });

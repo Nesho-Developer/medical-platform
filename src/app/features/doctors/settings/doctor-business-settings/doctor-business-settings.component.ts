@@ -1,5 +1,5 @@
 import { DatePipe } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { routes } from '../../../../shared/routes/routes';
@@ -16,6 +16,8 @@ import { DatePickerModule } from 'primeng/datepicker';
     providers:[DatePipe]
 })
 export class DoctorBusinessSettingsComponent {
+  private datePipe = inject(DatePipe);
+
   public routes  = routes
   showTimePicker: Array<string> = []
   time: Date = new Date();
@@ -36,7 +38,7 @@ export class DoctorBusinessSettingsComponent {
   endTime6 = new Date();
   endTime7 = new Date();
   myDateValue!: Date ;
-  constructor( private datePipe: DatePipe) {
+  constructor() {
     this.selectDay('Monday');
     this.selectDay('Friday');
     this.selectDay('Tuesday');

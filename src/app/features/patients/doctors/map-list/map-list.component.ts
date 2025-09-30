@@ -1,5 +1,5 @@
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { Lightbox, LightboxModule } from 'ngx-lightbox';
 import lgZoom from 'lightgallery/plugins/zoom';
 import { BeforeSlideDetail } from 'lightgallery/lg-events';
@@ -23,6 +23,8 @@ interface data {
     providers:[Lightbox]
 })
 export class MapListComponent implements OnInit {
+  private _lightbox = inject(Lightbox);
+
   settings = {
     counter: false,
     plugins: [lgZoom],
@@ -348,7 +350,7 @@ export class MapListComponent implements OnInit {
       if (map.zoom > 16) map.slide = false;
     });
   }
-  constructor(private _lightbox: Lightbox) {
+  constructor() {
 
     for (let i = 1; i <= 4; i++) {
       const src = 'assets/img/features/feature-' + i + '.jpg';

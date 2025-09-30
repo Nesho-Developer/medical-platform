@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit, inject } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { routes } from '../../../shared/routes/routes';
@@ -19,6 +19,8 @@ interface data {
     imports: [RouterLink, FooterComponent, HeaderComponent, CarouselModule, MatSelectModule, FormsModule, BsDatepickerModule],
 })
 export class Home8Component implements OnInit {
+  private router = inject(Router);
+
   public routes = routes;
   sticky = false;
   public white_bg = false;
@@ -125,7 +127,6 @@ export class Home8Component implements OnInit {
       },
     },
   };
-  constructor(private router: Router) {}
   public navigation() {
     this.router.navigate([routes.search2]);
   }

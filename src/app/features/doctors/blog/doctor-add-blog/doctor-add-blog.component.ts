@@ -1,5 +1,5 @@
 
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { DoctorSidebarComponent } from '../../common/doctor-sidebar/doctor-sidebar.component';
@@ -12,8 +12,9 @@ import { routes } from '../../../../shared/routes/routes';
     imports: [FormsModule, RouterLink, DoctorSidebarComponent, DoctorBreadcrumbComponent]
 })
 export class DoctorAddBlogComponent {
+  private router = inject(Router);
+
   public routes = routes;
-  constructor(private router: Router) {}
 
   public navigation() {
     this.router.navigate([routes.doctorBlog]);

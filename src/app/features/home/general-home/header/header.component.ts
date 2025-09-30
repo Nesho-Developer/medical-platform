@@ -1,4 +1,4 @@
-import { Component, HostListener, Renderer2 } from '@angular/core';
+import { Component, HostListener, Renderer2, inject } from '@angular/core';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { CommonService } from '../../../../shared/common/common.service';
 import { DataService } from '../../../../shared/data/data.service';
@@ -14,6 +14,12 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule,RouterLink,RouterLinkActive],
 })
 export class HeaderComponent {
+private common = inject(CommonService);
+private data = inject(DataService);
+sidebar = inject(SidebarService);
+private router = inject(Router);
+private renderer = inject(Renderer2);
+
 public searchField  = false;
   public routes = routes;
   public header: header[];
@@ -28,13 +34,7 @@ public searchField  = false;
   themeColor = 'light-mode';
   isDropdownOpen=false;
   openDropdownIndex: number | null = null;
-  constructor(
-    private common: CommonService,
-    private data: DataService,
-    public sidebar: SidebarService,
-    private router: Router,
-    private renderer: Renderer2
-  ) {
+  constructor() {
     this.isMenuOpened=false;  
     this.common.base.subscribe((res: string) => {
       this.base = res;

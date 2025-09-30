@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { routes } from '../../shared/routes/routes';
 @Component({
@@ -8,8 +8,9 @@ import { routes } from '../../shared/routes/routes';
     standalone: false
 })
 export class SignupSuccessComponent {
+  private router = inject(Router);
+
   public routes = routes;
-  constructor(private router: Router) {}
 
   public navigation() {
     this.router.navigate([routes.loginEmail]);

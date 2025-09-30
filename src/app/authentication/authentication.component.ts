@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { routes } from '../shared/routes/routes';
 import { SidebarService } from '../shared/sidebar/sidebar.service';
@@ -9,8 +9,9 @@ import { SidebarService } from '../shared/sidebar/sidebar.service';
     imports: [RouterModule]
 })
 export class AuthenticationComponent {
+  private sidebar = inject(SidebarService);
+
   public routes = routes;
-  constructor(private sidebar:SidebarService){}
   ngOnInit(): void {
     this.sidebar.changeThemeColor('light-mode');
 }

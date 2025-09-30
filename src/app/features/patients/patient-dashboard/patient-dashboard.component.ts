@@ -1,5 +1,5 @@
 
-import { Component, Renderer2, ViewChild } from '@angular/core';
+import { Component, Renderer2, ViewChild, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Router } from '@angular/router';
 import { patientDashboard } from '../../../shared/models/models';
@@ -38,6 +38,9 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
     imports: [RouterLink, CarouselModule, NgApexchartsModule, NgCircleProgressModule, PatientSidebarComponent, PatientBreadcrumbComponent]
 })
 export class PatientDashboardComponent {
+  private router = inject(Router);
+  private renderer = inject(Renderer2);
+
   @ViewChild('chart') chart!: ChartComponent;
   public chartOptions1: Partial<ChartOptions>;
   public chartOptions2: Partial<ChartOptions>;
@@ -110,7 +113,7 @@ export class PatientDashboardComponent {
     },
   };
 
-  constructor(private router: Router, private renderer: Renderer2) {
+  constructor() {
     if (this.page == 'patient-dashboard') {
       this.renderer.addClass(document.body, 'date-pickers');
     }

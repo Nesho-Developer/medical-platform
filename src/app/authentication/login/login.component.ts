@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { routes } from '../../shared/routes/routes';
@@ -10,8 +10,9 @@ import { routes } from '../../shared/routes/routes';
     imports: [CommonModule,RouterLink,FormsModule]
 })
 export class LoginComponent {
+  private router = inject(Router);
+
   public routes = routes;
-  constructor(private router: Router) {}
   public togglePasswordClass = false;
   togglePassword() {
     this.togglePasswordClass = !this.togglePasswordClass;

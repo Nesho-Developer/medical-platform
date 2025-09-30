@@ -1,5 +1,5 @@
 
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { Sort } from '@angular/material/sort';
@@ -19,6 +19,10 @@ import { DoctorBreadcrumbComponent } from '../common/doctor-breadcrumb/doctor-br
     imports: [FormsModule, RouterLink, DoctorSidebarComponent, DoctorBreadcrumbComponent]
 })
 export class AccountsComponent {
+  private data = inject(DataService);
+  private pagination = inject(PaginationService);
+  private router = inject(Router);
+
   public routes = routes;
   public tableData: Array<accounts> = [];
   // pagination variables
@@ -30,11 +34,7 @@ export class AccountsComponent {
   public searchDataValue = '';
   // pagination variables end
 
-  constructor(
-    private data: DataService,
-    private pagination: PaginationService,
-    private router: Router
-  ) {
+  constructor() {
     this.pagination.tablePageSize.subscribe((res: tablePageSize) => {
       if (this.router.url == this.routes.accounts) {
         this.getTableData({ skip: res.skip, limit: res.limit });

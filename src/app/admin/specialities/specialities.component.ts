@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 
 import { RouterLink } from '@angular/router';
 import { MatSortModule, Sort } from '@angular/material/sort';
@@ -18,6 +18,10 @@ import { PaginationHeaderComponent } from '../../shared/pagination-header/pagina
     imports: [RouterLink, CustomPaginationComponent, MatSortModule, PaginationHeaderComponent]
 })
 export class SpecialitiesComponent {
+  private data = inject(DataService);
+  private pagination = inject(PaginationService);
+  private router = inject(Router);
+
   public routes = routes;
   public tableData: Array<specialities> = [];
 
@@ -30,11 +34,7 @@ export class SpecialitiesComponent {
   public searchDataValue = '';
   // pagination variables end
 
-  constructor(
-    private data: DataService,
-    private pagination: PaginationService,
-    private router: Router
-  ) {
+  constructor() {
     this.pagination.tablePageSize.subscribe((res: tablePageSize) => {
       if (this.router.url == this.routes.specialities) {
         this.getTableData({ skip: res.skip, limit: res.limit });

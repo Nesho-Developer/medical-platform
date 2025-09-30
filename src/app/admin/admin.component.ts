@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, inject } from '@angular/core';
 import { CommonService } from '../shared/common/common.service';
 import { NavigationStart, Router, Event as RouterEvent, RouterModule} from '@angular/router';
 import { routes } from '../shared/routes/routes';
@@ -15,12 +15,16 @@ import { HeaderComponent } from './common/header/header.component';
     imports: [CommonModule,RouterModule,SidebarComponent,HeaderComponent]
 })
 export class AdminComponent {
+  private common = inject(CommonService);
+  private router = inject(Router);
+
   public routes = routes;
   public sidebarActive = false;
   public headerActive = false;
 
-  constructor(private common: CommonService, private router: Router) {
-    router.events.subscribe((event: RouterEvent) => {
+  constructor() {
+
+    this.router.events.subscribe((event: RouterEvent) => {
       if (event instanceof NavigationStart) {
         this.getRoutes(event);
         window.scrollTo({ top: 0, behavior: 'smooth' });

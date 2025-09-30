@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, inject } from '@angular/core';
 import { routes } from '../shared/routes/routes';
 import {
   ChartComponent,
@@ -49,6 +49,8 @@ export type ChartOptions = {
     imports: [NgApexchartsModule, MatSelectModule, BsDatepickerModule, RouterLink],
 })
 export class ModalComponent implements OnInit {
+  private router = inject(Router);
+
   public routes = routes;
   myDateValue!: Date;
   date = new Date();
@@ -63,7 +65,7 @@ export class ModalComponent implements OnInit {
   public chartOptionsThree!: Partial<ChartOptions>;
   public chartOptionsFour!: Partial<ChartOptions>;
 
-  constructor(private router:Router) {
+  constructor() {
     this.chartOptionsOne = {
       series: [
         {

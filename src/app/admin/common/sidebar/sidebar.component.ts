@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonService } from '../../../shared/common/common.service';
 import { DataService } from '../../../shared/data/data.service';
 import { adminSidebar } from '../../../shared/models/sidebar-model';
@@ -14,6 +14,10 @@ import { NgScrollbarModule } from 'ngx-scrollbar';
     imports: [CommonModule,RouterLink,NgScrollbarModule,RouterLinkActive]
 })
 export class SidebarComponent {
+  private sidebar = inject(SidebarService);
+  private common = inject(CommonService);
+  private data = inject(DataService);
+
   public routes = routes;
   base = '';
   page = '';
@@ -22,11 +26,7 @@ export class SidebarComponent {
   public miniSidebar = false;
   public multilevel: Array<boolean> = [false, false, false];
 
-  constructor(
-    private sidebar: SidebarService,
-    private common: CommonService,
-    private data: DataService
-  ) {
+  constructor() {
     this.common.base.subscribe((base: string) => {
       this.base = base;
     });

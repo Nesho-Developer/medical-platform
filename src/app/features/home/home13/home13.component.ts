@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild, inject } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { DataService } from '../../../shared/data/data.service';
@@ -25,6 +25,9 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     imports: [CommonModule,RouterLink,FooterComponent,HeaderComponent,CarouselModule,SlickCarouselModule],
 })
 export class Home13Component {
+  private data = inject(DataService);
+  private router = inject(Router);
+
   public routes = routes;
   public isClassAdded: boolean[] = [false];
   public nurseSliderOne: nurseSliderOne[];
@@ -36,7 +39,7 @@ export class Home13Component {
   public listingDetails2: listingDetails2[] = [];
 
   public activeTab: Array<string> = [''];
-  constructor(private data: DataService, private router: Router) {
+  constructor() {
     this.nurseSliderOne = this.data.nurseSliderOne;
     this.nurseSlidertwo = this.data.nurseSlidertwo;
     this.recommendedBlog = this.data.recommendedBlog;

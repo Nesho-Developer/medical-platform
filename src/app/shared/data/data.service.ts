@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { routes } from '../routes/routes';
 import { HttpClient } from '@angular/common/http';
 import { Observable, map } from 'rxjs';
@@ -8,7 +8,8 @@ import { apiResultFormat } from '../model/models';
   providedIn: 'root',
 })
 export class DataService {
-  constructor(private http: HttpClient) {}
+  private http = inject(HttpClient);
+
   public getAppointmentList(): Observable<apiResultFormat> {
     return this.http
       .get<apiResultFormat>('assets/admin/json/appointment-list.json')

@@ -1,5 +1,5 @@
 
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { routes } from '../../shared/routes/routes';
@@ -10,6 +10,8 @@ import { routes } from '../../shared/routes/routes';
     imports: [FormsModule]
 })
 export class MobileOtpComponent {
+  private router = inject(Router);
+
   public routes = routes;
   public oneTimePassword = {
     data1: "",
@@ -43,7 +45,6 @@ export class MobileOtpComponent {
       document.getElementById('digit-1')?.focus();
     }
   }
-  constructor(private router: Router) {}
 
   public navigation() {
     this.router.navigate([routes.doctorDashboard]);

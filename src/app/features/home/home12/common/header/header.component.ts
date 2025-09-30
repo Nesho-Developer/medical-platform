@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, inject } from '@angular/core';
 import { CommonService } from '../../../../../shared/common/common.service';
 import { DataService } from '../../../../../shared/data/data.service';
 import { header } from '../../../../../shared/model/sidebar-model';
@@ -15,6 +15,10 @@ import { MatSelectModule } from '@angular/material/select';
     imports: [CommonModule,RouterLink,MatSelectModule,RouterLinkActive],
 })
 export class HeaderComponent {
+  private common = inject(CommonService);
+  private data = inject(DataService);
+  sidebar = inject(SidebarService);
+
   public routes = routes;
   public header: header[];
   base = '';
@@ -44,11 +48,7 @@ export class HeaderComponent {
     }
   }
   
-  constructor(
-    private common: CommonService,
-    private data: DataService,
-    public sidebar: SidebarService
-  ) {
+  constructor() {
     this.common.base.subscribe((res: string) => {
       this.base = res;
     });

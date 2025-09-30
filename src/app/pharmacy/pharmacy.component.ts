@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, inject } from '@angular/core';
 import { Router, NavigationStart, Event as RouterEvent } from '@angular/router';
 import { CommonService } from '../shared/common/common.service';
 import { routes } from '../..../../shared/routes/routes';
@@ -15,11 +15,16 @@ import { HeaderComponent } from './common/header/header.component';
     imports: [CommonModule,RouterModule,SidebarComponent,HeaderComponent]
 })
 export class PharmacyComponent {
+  private common = inject(CommonService);
+  private router = inject(Router);
+
   public routes = routes;
   public sidebarActive = false;
   public headerActive = false;
 
-  constructor(private common: CommonService, private router: Router) {
+  constructor() {
+    const router = this.router;
+
     router.events.subscribe((event: RouterEvent) => {
       if (event instanceof NavigationStart) {
         this.getRoutes(event);

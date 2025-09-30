@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { DatePipe } from '@angular/common';
 import { routes } from '../../../shared/routes/routes';
@@ -23,6 +23,8 @@ interface data {
     providers: [DatePipe]
 })
 export class Home6Component implements OnInit {
+  private datePipe = inject(DatePipe);
+
   public routes = routes;
   public selectedValue1 = '';
   public selectedValue2 = '';
@@ -297,8 +299,6 @@ export class Home6Component implements OnInit {
     { value: 'Online' },
     { value: 'Offline' },
   ];
-  constructor( private datePipe: DatePipe) {
-  }
   toggleTimePcker(value: string): void {
 
     if (this.showTimePicker[0] !== value) {

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { routes } from '../../../shared/routes/routes';
@@ -16,10 +16,12 @@ import { FooterComponent } from './footer/footer.component';
   styleUrl: './general-home.component.scss'
 })
 export class GeneralHomeComponent {
+router = inject(Router);
+private zone = inject(NgZone);
+
 public routes=routes;
 time: Date | null = null; // Bind this to the p-calendar
 bsValue=new Date();
-constructor(public router:Router,private zone: NgZone){}
 public spcialitySlider : OwlOptions={
   loop: true,
 			margin: 24,

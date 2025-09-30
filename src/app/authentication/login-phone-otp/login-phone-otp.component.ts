@@ -1,5 +1,5 @@
 
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { routes } from '../../shared/routes/routes';
@@ -11,6 +11,8 @@ import intlTelInput from 'intl-tel-input';
     imports: [RouterLink]
 })
 export class LoginPhoneOtpComponent {
+  private router = inject(Router);
+
   public routes = routes;
   public togglePasswordClass = false;
   public selectedFieldSet = [0];
@@ -22,8 +24,6 @@ export class LoginPhoneOtpComponent {
   togglePassword() {
     this.togglePasswordClass = !this.togglePasswordClass;
   }
-
-  constructor(private router: Router) {}
 
   public navigation() {
     this.router.navigate([routes.mobileOtp]);

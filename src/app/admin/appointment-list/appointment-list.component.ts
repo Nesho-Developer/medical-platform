@@ -1,5 +1,5 @@
 
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { DataService } from '../../shared/data/data.service';
 import {
   apiResultFormat,
@@ -21,6 +21,10 @@ import { FormsModule } from '@angular/forms';
     imports: [RouterLink, CustomPaginationComponent, MatSortModule, PaginationHeaderComponent, FormsModule]
 })
 export class AppointmentListComponent {
+  private data = inject(DataService);
+  private pagination = inject(PaginationService);
+  private router = inject(Router);
+
   public routes = routes;
   initChecked = false;
 
@@ -34,11 +38,7 @@ export class AppointmentListComponent {
   public searchDataValue = '';
   // pagination variables end
 
-  constructor(
-    private data: DataService,
-    private pagination: PaginationService,
-    private router: Router
-  ) {
+  constructor() {
     this.pagination.tablePageSize.subscribe((res: tablePageSize) => {
       if (this.router.url == this.routes.appointmentList) {
         this.getTableData({ skip: res.skip, limit: res.limit });

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, inject } from '@angular/core';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { CommonService } from '../../../../../shared/common/common.service';
@@ -19,6 +19,11 @@ import { FormsModule } from '@angular/forms';
     imports: [CommonModule,RouterLink,MatSelectModule,FormsModule,RouterLinkActive],
 })
 export class HeaderComponent {
+  private common = inject(CommonService);
+  private data = inject(DataService);
+  sidebar = inject(SidebarService);
+  private router = inject(Router);
+
   public white_bg = false;
   public routes = routes;
   public header: header[];
@@ -32,12 +37,7 @@ export class HeaderComponent {
   themeColor = 'light-mode';
   isDropdownOpen=false;
   openDropdownIndex: number | null = null;
-  constructor(
-    private common: CommonService,
-    private data: DataService,
-    public sidebar: SidebarService,
-    private router:Router
-  ) {
+  constructor() {
     this.selectedClinic = this.clinics[0];
     this.common.base.subscribe((res: string) => {
       this.base = res;

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import { Component, OnDestroy, Renderer2 } from '@angular/core';
+import { Component, OnDestroy, Renderer2, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonService } from '../../../shared/common/common.service';
 import { routes } from '../../../shared/routes/routes';
@@ -16,6 +16,9 @@ import { DatePickerModule } from 'primeng/datepicker';
     imports: [FormsModule, DoctorSidebarComponent, DoctorBreadcrumbComponent, MatSelectModule, DatePickerModule]
 })
 export class AvailableTimingsComponent implements OnDestroy {
+  private renderer = inject(Renderer2);
+  private common = inject(CommonService);
+
   public routes = routes;
   public base = '';
   public page = '';
@@ -34,7 +37,7 @@ export class AvailableTimingsComponent implements OnDestroy {
     },
   ];
 
-  constructor(private renderer: Renderer2, private common: CommonService) {
+  constructor() {
     this.selectedClinic = this.clinics[0];
     this.common.base.subscribe((base: string) => {
       this.base = base;

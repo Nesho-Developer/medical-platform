@@ -1,5 +1,5 @@
 
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MatSortModule, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router, RouterLink } from '@angular/router';
@@ -17,6 +17,10 @@ import { routes } from '../../../../shared/routes/routes';
     imports: [RouterLink, CustomPaginationComponent, MatSortModule, PaginationHeaderComponent]
 })
 export class DataTablesComponent {
+  private data = inject(DataService);
+  private pagination = inject(PaginationService);
+  private router = inject(Router);
+
   public routes = routes;
   public tableData: Array<dataTables> = [];
 
@@ -29,11 +33,7 @@ export class DataTablesComponent {
   public searchDataValue = '';
   // pagination variables end
 
-  constructor(
-    private data: DataService,
-    private pagination: PaginationService,
-    private router: Router
-  ) {
+  constructor() {
     this.pagination.tablePageSize.subscribe((res: tablePageSize) => {
       if (this.router.url == this.routes.dataTables) {
         this.getTableData({ skip: res.skip, limit: res.limit });

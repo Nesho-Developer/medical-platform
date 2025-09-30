@@ -1,5 +1,5 @@
 
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonService } from '../../../shared/common/common.service';
 import { routes } from '../../../shared/routes/routes';
 import { RouterLink } from '@angular/router';
@@ -10,12 +10,12 @@ import { RouterLink } from '@angular/router';
     imports: [RouterLink],
 })
 export class FooterComponent {
+  private common = inject(CommonService);
+
   public routes = routes;
   base='';
   page='';
-  constructor(
-      private common: CommonService,
-    ) {
+  constructor() {
       this.common.base.subscribe((res: string) => {
         this.base = res;
       });

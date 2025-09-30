@@ -1,5 +1,5 @@
 
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { routes } from '../../shared/routes/routes';
@@ -11,8 +11,9 @@ import intlTelInput from 'intl-tel-input';
     imports: [RouterLink, FormsModule, ReactiveFormsModule]
 })
 export class PatientSignupComponent {
+  private router = inject(Router);
+
   public routes = routes;
-  constructor(private router: Router) {}
 
   public navigation() {
     this.router.navigate([routes.signupSuccess]);

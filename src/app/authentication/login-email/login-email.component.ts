@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { routes } from '../../shared/routes/routes';
 @Component({
@@ -9,10 +9,10 @@ import { routes } from '../../shared/routes/routes';
     imports: [CommonModule,RouterLink]
 })
 export class LoginEmailComponent {
+  private router = inject(Router);
+
   public routes = routes;
   public togglePasswordClass = false;
-
-  constructor(private router: Router) {}
 
   public navigation() {
     this.router.navigate([routes.loginEmailOtp]);

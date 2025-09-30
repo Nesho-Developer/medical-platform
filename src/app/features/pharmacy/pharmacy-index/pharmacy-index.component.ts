@@ -1,5 +1,5 @@
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { DataService } from '../../../shared/data/data.service';
@@ -16,9 +16,12 @@ import { PharmacyheaderComponent } from '../../common/pharmacyheader/pharmacyhea
     imports: [RouterLink, PharmacyfooterComponent, CarouselModule, FormsModule, PharmacyheaderComponent]
 })
 export class PharmacyIndexComponent implements OnInit {
+  private data = inject(DataService);
+  private router = inject(Router);
+
   public routes = routes;
   public partnerSlider: partnersSlider[] = [];
-  constructor(private data: DataService, private router: Router) {
+  constructor() {
     this.partnerSlider = this.data.partnerSlider;
   }
   public partnersSliderOption: OwlOptions = {

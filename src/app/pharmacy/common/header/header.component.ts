@@ -1,5 +1,5 @@
 
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { routes } from '../../../shared/routes/routes';
 import { SidebarService } from '../../../shared/sidebar/sidebar.service';
@@ -11,10 +11,13 @@ import { SidebarService } from '../../../shared/sidebar/sidebar.service';
     imports: [RouterLink]
 })
 export class HeaderComponent {
+  router = inject(Router);
+  private sidebar = inject(SidebarService);
+
   public routes = routes;
   public miniSidebar = false;
 
-  constructor(public router: Router,private sidebar: SidebarService) {
+  constructor() {
     this.sidebar.toggleSideBar.subscribe((res: string) => {
       if (res == 'true') {
         this.miniSidebar = true;

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { routes } from '../../../shared/routes/routes';        
 import { FooterComponent } from './common/footer/footer.component';
@@ -13,6 +13,8 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     imports: [CommonModule,RouterLink,FooterComponent,HeaderComponent,CarouselModule,SlickCarouselModule],
 })
 export class Home2Component {
+  private router = inject(Router);
+
   public routes = routes;
   public isClassAdded: boolean[] = [false];
 
@@ -101,7 +103,6 @@ export class Home2Component {
   toggleClass(index: number){
     this.isClassAdded[index] = !this.isClassAdded[index]
   }
-  constructor(private router: Router) {}
   public navigation() {
     this.router.navigate([routes.search1]);
   }

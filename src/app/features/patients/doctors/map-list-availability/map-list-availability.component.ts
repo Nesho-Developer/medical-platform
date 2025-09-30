@@ -1,5 +1,5 @@
 
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { BeforeSlideDetail } from 'lightgallery/lg-events';
 import { routes } from '../../../../shared/routes/routes';
@@ -22,6 +22,8 @@ interface data {
   providers:[Lightbox]
 })
 export class MapListAvailabilityComponent {
+private _lightbox = inject(Lightbox);
+
 settings = {
     counter: false,
     plugins: [lgZoom],
@@ -347,7 +349,7 @@ settings = {
       if (map.zoom > 16) map.slide = false;
     });
   }
-  constructor(private _lightbox: Lightbox) {
+  constructor() {
     for (let i = 1; i <= 4; i++) {
       const src = 'assets/img/features/feature-' + i + '.jpg';
       // const caption = 'Image ' + i + ' caption here';

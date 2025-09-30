@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { routes } from '../../shared/routes/routes';
 import intlTelInput from 'intl-tel-input';
@@ -10,8 +10,9 @@ import intlTelInput from 'intl-tel-input';
     imports: [CommonModule,RouterLink]
 })
 export class RegisterComponent {
+  private router = inject(Router);
+
   public routes = routes;
-  constructor(private router: Router) {}
 
   public togglePasswordClass = false;
   togglePassword() {

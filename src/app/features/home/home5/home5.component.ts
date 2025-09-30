@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { routes } from '../../../shared/routes/routes';
 import { OwlOptions } from 'ngx-owl-carousel-o';
@@ -16,6 +16,9 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
     imports: [CommonModule,RouterLink,FooterComponent,HeaderComponent,CarouselModule,BsDatepickerModule],
 })
 export class Home5Component implements OnInit{
+  private router = inject(Router);
+  private data = inject(DataService);
+
   public routes = routes;
   public partnersSlider: partnersSlider[] = [];
   myDateValue!: Date ;
@@ -26,7 +29,7 @@ public isClassAdded: boolean[] = [false];
 toggleClass(index: number){
 this.isClassAdded[index] = !this.isClassAdded[index]
 }
-constructor(private router: Router,private data: DataService) {this.partnersSlider = this.data.partnersSlider;}
+constructor() {this.partnersSlider = this.data.partnersSlider;}
 public navigation() {
   this.router.navigate([routes.search2]);
 }

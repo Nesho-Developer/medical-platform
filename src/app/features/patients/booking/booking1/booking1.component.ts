@@ -1,5 +1,5 @@
 
-import { Component, OnDestroy, Renderer2 } from '@angular/core';
+import { Component, OnDestroy, Renderer2, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
@@ -13,6 +13,9 @@ import { PatientBreadcrumbComponent } from '../../common/patient-breadcrumb/pati
     imports: [RouterLink, BsDatepickerModule, FormsModule, PatientBreadcrumbComponent]
 })
 export class Booking1Component implements OnDestroy {
+  private common = inject(CommonService);
+  private renderer = inject(Renderer2);
+
   public routes = routes;
   public base = '';
   public page = '';
@@ -20,7 +23,7 @@ export class Booking1Component implements OnDestroy {
   bsValue = new Date();
   bsRangeValue: Date[];
   maxDate = new Date();
-  constructor(private common: CommonService,private renderer: Renderer2) {
+  constructor() {
     this.maxDate.setDate(this.maxDate.getDate() + 7);
     this.bsRangeValue = [this.bsValue, this.maxDate];
 

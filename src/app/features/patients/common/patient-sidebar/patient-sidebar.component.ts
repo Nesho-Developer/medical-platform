@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-  import { Component } from '@angular/core';
+  import { Component, inject } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { CommonService } from '../../../../shared/common/common.service';
 import { routes } from '../../../../shared/routes/routes';
@@ -11,12 +11,14 @@ import { routes } from '../../../../shared/routes/routes';
     imports:[CommonModule,RouterLink,RouterLinkActive]
 })
 export class PatientSidebarComponent {
+  private common = inject(CommonService);
+
   public routes = routes
   public base = '';
   public page = '';
   public last = '';
 
-  constructor(private common: CommonService) {
+  constructor() {
     this.common.base.subscribe((base: string) => {
       this.base = base;
     });

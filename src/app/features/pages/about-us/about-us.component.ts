@@ -1,5 +1,5 @@
 
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CountUpModule } from 'ngx-countup';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
@@ -14,6 +14,8 @@ import { routes } from '../../../shared/routes/routes';
     imports: [CountUpModule, SlickCarouselModule, RouterLink]
 })
 export class AboutUsComponent {
+  private data = inject(DataService);
+
   public routes = routes;
   public aboutUs: aboutUs[];
   public slideConfig = {
@@ -56,7 +58,7 @@ export class AboutUsComponent {
       },
     ],
   };
-  constructor(private data: DataService) {
+  constructor() {
     this.aboutUs = this.data.aboutUs;
   }
 }
