@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { routes } from '../../../shared/routes/routes';
@@ -6,7 +6,7 @@ import { routes } from '../../../shared/routes/routes';
     selector: 'app-payment',
     templateUrl: './payment.component.html',
     styleUrls: ['./payment.component.scss'],
-    imports:[CommonModule,RouterLink]
+    imports: [RouterLink]
 })
 export class PaymentComponent {
   public routes = routes;

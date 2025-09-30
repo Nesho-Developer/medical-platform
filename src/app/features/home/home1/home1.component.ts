@@ -4,7 +4,7 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 import { routes } from '../../../shared/routes/routes';
 import { aboutUs, doctorSliderOne, partnersSlider, specialitiesSliderOne } from '../../../shared/model/models';
 import { Router, RouterLink } from '@angular/router';
-import { CommonModule } from '@angular/common';
+
 
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
@@ -16,7 +16,7 @@ import { HeaderComponent } from './common/header/header.component';
     selector: 'app-home1',
     templateUrl: './home1.component.html',
     styleUrls: ['./home1.component.scss'],
-    imports: [CommonModule,RouterLink,FooterComponent,HeaderComponent,CarouselModule,SlickCarouselModule,CountUpModule,BsDatepickerModule],
+    imports: [RouterLink, FooterComponent, HeaderComponent, CarouselModule, SlickCarouselModule, CountUpModule, BsDatepickerModule],
 })
 export class Home1Component implements OnInit {
   public routes = routes;

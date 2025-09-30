@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { routes } from '../../../shared/routes/routes';
-import { CommonModule } from '@angular/common';
+
 import { FooterComponent } from './common/footer/footer.component';
 import { HeaderComponent } from './common/header/header.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
@@ -13,7 +13,7 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
     selector: 'app-home7',
     templateUrl: './home7.component.html',
     styleUrls: ['./home7.component.scss'],
-    imports: [CommonModule,RouterLink,FooterComponent,HeaderComponent,CarouselModule,MatSelectModule,CountUpModule,BsDatepickerModule]
+    imports: [RouterLink, FooterComponent, HeaderComponent, CarouselModule, MatSelectModule, CountUpModule, BsDatepickerModule]
 })
 export class Home7Component implements OnInit{
   

@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { MatSortModule, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
@@ -14,7 +14,7 @@ import { PaginationHeaderComponent } from '../../../shared/pagination-header/pag
     selector: 'app-order',
     templateUrl:   './order.component.html',
     styleUrls: ['./order.component.scss'],
-    imports: [CommonModule,RouterModule,MatSortModule,CustomPaginationComponent,PaginationHeaderComponent]
+    imports: [RouterModule, MatSortModule, CustomPaginationComponent, PaginationHeaderComponent]
 })
 export class OrderComponent {
   public routes = routes;

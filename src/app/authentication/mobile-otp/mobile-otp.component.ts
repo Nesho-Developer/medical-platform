@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -7,7 +7,7 @@ import { routes } from '../../shared/routes/routes';
     selector: 'app-mobile-otp',
     templateUrl: './mobile-otp.component.html',
     styleUrls: ['./mobile-otp.component.scss'],
-    imports: [CommonModule,FormsModule]
+    imports: [FormsModule]
 })
 export class MobileOtpComponent {
   public routes = routes;

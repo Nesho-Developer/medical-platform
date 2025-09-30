@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { MatSelectModule } from '@angular/material/select';
 import { RouterLink } from '@angular/router';
@@ -6,7 +6,7 @@ import { routes } from '../../../shared/routes/routes';
 
 @Component({
   selector: 'app-clinic',
-  imports: [RouterLink,CommonModule,MatSelectModule],
+  imports: [RouterLink, MatSelectModule],
   templateUrl: './clinic.component.html',
   styleUrl: './clinic.component.scss'
 })

@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import {  Component,  Renderer2 } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
@@ -11,7 +11,7 @@ import { HeaderComponent } from './common/header/header.component';
     selector: 'app-home11',
     templateUrl: './home11.component.html',
     styleUrls: ['./home11.component.scss'],
-    imports: [CommonModule,RouterLink,FooterComponent,HeaderComponent,CarouselModule],
+    imports: [RouterLink, FooterComponent, HeaderComponent, CarouselModule],
 
 })
 export class Home11Component  {

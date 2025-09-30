@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { routes } from '../../../../shared/routes/routes';
@@ -9,7 +9,7 @@ import { PatientBreadcrumbComponent } from '../../common/patient-breadcrumb/pati
     selector: 'app-patient-upcoming-appointment',
     templateUrl: './patient-upcoming-appointment.component.html',
     styleUrls: ['./patient-upcoming-appointment.component.scss'],
-    imports:[CommonModule,RouterLink,PatientSidebarComponent,PatientBreadcrumbComponent]
+    imports: [RouterLink, PatientSidebarComponent, PatientBreadcrumbComponent]
 })
 export class PatientUpcomingAppointmentComponent {
   public routes = routes;

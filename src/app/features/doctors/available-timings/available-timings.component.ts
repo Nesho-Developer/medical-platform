@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { CommonModule } from '@angular/common';
+
 import { Component, OnDestroy, Renderer2 } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonService } from '../../../shared/common/common.service';
@@ -13,7 +13,7 @@ import { DatePickerModule } from 'primeng/datepicker';
     selector: 'app-available-timings',
     templateUrl: './available-timings.component.html',
     styleUrls: ['./available-timings.component.scss'],
-    imports:[CommonModule,FormsModule,DoctorSidebarComponent,DoctorBreadcrumbComponent,MatSelectModule,DatePickerModule]
+    imports: [FormsModule, DoctorSidebarComponent, DoctorBreadcrumbComponent, MatSelectModule, DatePickerModule]
 })
 export class AvailableTimingsComponent implements OnDestroy {
   public routes = routes;

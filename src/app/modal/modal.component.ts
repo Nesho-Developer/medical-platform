@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { CommonModule } from '@angular/common';
+
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { routes } from '../shared/routes/routes';
 import {
@@ -46,7 +46,7 @@ export type ChartOptions = {
     selector: 'app-modal',
     templateUrl: './modal.component.html',
     styleUrls: ['./modal.component.scss'],
-    imports: [CommonModule,NgApexchartsModule,MatSelectModule,BsDatepickerModule,RouterLink],
+    imports: [NgApexchartsModule, MatSelectModule, BsDatepickerModule, RouterLink],
 })
 export class ModalComponent implements OnInit {
   public routes = routes;

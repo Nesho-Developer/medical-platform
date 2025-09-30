@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { DoctorSidebarComponent } from '../common/doctor-sidebar/doctor-sidebar.component';
@@ -12,7 +12,7 @@ interface specialities {
     selector: 'app-doctor-specialities',
     templateUrl: './doctor-specialities.component.html',
     styleUrls: ['./doctor-specialities.component.scss'],
-    imports:[CommonModule,FormsModule,DoctorSidebarComponent,DoctorBreadcrumbComponent,MatSelectModule]
+    imports: [FormsModule, DoctorSidebarComponent, DoctorBreadcrumbComponent, MatSelectModule]
 })
 export class DoctorSpecialitiesComponent {
   cardiology: specialities[] = [{}];

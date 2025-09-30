@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { routes } from '../../../shared/routes/routes';
@@ -9,7 +9,7 @@ import { PatientBreadcrumbComponent } from '../common/patient-breadcrumb/patient
     selector: 'app-patient-invoice',
     templateUrl: './patient-invoice.component.html',
     styleUrl: './patient-invoice.component.scss',
-    imports:[CommonModule,RouterLink,PatientSidebarComponent,PatientBreadcrumbComponent]
+    imports: [RouterLink, PatientSidebarComponent, PatientBreadcrumbComponent]
 })
 export class PatientInvoiceComponent {
   public routes = routes;

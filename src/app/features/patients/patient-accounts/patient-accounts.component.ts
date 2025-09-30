@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
   import { Component } from '@angular/core';
 import { Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
@@ -13,7 +13,7 @@ import { PatientBreadcrumbComponent } from '../common/patient-breadcrumb/patient
     selector: 'app-patient-accounts',
     templateUrl: './patient-accounts.component.html',
     styleUrls: ['./patient-accounts.component.scss'],
-    imports:[CommonModule,PatientSidebarComponent,PatientBreadcrumbComponent]
+    imports: [PatientSidebarComponent, PatientBreadcrumbComponent]
 })
 export class PatientAccountsComponent {
   public routes = routes;

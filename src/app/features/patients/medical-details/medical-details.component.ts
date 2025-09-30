@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
@@ -14,7 +14,7 @@ import { PatientBreadcrumbComponent } from '../common/patient-breadcrumb/patient
     selector: 'app-medical-details',
     templateUrl: './medical-details.component.html',
     styleUrls: ['./medical-details.component.scss'],
-    imports:[CommonModule,RouterLink,PatientSidebarComponent,PatientBreadcrumbComponent]
+    imports: [RouterLink, PatientSidebarComponent, PatientBreadcrumbComponent]
 })
 export class MedicalDetailsComponent {
   public routes = routes;

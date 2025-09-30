@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
@@ -13,7 +13,7 @@ interface education {
     selector: 'app-doctor-clinics-settings',
     templateUrl: './doctor-clinics-settings.component.html',
     styleUrl: './doctor-clinics-settings.component.scss',
-    imports:[CommonModule,FormsModule,RouterLink,DoctorSidebarComponent,DoctorBreadcrumbComponent,MatSelectModule]
+    imports: [FormsModule, RouterLink, DoctorSidebarComponent, DoctorBreadcrumbComponent, MatSelectModule]
 })
 export class DoctorClinicsSettingsComponent {
   public routes = routes;

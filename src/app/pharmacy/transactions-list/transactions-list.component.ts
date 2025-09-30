@@ -7,14 +7,14 @@ import { PaginationService, tablePageSize } from '../../shared/custom-pagination
 import { DataService } from '../../shared/data/data.service';
 import { apiResultFormat, pageSelection, transactionList } from '../../shared/models/models';
 import { routes } from '../../shared/routes/routes';
-import { CommonModule } from '@angular/common';
+
 import { PaginationHeaderComponent } from '../../shared/pagination-header/pagination-header.component';
 
 @Component({
     selector: 'app-transactions-list',
     templateUrl: './transactions-list.component.html',
     styleUrls: ['./transactions-list.component.scss'],
-    imports: [CommonModule,RouterModule,MatSortModule,CustomPaginationComponent,PaginationHeaderComponent]
+    imports: [RouterModule, MatSortModule, CustomPaginationComponent, PaginationHeaderComponent]
 })
 export class TransactionsListComponent {
   public routes = routes;

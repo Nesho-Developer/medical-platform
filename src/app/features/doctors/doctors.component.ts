@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { routes } from '../../shared/routes/routes';
@@ -6,7 +6,7 @@ import { routes } from '../../shared/routes/routes';
     selector: 'app-doctors',
     templateUrl: './doctors.component.html',
     styleUrls: ['./doctors.component.scss'],
-    imports:[CommonModule,RouterModule]
+    imports: [RouterModule]
 })
 export class DoctorsComponent {
   public routes = routes;

@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
@@ -6,7 +6,7 @@ import { RouterModule } from '@angular/router';
     selector: 'app-settings',
     templateUrl: './settings.component.html',
     styleUrls: ['./settings.component.scss'],
-    imports:[CommonModule,RouterModule]
+    imports: [RouterModule]
 })
 export class SettingsComponent {
 

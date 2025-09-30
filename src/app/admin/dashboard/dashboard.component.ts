@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Component, ViewChild } from '@angular/core';
 import { routes } from '../../shared/routes/routes';
-import { CommonModule } from '@angular/common';
+
 import { RouterLink } from '@angular/router';
 import {
   ChartComponent,
@@ -30,7 +30,7 @@ export type ChartOptions = {
     selector: 'app-dashboard',
     templateUrl: './dashboard.component.html',
     styleUrls: ['./dashboard.component.scss'],
-    imports: [CommonModule, RouterLink,NgApexchartsModule],
+    imports: [RouterLink, NgApexchartsModule],
 })
 export class DashboardComponent {
   public routes = routes;

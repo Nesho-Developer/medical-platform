@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
@@ -8,7 +8,7 @@ import { routes } from '../../shared/routes/routes';
     selector: 'app-profile',
     templateUrl: './profile.component.html',
     styleUrls: ['./profile.component.scss'],
-    imports: [CommonModule,RouterModule,BsDatepickerModule]
+    imports: [RouterModule, BsDatepickerModule]
 })
 export class ProfileComponent implements OnInit{
   public routes = routes;

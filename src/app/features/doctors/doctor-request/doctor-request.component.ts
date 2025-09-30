@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
@@ -12,9 +12,7 @@ import { MatSliderModule } from '@angular/material/slider';
     selector: 'app-doctor-request',
     templateUrl: './doctor-request.component.html',
     styleUrls: ['./doctor-request.component.scss'],
-    imports:[CommonModule,FormsModule,RouterLink,DoctorSidebarComponent,DoctorBreadcrumbComponent,MatSelectModule,
-      MatSliderModule
-    ]
+    imports: [FormsModule, RouterLink, DoctorSidebarComponent, DoctorBreadcrumbComponent, MatSelectModule, MatSliderModule]
 })
 export class DoctorRequestComponent {
   public routes = routes;

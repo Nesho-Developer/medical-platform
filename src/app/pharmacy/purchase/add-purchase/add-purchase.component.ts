@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { routes } from '../../../shared/routes/routes';
-import { CommonModule } from '@angular/common';
+
 import { RouterLink } from '@angular/router';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
@@ -8,7 +8,7 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
     selector: 'app-add-purchase',
     templateUrl: './add-purchase.component.html',
     styleUrls: ['./add-purchase.component.scss'],
-    imports: [CommonModule,RouterLink,BsDatepickerModule]
+    imports: [RouterLink, BsDatepickerModule]
 })
 export class AddPurchaseComponent implements OnInit {
   public routes = routes;

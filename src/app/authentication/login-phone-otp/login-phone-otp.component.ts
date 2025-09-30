@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
@@ -8,7 +8,7 @@ import intlTelInput from 'intl-tel-input';
     selector: 'app-login-phone-otp',
     templateUrl: './login-phone-otp.component.html',
     styleUrls: ['./login-phone-otp.component.scss'],
-    imports: [CommonModule,RouterLink]
+    imports: [RouterLink]
 })
 export class LoginPhoneOtpComponent {
   public routes = routes;

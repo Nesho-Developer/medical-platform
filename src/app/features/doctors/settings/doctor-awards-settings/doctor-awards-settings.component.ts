@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
   import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
@@ -13,7 +13,7 @@ interface award {
     selector: 'app-doctor-awards-settings',
     templateUrl: './doctor-awards-settings.component.html',
     styleUrls: ['./doctor-awards-settings.component.scss'],
-    imports:[CommonModule,FormsModule,RouterLink,DoctorSidebarComponent,DoctorBreadcrumbComponent,MatSelectModule,BsDatepickerModule]
+    imports: [FormsModule, RouterLink, DoctorSidebarComponent, DoctorBreadcrumbComponent, MatSelectModule, BsDatepickerModule]
 })
 export class DoctorAwardsSettingsComponent {
   public routes = routes;

@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, OnInit } from '@angular/core';
 import { Lightbox, LightboxModule } from 'ngx-lightbox';
 import lgZoom from 'lightgallery/plugins/zoom';
@@ -19,7 +19,7 @@ interface data {
     selector: 'app-map-list',
     templateUrl: './map-list.component.html',
     styleUrls: ['./map-list.component.scss'],
-    imports:[CommonModule,RouterLink,GoogleMapsModule,MatSelectModule,BreadcrumbSearchComponent,LightboxModule,LightgalleryModule],
+    imports: [RouterLink, GoogleMapsModule, MatSelectModule, BreadcrumbSearchComponent, LightboxModule, LightgalleryModule],
     providers:[Lightbox]
 })
 export class MapListComponent implements OnInit {

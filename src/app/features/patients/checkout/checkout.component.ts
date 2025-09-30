@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { routes } from '../../../shared/routes/routes';
@@ -8,7 +8,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     selector: 'app-checkout',
     templateUrl: './checkout.component.html',
     styleUrls: ['./checkout.component.scss'],
-    imports:[CommonModule,RouterLink,PatientBreadcrumbComponent,CarouselModule]
+    imports: [RouterLink, PatientBreadcrumbComponent, CarouselModule]
 })
 export class CheckoutComponent {
   public routes = routes;

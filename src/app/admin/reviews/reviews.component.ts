@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { RouterLink } from '@angular/router';
 import { MatSortModule, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
@@ -19,7 +19,7 @@ import { PaginationHeaderComponent } from '../../shared/pagination-header/pagina
     selector: 'app-reviews',
     templateUrl: './reviews.component.html',
     styleUrls: ['./reviews.component.scss'],
-    imports: [CommonModule, RouterLink,CustomPaginationComponent,MatSortModule,PaginationHeaderComponent]
+    imports: [RouterLink, CustomPaginationComponent, MatSortModule, PaginationHeaderComponent]
 })
 export class ReviewsComponent {
   public routes = routes;

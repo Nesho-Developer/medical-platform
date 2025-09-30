@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
@@ -9,7 +9,7 @@ import { PatientBreadcrumbComponent } from '../../common/patient-breadcrumb/pati
     selector: 'app-doctor-profile1',
     templateUrl: './doctor-profile1.component.html',
     styleUrl: './doctor-profile1.component.scss',
-    imports:[CommonModule,RouterLink,CarouselModule,PatientBreadcrumbComponent]
+    imports: [RouterLink, CarouselModule, PatientBreadcrumbComponent]
 })
 export class DoctorProfile1Component {
   public routes = routes

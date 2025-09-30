@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
@@ -9,7 +9,7 @@ import { DoctorBreadcrumbComponent } from '../../common/doctor-breadcrumb/doctor
     selector: 'app-doctor-pending-blog',
     templateUrl: './doctor-pending-blog.component.html',
     styleUrls: ['./doctor-pending-blog.component.scss'],
-    imports:[CommonModule,FormsModule,RouterLink,DoctorSidebarComponent,DoctorBreadcrumbComponent]
+    imports: [FormsModule, RouterLink, DoctorSidebarComponent, DoctorBreadcrumbComponent]
 })
 export class DoctorPendingBlogComponent {
   public routes = routes;

@@ -1,4 +1,4 @@
-import { CommonModule, DatePipe } from '@angular/common';
+import { DatePipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
@@ -12,7 +12,7 @@ import { DatePickerModule } from 'primeng/datepicker';
     selector: 'app-doctor-business-settings',
     templateUrl: './doctor-business-settings.component.html',
     styleUrls: ['./doctor-business-settings.component.scss'],
-    imports:[CommonModule,FormsModule,RouterLink,DoctorSidebarComponent,DoctorBreadcrumbComponent,MatSelectModule,DatePickerModule],
+    imports: [FormsModule, RouterLink, DoctorSidebarComponent, DoctorBreadcrumbComponent, MatSelectModule, DatePickerModule],
     providers:[DatePipe]
 })
 export class DoctorBusinessSettingsComponent {

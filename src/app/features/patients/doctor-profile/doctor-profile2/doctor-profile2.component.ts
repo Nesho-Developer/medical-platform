@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { LightgalleryModule } from 'lightgallery/angular';
@@ -11,7 +11,7 @@ import { PatientBreadcrumbComponent } from '../../common/patient-breadcrumb/pati
     selector: 'app-doctor-profile2',
     templateUrl: './doctor-profile2.component.html',
     styleUrl: './doctor-profile2.component.scss',
-    imports:[CommonModule,RouterLink,LightgalleryModule,PatientBreadcrumbComponent]
+    imports: [RouterLink, LightgalleryModule, PatientBreadcrumbComponent]
 })
 export class DoctorProfile2Component {
   public routes = routes;

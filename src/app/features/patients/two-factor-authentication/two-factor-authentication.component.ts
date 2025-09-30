@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { routes } from '../../../shared/routes/routes';
@@ -9,7 +9,7 @@ import { PatientBreadcrumbComponent } from '../common/patient-breadcrumb/patient
   selector: 'app-two-factor-authentication',
   templateUrl: './two-factor-authentication.component.html',
   styleUrls: ['./two-factor-authentication.component.scss'],
-  imports:[CommonModule,RouterLink,PatientSidebarComponent,PatientBreadcrumbComponent]
+  imports: [RouterLink, PatientSidebarComponent, PatientBreadcrumbComponent]
 })
 export class TwoFactorAuthenticationComponent {
 routes=routes;

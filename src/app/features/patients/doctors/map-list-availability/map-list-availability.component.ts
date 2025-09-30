@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { BeforeSlideDetail } from 'lightgallery/lg-events';
@@ -18,7 +18,7 @@ interface data {
   selector: 'app-map-list-availability',
   templateUrl: './map-list-availability.component.html',
   styleUrls: ['./map-list-availability.component.scss'],
-  imports:[CommonModule,RouterLink,GoogleMapsModule,SlickCarouselModule,MatSelectModule,BreadcrumbSearchComponent,LightboxModule,LightgalleryModule],
+  imports: [RouterLink, GoogleMapsModule, SlickCarouselModule, MatSelectModule, BreadcrumbSearchComponent, LightboxModule, LightgalleryModule],
   providers:[Lightbox]
 })
 export class MapListAvailabilityComponent {

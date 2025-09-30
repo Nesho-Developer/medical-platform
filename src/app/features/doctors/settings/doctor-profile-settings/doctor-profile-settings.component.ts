@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
@@ -14,7 +14,7 @@ interface medical {
     selector: 'app-doctor-profile-settings',
     templateUrl: './doctor-profile-settings.component.html',
     styleUrl: './doctor-profile-settings.component.scss',
-    imports:[CommonModule,FormsModule,RouterLink,DoctorSidebarComponent,DoctorBreadcrumbComponent]
+    imports: [FormsModule, RouterLink, DoctorSidebarComponent, DoctorBreadcrumbComponent]
 })
 export class DoctorProfileSettingsComponent {
   public routes = routes;

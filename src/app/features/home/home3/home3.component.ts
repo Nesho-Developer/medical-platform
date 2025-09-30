@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { routes } from '../../../shared/routes/routes';
 import { RouterLink } from '@angular/router';
-import { CommonModule } from '@angular/common';
+
 import { FooterComponent } from './common/footer/footer.component';
 import { HeaderComponent } from './common/header/header.component';
 import { MatSelectModule } from '@angular/material/select';
@@ -14,7 +14,7 @@ interface data {
     selector: 'app-home3',
     templateUrl: './home3.component.html',
     styleUrls: ['./home3.component.scss'],
-    imports: [CommonModule,RouterLink,FooterComponent,HeaderComponent,CarouselModule,MatSelectModule,FormsModule],
+    imports: [RouterLink, FooterComponent, HeaderComponent, CarouselModule, MatSelectModule, FormsModule],
 })
 export class Home3Component {
   public routes = routes;

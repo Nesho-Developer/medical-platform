@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { MatSortModule, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
@@ -14,7 +14,7 @@ import { routes } from '../../../../shared/routes/routes';
     selector: 'app-data-tables',
     templateUrl:   './data-tables.component.html',
     styleUrls: ['./data-tables.component.scss'],
-    imports: [CommonModule, RouterLink,CustomPaginationComponent,MatSortModule,PaginationHeaderComponent]
+    imports: [RouterLink, CustomPaginationComponent, MatSortModule, PaginationHeaderComponent]
 })
 export class DataTablesComponent {
   public routes = routes;

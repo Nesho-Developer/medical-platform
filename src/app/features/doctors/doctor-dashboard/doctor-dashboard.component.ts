@@ -18,7 +18,7 @@ import {
 
 
 } from "ng-apexcharts";
-import { CommonModule } from '@angular/common';
+
 import { FormsModule } from '@angular/forms';
 import { DoctorSidebarComponent } from '../common/doctor-sidebar/doctor-sidebar.component';
 import { DoctorBreadcrumbComponent } from '../common/doctor-breadcrumb/doctor-breadcrumb.component';
@@ -40,9 +40,7 @@ export type ChartOptions = {
     selector: 'app-doctor-dashboard',
     templateUrl:   './doctor-dashboard.component.html',
     styleUrls: ['./doctor-dashboard.component.scss'],
-    imports:[CommonModule,FormsModule,RouterLink,DoctorSidebarComponent,DoctorBreadcrumbComponent,MatSelectModule,
-      MatSliderModule,NgApexchartsModule
-    ]
+    imports: [FormsModule, RouterLink, DoctorSidebarComponent, DoctorBreadcrumbComponent, MatSelectModule, MatSliderModule, NgApexchartsModule]
 })
 export class DoctorDashboardComponent {
   @ViewChild("chart") chart!: ChartComponent;

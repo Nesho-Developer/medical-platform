@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
@@ -12,7 +12,7 @@ import { PatientBreadcrumbComponent } from '../../common/patient-breadcrumb/pati
     selector: 'app-booking2',
     templateUrl: './booking2.component.html',
     styleUrls: ['./booking2.component.scss'],
-    imports:[CommonModule,RouterLink,SlickCarouselModule,FormsModule,BsDatepickerModule,PatientBreadcrumbComponent]
+    imports: [RouterLink, SlickCarouselModule, FormsModule, BsDatepickerModule, PatientBreadcrumbComponent]
 })
 export class Booking2Component {
   public routes = routes;

@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
@@ -8,7 +8,7 @@ import { DoctorBreadcrumbComponent } from '../common/doctor-breadcrumb/doctor-br
     selector: 'app-add-billing',
     templateUrl: './add-billing.component.html',
     styleUrls: ['./add-billing.component.scss'],
-    imports:[CommonModule,FormsModule,RouterLink,DoctorBreadcrumbComponent]
+    imports: [FormsModule, RouterLink, DoctorBreadcrumbComponent]
 })
 export class AddBillingComponent {
   public routes = routes;

@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
@@ -12,9 +12,7 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
     selector: 'app-doctor-experience-settings',
     templateUrl: './doctor-experience-settings.component.html',
     styleUrl: './doctor-experience-settings.component.scss',
-    imports:[CommonModule,FormsModule,RouterLink,DoctorSidebarComponent,DoctorBreadcrumbComponent,MatSelectModule,
-      BsDatepickerModule
-    ]
+    imports: [FormsModule, RouterLink, DoctorSidebarComponent, DoctorBreadcrumbComponent, MatSelectModule, BsDatepickerModule]
 })
 export class DoctorExperienceSettingsComponent {
   public routes = routes

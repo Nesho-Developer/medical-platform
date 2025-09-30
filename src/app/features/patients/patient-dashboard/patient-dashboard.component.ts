@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, Renderer2, ViewChild } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Router } from '@angular/router';
@@ -35,7 +35,7 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
     selector: 'app-patient-dashboard',
     templateUrl: './patient-dashboard.component.html',
     styleUrls: ['./patient-dashboard.component.scss'],
-    imports:[CommonModule,RouterLink,CarouselModule,NgApexchartsModule,NgCircleProgressModule,PatientSidebarComponent,PatientBreadcrumbComponent]
+    imports: [RouterLink, CarouselModule, NgApexchartsModule, NgCircleProgressModule, PatientSidebarComponent, PatientBreadcrumbComponent]
 })
 export class PatientDashboardComponent {
   @ViewChild('chart') chart!: ChartComponent;

@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { DataService } from '../../shared/data/data.service';
 import {
@@ -18,7 +18,7 @@ import { FormsModule } from '@angular/forms';
     selector: 'app-appointment-list',
     templateUrl: './appointment-list.component.html',
     styleUrls: ['./appointment-list.component.scss'],
-    imports: [CommonModule,RouterLink,CustomPaginationComponent,MatSortModule,PaginationHeaderComponent,FormsModule]
+    imports: [RouterLink, CustomPaginationComponent, MatSortModule, PaginationHeaderComponent, FormsModule]
 })
 export class AppointmentListComponent {
   public routes = routes;

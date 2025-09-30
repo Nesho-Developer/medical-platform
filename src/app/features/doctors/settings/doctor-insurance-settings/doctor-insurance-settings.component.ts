@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
@@ -10,7 +10,7 @@ import { DoctorBreadcrumbComponent } from '../../common/doctor-breadcrumb/doctor
     selector: 'app-doctor-insurance-settings',
     templateUrl: './doctor-insurance-settings.component.html',
     styleUrl: './doctor-insurance-settings.component.scss',
-    imports:[CommonModule,FormsModule,RouterLink,DoctorSidebarComponent,DoctorBreadcrumbComponent]
+    imports: [FormsModule, RouterLink, DoctorSidebarComponent, DoctorBreadcrumbComponent]
 })
 export class DoctorInsuranceSettingsComponent {
   public routes = routes

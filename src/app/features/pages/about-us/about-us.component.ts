@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CountUpModule } from 'ngx-countup';
@@ -11,7 +11,7 @@ import { routes } from '../../../shared/routes/routes';
     selector: 'app-about-us',
     templateUrl: './about-us.component.html',
     styleUrls: ['./about-us.component.scss'],
-    imports: [CommonModule,CountUpModule,SlickCarouselModule,RouterLink]
+    imports: [CountUpModule, SlickCarouselModule, RouterLink]
 })
 export class AboutUsComponent {
   public routes = routes;

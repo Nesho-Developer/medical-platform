@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { routes } from '../../../shared/routes/routes';
@@ -7,7 +7,7 @@ import { routes } from '../../../shared/routes/routes';
     selector: 'app-register',
     templateUrl: './register.component.html',
     styleUrls: ['./register.component.scss'],
-    imports: [CommonModule,RouterLink]
+    imports: [RouterLink]
 })
 export class RegisterComponent {
   public routes = routes;

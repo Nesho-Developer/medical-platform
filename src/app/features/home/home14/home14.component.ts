@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { routes } from '../../../shared/routes/routes';
-import { CommonModule } from '@angular/common';
+
 import { RouterLink } from '@angular/router';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
@@ -12,7 +12,7 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
     selector: 'app-home14',
     templateUrl: './home14.component.html',
     styleUrl: './home14.component.scss',
-    imports: [CommonModule,RouterLink,FooterComponent,HeaderComponent,CarouselModule,CountUpModule,BsDatepickerModule],
+    imports: [RouterLink, FooterComponent, HeaderComponent, CarouselModule, CountUpModule, BsDatepickerModule],
 })
 export class Home14Component {
   public routes = routes

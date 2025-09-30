@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { routes } from '../../../shared/routes/routes';
@@ -7,7 +7,7 @@ import { routes } from '../../../shared/routes/routes';
     selector: 'app-login',
     templateUrl: './login.component.html',
     styleUrls: ['./login.component.scss'],
-    imports: [CommonModule,RouterLink]
+    imports: [RouterLink]
 })
 export class LoginComponent implements OnInit{
   public routes = routes;

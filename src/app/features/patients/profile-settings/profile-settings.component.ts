@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, OnInit } from '@angular/core';
 import { MatSelectModule } from '@angular/material/select';
 import { RouterLink } from '@angular/router';
@@ -10,7 +10,7 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
     selector: 'app-profile-settings',
     templateUrl: './profile-settings.component.html',
     styleUrls: ['./profile-settings.component.scss'],
-    imports:[CommonModule,RouterLink,MatSelectModule,PatientSidebarComponent,PatientBreadcrumbComponent,BsDatepickerModule]
+    imports: [RouterLink, MatSelectModule, PatientSidebarComponent, PatientBreadcrumbComponent, BsDatepickerModule]
 })
 export class ProfileSettingsComponent implements OnInit {
   public routes = routes;

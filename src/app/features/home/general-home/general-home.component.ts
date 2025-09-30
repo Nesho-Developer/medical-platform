@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { routes } from '../../../shared/routes/routes';
-import { CommonModule } from '@angular/common';
+
 import { NgZone } from '@angular/core';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
@@ -11,7 +11,7 @@ import { FooterComponent } from './footer/footer.component';
 
 @Component({
   selector: 'app-general-home',
-  imports: [CommonModule,RouterLink,FooterComponent,HeaderComponent,CarouselModule,BsDatepickerModule],
+  imports: [RouterLink, FooterComponent, HeaderComponent, CarouselModule, BsDatepickerModule],
   templateUrl: './general-home.component.html',
   styleUrl: './general-home.component.scss'
 })

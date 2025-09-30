@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
   import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
@@ -12,7 +12,7 @@ import { DoctorBreadcrumbComponent } from '../common/doctor-breadcrumb/doctor-br
   selector: 'app-invoices',
   templateUrl: './invoices.component.html',
   styleUrls: ['./invoices.component.scss'],
-  imports:[CommonModule,FormsModule,RouterLink,MatSelectModule,BsDatepickerModule,DoctorSidebarComponent,DoctorBreadcrumbComponent]
+  imports: [FormsModule, RouterLink, MatSelectModule, BsDatepickerModule, DoctorSidebarComponent, DoctorBreadcrumbComponent]
 })
 export class InvoicesComponent {
 routes=routes;

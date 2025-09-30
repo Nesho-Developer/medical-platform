@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { routes } from '../../../shared/routes/routes';
@@ -6,7 +6,7 @@ import { routes } from '../../../shared/routes/routes';
     selector: 'app-error404',
     templateUrl: './error404.component.html',
     styleUrls: ['./error404.component.scss'],
-    imports: [RouterLink,CommonModule]
+    imports: [RouterLink]
 })
 export class Error404Component {
   public routes = routes;

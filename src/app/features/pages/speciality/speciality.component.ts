@@ -1,11 +1,11 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { routes } from '../../../shared/routes/routes';
 
 @Component({
   selector: 'app-speciality',
-  imports: [RouterLink,CommonModule],
+  imports: [RouterLink],
   templateUrl: './speciality.component.html',
   styleUrl: './speciality.component.scss'
 })

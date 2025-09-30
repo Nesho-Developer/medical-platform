@@ -6,7 +6,7 @@ import { PaginationService, tablePageSize } from '../../../shared/custom-paginat
 import { DataService } from '../../../shared/data/data.service';
 import { outstock, apiResultFormat, pageSelection } from '../../../shared/models/models';
 import { routes } from '../../../shared/routes/routes';
-import { CommonModule } from '@angular/common';
+
 import { RouterModule } from '@angular/router';
 import { MatSortModule } from '@angular/material/sort';
 import { CustomPaginationComponent } from '../../../shared/custom-pagination/custom-pagination.component';
@@ -16,7 +16,7 @@ import { PaginationHeaderComponent } from '../../../shared/pagination-header/pag
     selector: 'app-outstock',
     templateUrl: './outstock.component.html',
     styleUrls: ['./outstock.component.scss'],
-    imports: [CommonModule,RouterModule,MatSortModule,CustomPaginationComponent,PaginationHeaderComponent]
+    imports: [RouterModule, MatSortModule, CustomPaginationComponent, PaginationHeaderComponent]
 })
 export class OutstockComponent {
   public routes = routes;

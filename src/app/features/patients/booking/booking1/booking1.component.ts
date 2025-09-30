@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, OnDestroy, Renderer2 } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
@@ -10,7 +10,7 @@ import { PatientBreadcrumbComponent } from '../../common/patient-breadcrumb/pati
     selector: 'app-booking1',
     templateUrl: './booking1.component.html',
     styleUrls: ['./booking1.component.scss'],
-    imports:[CommonModule,RouterLink,BsDatepickerModule,FormsModule,PatientBreadcrumbComponent]
+    imports: [RouterLink, BsDatepickerModule, FormsModule, PatientBreadcrumbComponent]
 })
 export class Booking1Component implements OnDestroy {
   public routes = routes;

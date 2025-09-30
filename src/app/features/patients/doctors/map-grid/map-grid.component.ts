@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { CommonModule } from '@angular/common';
+
 import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { routes } from '../../../../shared/routes/routes';
@@ -14,7 +14,7 @@ interface data {
     selector: 'app-map-grid',
     templateUrl: './map-grid.component.html',
     styleUrls: ['./map-grid.component.scss'],
-    imports:[CommonModule,RouterLink,GoogleMapsModule,BreadcrumbSearchComponent,MatSelectModule]
+    imports: [RouterLink, GoogleMapsModule, BreadcrumbSearchComponent, MatSelectModule]
 })
 export class MapGridComponent implements OnInit {
   public routes = routes;

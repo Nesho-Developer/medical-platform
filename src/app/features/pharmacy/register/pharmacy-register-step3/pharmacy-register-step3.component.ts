@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { routes } from '../../../../shared/routes/routes';
@@ -6,7 +6,7 @@ import { routes } from '../../../../shared/routes/routes';
     selector: 'app-pharmacy-register-step3',
     templateUrl: './pharmacy-register-step3.component.html',
     styleUrls: ['./pharmacy-register-step3.component.scss'],
-    imports:[CommonModule,RouterLink]
+    imports: [RouterLink]
 })
 export class PharmacyRegisterStep3Component {
   public routes = routes;

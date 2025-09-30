@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
@@ -15,9 +15,7 @@ interface medical {
     selector: 'app-doctor-appointment-start',
     templateUrl: './doctor-appointment-start.component.html',
     styleUrls: ['./doctor-appointment-start.component.scss'],
-    imports:[CommonModule,FormsModule,RouterLink,DoctorSidebarComponent,DoctorBreadcrumbComponent,BsDatepickerModule,
-      MatSelectModule
-    ]
+    imports: [FormsModule, RouterLink, DoctorSidebarComponent, DoctorBreadcrumbComponent, BsDatepickerModule, MatSelectModule]
 })
 export class DoctorAppointmentStartComponent {
   public routes = routes;

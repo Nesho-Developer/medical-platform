@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
@@ -13,7 +13,7 @@ import { PharmacyheaderComponent } from '../../common/pharmacyheader/pharmacyhea
     selector: 'app-pharmacy-index',
     templateUrl: './pharmacy-index.component.html',
     styleUrls: ['./pharmacy-index.component.scss'],
-    imports:[CommonModule,RouterLink,PharmacyfooterComponent,CarouselModule,FormsModule,PharmacyheaderComponent]
+    imports: [RouterLink, PharmacyfooterComponent, CarouselModule, FormsModule, PharmacyheaderComponent]
 })
 export class PharmacyIndexComponent implements OnInit {
   public routes = routes;

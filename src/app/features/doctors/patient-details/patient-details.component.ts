@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
@@ -11,7 +11,7 @@ interface data {
     selector: 'app-patient-details',
     templateUrl: './patient-details.component.html',
     styleUrls: ['./patient-details.component.scss'],
-    imports:[CommonModule,FormsModule,RouterLink,MatSelectModule]
+    imports: [FormsModule, RouterLink, MatSelectModule]
 })
 export class PatientDetailsComponent {
   public routes = routes;

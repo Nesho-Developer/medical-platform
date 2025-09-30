@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { routes } from '../../../shared/routes/routes';
@@ -8,7 +8,7 @@ import { SidebarService } from '../../../shared/sidebar/sidebar.service';
     selector: 'app-header',
     templateUrl: './header.component.html',
     styleUrls: ['./header.component.scss'],
-    imports: [CommonModule,RouterLink]
+    imports: [RouterLink]
 })
 export class HeaderComponent {
   public routes = routes;

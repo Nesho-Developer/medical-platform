@@ -2,7 +2,7 @@ import { Component, HostListener, OnInit } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { routes } from '../../../shared/routes/routes';
-import { CommonModule } from '@angular/common';
+
 import { FooterComponent } from './common/footer/footer.component';
 import { HeaderComponent } from './common/header/header.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
@@ -16,7 +16,7 @@ interface data {
     selector: 'app-home8',
     templateUrl: './home8.component.html',
     styleUrls: ['./home8.component.scss'],
-    imports: [CommonModule,RouterLink,FooterComponent,HeaderComponent,CarouselModule,MatSelectModule,FormsModule,BsDatepickerModule],
+    imports: [RouterLink, FooterComponent, HeaderComponent, CarouselModule, MatSelectModule, FormsModule, BsDatepickerModule],
 })
 export class Home8Component implements OnInit {
   public routes = routes;

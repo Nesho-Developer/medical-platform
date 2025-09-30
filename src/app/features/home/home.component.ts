@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { routes } from '../../shared/routes/routes';
-import { CommonModule } from '@angular/common';
+
 import { RouterLink, RouterModule } from '@angular/router';
 @Component({
     selector: 'app-home',
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.scss'],
-    imports: [CommonModule,RouterModule],
+    imports: [RouterModule],
 })
 export class HomeComponent implements OnInit {
   public routes = routes;

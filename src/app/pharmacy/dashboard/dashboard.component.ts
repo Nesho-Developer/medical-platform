@@ -13,7 +13,7 @@ import {
   ApexLegend,
   NgApexchartsModule,
 } from "ng-apexcharts";
-import { CommonModule } from '@angular/common';
+
 
 export type ChartOptions = {
   series: ApexAxisChartSeries | any;
@@ -29,7 +29,7 @@ export type ChartOptions = {
     selector: 'app-dashboard',
     templateUrl: './dashboard.component.html',
     styleUrls: ['./dashboard.component.scss'],
-    imports: [CommonModule,NgApexchartsModule]
+    imports: [NgApexchartsModule]
 })
 export class DashboardComponent {
   public routes = routes;

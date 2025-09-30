@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
@@ -8,7 +8,7 @@ import intlTelInput from 'intl-tel-input';
     selector: 'app-patient-signup',
     templateUrl: './patient-signup.component.html',
     styleUrls: ['./patient-signup.component.scss'],
-    imports: [CommonModule,RouterLink,FormsModule,ReactiveFormsModule]
+    imports: [RouterLink, FormsModule, ReactiveFormsModule]
 })
 export class PatientSignupComponent {
   public routes = routes;

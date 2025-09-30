@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
@@ -7,7 +7,7 @@ import { routes } from '../../shared/routes/routes';
     selector: 'app-email-otp',
     templateUrl: './email-otp.component.html',
     styleUrls: ['./email-otp.component.scss'],
-    imports: [CommonModule,RouterLink,FormsModule]
+    imports: [RouterLink, FormsModule]
 })
 export class EmailOtpComponent {
   public routes = routes;

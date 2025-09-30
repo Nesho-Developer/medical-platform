@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { routes } from '../../../shared/routes/routes';
@@ -6,7 +6,7 @@ import { routes } from '../../../shared/routes/routes';
     selector: 'app-coming-soon',
     templateUrl: './coming-soon.component.html',
     styleUrls: ['./coming-soon.component.scss'],
-    imports: [RouterLink,CommonModule]
+    imports: [RouterLink]
 })
 export class ComingSoonComponent {
   public routes = routes;

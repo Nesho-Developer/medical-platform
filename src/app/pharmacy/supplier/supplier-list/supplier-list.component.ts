@@ -7,14 +7,14 @@ import { PaginationService, tablePageSize } from '../../../shared/custom-paginat
 import { DataService } from '../../../shared/data/data.service';
 import { supplierList, apiResultFormat, pageSelection } from '../../../shared/models/models';
 import { routes } from '../../../shared/routes/routes';
-import { CommonModule } from '@angular/common';
+
 import { PaginationHeaderComponent } from '../../../shared/pagination-header/pagination-header.component';
 
 @Component({
     selector: 'app-supplier-list',
     templateUrl:   './supplier-list.component.html',
     styleUrls: ['./supplier-list.component.scss'],
-    imports: [CommonModule,RouterModule,MatSortModule,CustomPaginationComponent,PaginationHeaderComponent]
+    imports: [RouterModule, MatSortModule, CustomPaginationComponent, PaginationHeaderComponent]
 })
 export class SupplierListComponent {
   public routes = routes;

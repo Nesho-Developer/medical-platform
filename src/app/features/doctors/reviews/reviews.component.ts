@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, Renderer2 } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { routes } from '../../../shared/routes/routes';
@@ -10,7 +10,7 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
     selector: 'app-reviews',
     templateUrl: './reviews.component.html',
     styleUrls: ['./reviews.component.scss'],
-    imports:[CommonModule,FormsModule,DoctorSidebarComponent,DoctorBreadcrumbComponent,MatSelectModule,BsDatepickerModule]
+    imports: [FormsModule, DoctorSidebarComponent, DoctorBreadcrumbComponent, MatSelectModule, BsDatepickerModule]
 })
 export class ReviewsComponent {
   public routes = routes;

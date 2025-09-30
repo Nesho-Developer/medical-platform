@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { routes } from '../../../shared/routes/routes';
@@ -9,8 +9,7 @@ import { PatientBreadcrumbComponent } from '../common/patient-breadcrumb/patient
   selector: 'app-delete-account',
   templateUrl: './delete-account.component.html',
   styleUrls: ['./delete-account.component.scss'],
-  imports:[CommonModule,RouterLink,PatientSidebarComponent
-  ,PatientBreadcrumbComponent]
+  imports: [RouterLink, PatientSidebarComponent, PatientBreadcrumbComponent]
 })
 export class DeleteAccountComponent {
 routes=routes;

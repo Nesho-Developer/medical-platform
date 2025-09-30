@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { routes } from '../../../shared/routes/routes';
@@ -6,7 +6,7 @@ import { routes } from '../../../shared/routes/routes';
     selector: 'app-signup',
     templateUrl: './signup.component.html',
     styleUrls: ['./signup.component.scss'],
-    imports: [RouterLink,CommonModule]
+    imports: [RouterLink]
 })
 export class SignupComponent {
   public routes = routes;

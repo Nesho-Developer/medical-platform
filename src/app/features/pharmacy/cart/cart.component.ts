@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
@@ -8,7 +8,7 @@ import { routes } from '../../../shared/routes/routes';
     selector: 'app-cart',
     templateUrl: './cart.component.html',
     styleUrls: ['./cart.component.scss'],
-    imports:[CommonModule,RouterLink,FormsModule]
+    imports: [RouterLink, FormsModule]
 })
 export class CartComponent {
   public routes = routes;

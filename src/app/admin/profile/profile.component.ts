@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { routes } from '../../shared/routes/routes';
-import { CommonModule } from '@angular/common';
+
 import { RouterLink } from '@angular/router';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 interface data {
@@ -10,7 +10,7 @@ interface data {
     selector: 'app-profile',
     templateUrl: './profile.component.html',
     styleUrls: ['./profile.component.scss'],
-    imports: [CommonModule, RouterLink,BsDatepickerModule]
+    imports: [RouterLink, BsDatepickerModule]
 })
 export class ProfileComponent implements OnInit {
   public routes = routes;

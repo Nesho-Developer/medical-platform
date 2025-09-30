@@ -6,14 +6,14 @@ import {
   pageSizeCal,
 } from '../custom-pagination/pagination.service';
 import { routes } from '../routes/routes';
-import { CommonModule } from '@angular/common';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
     selector: 'app-pagination-header',
     templateUrl: './pagination-header.component.html',
     styleUrls: ['./pagination-header.component.scss'],
-    imports: [CommonModule, FormsModule, ReactiveFormsModule],
+    imports: [FormsModule, ReactiveFormsModule],
 })
 export class PaginationHeaderComponent {
   public routes = routes;
