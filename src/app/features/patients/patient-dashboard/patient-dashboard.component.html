@@ -1,11 +1,11 @@
-<app-patient-breadcrumb></app-patient-breadcrumb>
+<app-patient-breadcrumb />
 <!-- Page Content -->
 <div class="content">
   <div class="container">
 
     <div class="row">
 
-      <app-patient-sidebar class="col-lg-4 col-xl-3"></app-patient-sidebar>
+      <app-patient-sidebar class="col-lg-4 col-xl-3" />
 
       <div class="col-lg-8 col-xl-9">
         <div class="dashboard-header">
@@ -101,8 +101,7 @@
                         <div class="circle-progress-text"> Mar 2024</div>
                       </div>
                       <circle-progress class="circle-progress-bar" [percent]="65" [clockwise]="true"
-                        innerStrokeColor=#e7e8ea outerStrokeColor=#04BD6C>
-                      </circle-progress>
+                        innerStrokeColor=#e7e8ea outerStrokeColor=#04BD6C />
                       <span class="health-percentage">Your health is 95% Normal</span>
                       <a [routerLink]="routes.medicaldetails" class="btn btn-dark w-100">View Details<i
                           class="fa-solid fa-chevron-right ms-2"></i></a>
@@ -440,7 +439,7 @@
                       <apx-chart [series]="chartOptions1.series" [chart]="chartOptions1.chart"
                         [dataLabels]="chartOptions1.dataLabels" [plotOptions]="chartOptions1.plotOptions"
                         [xaxis]="chartOptions1.xaxis" [stroke]="chartOptions1.stroke"
-                        [fill]="chartOptions1.fill"></apx-chart>
+                        [fill]="chartOptions1.fill" />
                     </div>
                   </div>
                   <!-- /Chart -->
@@ -452,7 +451,7 @@
                         [dataLabels]="chartOptions2.dataLabels" [plotOptions]="chartOptions2.plotOptions"
                         [xaxis]="chartOptions2.xaxis" [stroke]="chartOptions2.stroke"
                         [fill]="chartOptions2.fill"
-                        ></apx-chart>
+                         />
                     </div>
                   </div>
                   <!-- /Chart -->

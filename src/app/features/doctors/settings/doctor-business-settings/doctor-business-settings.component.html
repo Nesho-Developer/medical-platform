@@ -1,9 +1,9 @@
-<app-doctor-breadcrumb></app-doctor-breadcrumb>
+<app-doctor-breadcrumb />
 <!-- Page Content -->
 <div class="content doctor-content custom-time2">
   <div class="container">
     <div class="row">
-      <app-doctor-sidebar class="col-md-5 col-lg-4 col-xl-3"></app-doctor-sidebar>
+      <app-doctor-sidebar class="col-md-5 col-lg-4 col-xl-3" />
       <div class="col-lg-8 col-xl-9">
         <!-- Profile Settings -->
         <div class="dashboard-header">
@@ -68,15 +68,13 @@
                       <div class="form-wrap">
                         <label class="col-form-label" for="from">From <span class="text-danger">*</span></label>
                         <div class="form-icon">
-                            <p-datepicker
-                            inputId="calendar-timeonly"
+                            <p-datepicker inputId="calendar-timeonly"
                             [(ngModel)]="time"
                             name="time"
                             class="form-control"
                             [timeOnly]="true"
                             [hourFormat]="'12'"
-                            placeholder="5:50 PM">
-                          </p-datepicker>
+                            placeholder="5:50 PM" />
                           <span class="icon"><i class="fa-solid fa-clock"></i></span>
                         </div>
                       </div>
@@ -85,15 +83,13 @@
                       <div class="form-wrap">
                         <label class="col-form-label" for="to">To <span class="text-danger">*</span></label>
                         <div class="form-icon">
-                          <p-datepicker
-                            inputId="calendar-timeonly"
+                          <p-datepicker inputId="calendar-timeonly"
                             [(ngModel)]="time"
                             name="time"
                             class="form-control"
                             [timeOnly]="true"
                             [hourFormat]="'12'"
-                            placeholder="5:50 PM">
-                          </p-datepicker>
+                            placeholder="5:50 PM" />
                           <span class="icon"><i class="fa-solid fa-clock"></i></span>
                         </div>
                       </div>
@@ -115,15 +111,13 @@
                       <div class="form-wrap">
                         <label class="col-form-label" for="form">From <span class="text-danger">*</span></label>
                         <div class="form-icon">
-                          <p-datepicker
-                            inputId="calendar-timeonly"
+                          <p-datepicker inputId="calendar-timeonly"
                             [(ngModel)]="time"
                             name="time"
                             class="form-control"
                             [timeOnly]="true"
                             [hourFormat]="'12'"
-                            placeholder="5:50 PM">
-                          </p-datepicker>
+                            placeholder="5:50 PM" />
                           <span class="icon"><i class="fa-solid fa-clock"></i></span>
                         </div>
                       </div>
@@ -135,7 +129,7 @@
                           <input type="text" class="form-control timepicker1" (click)="toggleTimePicker('endTime2')"
                             [value]="formatTime(endTime2)" />
                           <timepicker [class.d-block]="showTimePicker[0] === 'endTime2'" class="custom-timepicker"
-                            [ngModelOptions]="{ standalone: true }" [(ngModel)]="endTime2"></timepicker>
+                            [ngModelOptions]="{ standalone: true }" [(ngModel)]="endTime2" />
                           <span class="icon"><i class="fa-solid fa-clock"></i></span>
                         </div>
                       </div>
@@ -157,15 +151,13 @@
                       <div class="form-wrap">
                         <label class="col-form-label" for="show">From <span class="text-danger">*</span></label>
                         <div class="form-icon">
-                          <p-datepicker
-                            inputId="calendar-timeonly"
+                          <p-datepicker inputId="calendar-timeonly"
                             [(ngModel)]="time"
                             name="time"
                             class="form-control"
                             [timeOnly]="true"
                             [hourFormat]="'12'"
-                            placeholder="5:50 PM">
-                          </p-datepicker>
+                            placeholder="5:50 PM" />
                           <span class="icon"><i class="fa-solid fa-clock"></i></span>
                         </div>
                       </div>
@@ -174,15 +166,13 @@
                       <div class="form-wrap">
                         <label class="col-form-label" for="icon">To <span class="text-danger">*</span></label>
                         <div class="form-icon">
-                          <p-datepicker
-                            inputId="calendar-timeonly"
+                          <p-datepicker inputId="calendar-timeonly"
                             [(ngModel)]="time"
                             name="time"
                             class="form-control"
                             [timeOnly]="true"
                             [hourFormat]="'12'"
-                            placeholder="5:50 PM">
-                          </p-datepicker>
+                            placeholder="5:50 PM" />
                           <span class="icon"><i class="fa-solid fa-clock"></i></span>
                         </div>
                       </div>
@@ -204,15 +194,13 @@
                       <div class="form-wrap">
                         <label class="col-form-label" for="danger">From <span class="text-danger">*</span></label>
                         <div class="form-icon">
-                          <p-datepicker
-                            inputId="calendar-timeonly"
+                          <p-datepicker inputId="calendar-timeonly"
                             [(ngModel)]="time"
                             name="time"
                             class="form-control"
                             [timeOnly]="true"
                             [hourFormat]="'12'"
-                            placeholder="5:50 PM">
-                          </p-datepicker>
+                            placeholder="5:50 PM" />
                           <span class="icon"><i class="fa-solid fa-clock"></i></span>
                         </div>
                       </div>
@@ -221,15 +209,13 @@
                       <div class="form-wrap">
                         <label class="col-form-label" for="timer">To <span class="text-danger">*</span></label>
                         <div class="form-icon">
-                          <p-datepicker
-                            inputId="calendar-timeonly"
+                          <p-datepicker inputId="calendar-timeonly"
                             [(ngModel)]="time"
                             name="time"
                             class="form-control"
                             [timeOnly]="true"
                             [hourFormat]="'12'"
-                            placeholder="5:50 PM">
-                          </p-datepicker>
+                            placeholder="5:50 PM" />
                           <span class="icon"><i class="fa-solid fa-clock"></i></span>
                         </div>
                       </div>
@@ -251,15 +237,13 @@
                       <div class="form-wrap">
                         <label class="col-form-label" for="text">From <span class="text-danger">*</span></label>
                         <div class="form-icon">
-                          <p-datepicker
-                            inputId="calendar-timeonly"
+                          <p-datepicker inputId="calendar-timeonly"
                             [(ngModel)]="time"
                             name="time"
                             class="form-control"
                             [timeOnly]="true"
                             [hourFormat]="'12'"
-                            placeholder="5:50 PM">
-                          </p-datepicker>
+                            placeholder="5:50 PM" />
                           <span class="icon"><i class="fa-solid fa-clock"></i></span>
                         </div>
                       </div>
@@ -268,15 +252,13 @@
                       <div class="form-wrap">
                         <label class="col-form-label" for="picker">To <span class="text-danger">*</span></label>
                         <div class="form-icon">
-                          <p-datepicker
-                            inputId="calendar-timeonly"
+                          <p-datepicker inputId="calendar-timeonly"
                             [(ngModel)]="time"
                             name="time"
                             class="form-control"
                             [timeOnly]="true"
                             [hourFormat]="'12'"
-                            placeholder="5:50 PM">
-                          </p-datepicker>
+                            placeholder="5:50 PM" />
                           <span class="icon"><i class="fa-solid fa-clock"></i></span>
                         </div>
                       </div>
@@ -298,15 +280,13 @@
                       <div class="form-wrap">
                         <label class="col-form-label" for="timepicker">From <span class="text-danger">*</span></label>
                         <div class="form-icon">
-                          <p-datepicker
-                            inputId="calendar-timeonly"
+                          <p-datepicker inputId="calendar-timeonly"
                             [(ngModel)]="time"
                             name="time"
                             class="form-control"
                             [timeOnly]="true"
                             [hourFormat]="'12'"
-                            placeholder="5:50 PM">
-                          </p-datepicker>
+                            placeholder="5:50 PM" />
                           <span class="icon"><i class="fa-solid fa-clock"></i></span>
                         </div>
                       </div>
@@ -315,15 +295,13 @@
                       <div class="form-wrap">
                         <label class="col-form-label" for="text">To <span class="text-danger">*</span></label>
                         <div class="form-icon">
-                          <p-datepicker
-                            inputId="calendar-timeonly"
+                          <p-datepicker inputId="calendar-timeonly"
                             [(ngModel)]="time"
                             name="time"
                             class="form-control"
                             [timeOnly]="true"
                             [hourFormat]="'12'"
-                            placeholder="5:50 PM">
-                          </p-datepicker>
+                            placeholder="5:50 PM" />
                           <span class="icon"><i class="fa-solid fa-clock"></i></span>
                         </div>
                       </div>
@@ -345,15 +323,13 @@
                       <div class="form-wrap">
                         <label class="col-form-label" for="label">From <span class="text-danger">*</span></label>
                         <div class="form-icon">
-                          <p-datepicker
-                            inputId="calendar-timeonly"
+                          <p-datepicker inputId="calendar-timeonly"
                             [(ngModel)]="time"
                             name="time"
                             class="form-control"
                             [timeOnly]="true"
                             [hourFormat]="'12'"
-                            placeholder="5:50 PM">
-                          </p-datepicker>
+                            placeholder="5:50 PM" />
                           <span class="icon"><i class="fa-solid fa-clock"></i></span>
                         </div>
                       </div>
@@ -362,15 +338,13 @@
                       <div class="form-wrap">
                         <label class="col-form-label" for="end">To <span class="text-danger">*</span></label>
                         <div class="form-icon">
-                          <p-datepicker
-                            inputId="calendar-timeonly"
+                          <p-datepicker inputId="calendar-timeonly"
                             [(ngModel)]="time"
                             name="time"
                             class="form-control"
                             [timeOnly]="true"
                             [hourFormat]="'12'"
-                            placeholder="5:50 PM">
-                          </p-datepicker>
+                            placeholder="5:50 PM" />
                           <span class="icon"><i class="fa-solid fa-clock"></i></span>
                         </div>
                       </div>

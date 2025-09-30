@@ -1,11 +1,10 @@
-<app-doctor-breadcrumb></app-doctor-breadcrumb>
+<app-doctor-breadcrumb />
 <!-- Page Content -->
 <div class="content">
   <div class="container">
     <div class="row">
-      <app-doctor-sidebar
-        class="col-md-5 col-lg-4 col-xl-3"
-      ></app-doctor-sidebar>
+      <app-doctor-sidebar class="col-md-5 col-lg-4 col-xl-3"
+       />
 
       <div class="col-lg-8 col-xl-9">
         <div class="row">
@@ -369,13 +368,12 @@
                         aria-labelledby="pills-revenue-tab"
                       >
                         <div id="revenue-chart">
-                          <apx-chart
-                            [series]="chartOptions1.series"
+                          <apx-chart [series]="chartOptions1.series"
                             [chart]="chartOptions1.chart"
                             [dataLabels]="chartOptions1.dataLabels"
                             [plotOptions]="chartOptions1.plotOptions"
                             [xaxis]="chartOptions1.xaxis"
-                          ></apx-chart>
+                           />
                         </div>
                       </div>
                       <div
@@ -385,13 +383,12 @@
                         aria-labelledby="pills-appointment-tab"
                       >
                         <div id="appointment-chart">
-                          <apx-chart
-                            [series]="chartOptions2.series"
+                          <apx-chart [series]="chartOptions2.series"
                             [chart]="chartOptions2.chart"
                             [dataLabels]="chartOptions2.dataLabels"
                             [plotOptions]="chartOptions2.plotOptions"
                             [xaxis]="chartOptions2.xaxis"
-                          ></apx-chart>
+                           />
                         </div>
                       </div>
                     </div>
