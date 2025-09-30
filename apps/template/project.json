@@ -1,14 +1,14 @@
 {
-  "$schema": "node_modules/nx/schemas/project-schema.json",
   "name": "template",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
+  "sourceRoot": "apps/template/src",
+  "prefix": "app",
   "generators": {
     "@schematics/angular:component": {
       "style": "scss"
     }
   },
-  "sourceRoot": "src",
-  "prefix": "app",
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
@@ -22,9 +22,9 @@
         "polyfills": [
           "zone.js"
         ],
-        "index": "src/index.html",
-        "browser": "src/main.ts",
-        "tsConfig": "tsconfig.app.json",
+        "index": "apps/template/src/index.html",
+        "browser": "apps/template/src/main.ts",
+        "tsConfig": "apps/template/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "stylePreprocessorOptions": {
           "sass": {
@@ -37,14 +37,20 @@
           }
         },
         "assets": [
-          {
-            "glob": "**/*",
-            "input": "public"
-          }
+            {
+              "glob": "**/*",
+              "input": "apps/template/public/assets",
+              "output": "/assets"
+            },
+            {
+              "glob": "**/*",
+              "input": "apps/template/src/assets",
+              "output": "/assets"
+            }
+
         ],
         "styles": [
-
-          "src/styles.scss"
+          "apps/template/src/styles.scss"
         ],
         "scripts": [
           "node_modules/intl-tel-input/build/js/intlTelInput.min.js",
@@ -100,8 +106,8 @@
       "executor": "@nx/eslint:lint",
       "options": {
         "lintFilePatterns": [
-          "src/**/*.ts",
-          "src/**/*.html"
+          "apps/template/src/**/*.ts",
+          "apps/template/src/**/*.html"
         ]
       }
     },
@@ -116,7 +122,7 @@
           "zone.js/testing",
           "@angular/localize/init"
         ],
-        "tsConfig": "tsconfig.spec.json",
+        "tsConfig": "apps/template/tsconfig.spec.json",
         "inlineStyleLanguage": "scss",
         "assets": [
           {
@@ -125,7 +131,7 @@
           }
         ],
         "styles": [
-          "src/styles.scss"
+          "apps/template/src/styles.scss"
         ]
       }
     }

@@ -3,15 +3,12 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "outDir": "./out-tsc/app",
+    "outDir": "../../out-tsc/spec",
     "types": [
-      "node","jquery"
+      "jasmine"
     ]
   },
   "include": [
     "src/**/*.ts"
-  ],
-  "exclude": [
-    "src/**/*.spec.ts"
   ]
 }

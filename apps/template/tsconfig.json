@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "outDir": "../../dist/out-tsc",
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "strict": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "useDefineForClassFields": false,
+    "skipLibCheck": true,
+    "typeRoots": [
+      "node_modules/@types",
+      "src/custom-typings",
+      "src/typings"
+    ]
+  },
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
+  },
+  "extends": "../../tsconfig.base.json"
+}
