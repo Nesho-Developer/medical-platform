@@ -1,0 +1,106 @@
+{
+  "name": "nts-medical",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "app",
+  "sourceRoot": "apps/nts-medical/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:webpack-browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/nts-medical",
+        "index": "apps/nts-medical/src/index.html",
+        "main": "apps/nts-medical/src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "apps/nts-medical/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          {
+            "glob": "**/*",
+            "input": "apps/nts-medical/public",
+            "output": "/assets"
+          },
+          {
+            "glob": "**/*",
+            "input": "apps/nts-medical/src/assets",
+            "output": "/assets"
+          }
+        ],
+        "styles": ["apps/nts-medical/src/styles.scss"],
+        "customWebpackConfig": {
+          "path": "apps/nts-medical/webpack.config.ts"
+        }
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "4kb",
+              "maximumError": "8kb"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "continuous": true,
+      "executor": "@nx/angular:module-federation-dev-server",
+      "configurations": {
+        "production": {
+          "buildTarget": "nts-medical:build:production"
+        },
+        "development": {
+          "buildTarget": "nts-medical:build:development"
+        }
+      },
+      "defaultConfiguration": "development",
+      "options": {
+        "port": 2400,
+        "publicHost": "http://localhost:2400"
+      }
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "nts-medical:build"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/nts-medical/jest.config.ts",
+        "tsConfig": "apps/nts-medical/tsconfig.spec.json"
+      }
+    },
+    "serve-static": {
+      "continuous": true,
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "nts-medical:build",
+        "spa": true
+      }
+    }
+  }
+}

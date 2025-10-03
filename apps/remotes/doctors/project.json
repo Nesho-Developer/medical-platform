@@ -1,0 +1,114 @@
+{
+  "name": "doctors",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "nts",
+  "sourceRoot": "apps/remotes/doctors/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:webpack-browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/remotes/doctors",
+        "index": "apps/remotes/doctors/src/index.html",
+        "main": "apps/remotes/doctors/src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "apps/remotes/doctors/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          {
+            "glob": "**/*",
+            "input": "apps/remotes/doctors/public"
+          }
+        ],
+        "styles": ["apps/remotes/doctors/src/styles.scss"],
+        "customWebpackConfig": {
+          "path": "apps/remotes/doctors/webpack.config.ts"
+        }
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "4kb",
+              "maximumError": "8kb"
+            }
+          ],
+          "outputHashing": "all",
+          "customWebpackConfig": {
+            "path": "apps/remotes/doctors/webpack.prod.config.ts"
+          }
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "continuous": true,
+      "executor": "@nx/angular:dev-server",
+      "options": {
+        "port": 2402,
+        "publicHost": "http://localhost:2402"
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "doctors:build:production"
+        },
+        "development": {
+          "buildTarget": "doctors:build:development"
+        }
+      },
+      "defaultConfiguration": "development",
+      "dependsOn": ["nts-medical:serve"]
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "doctors:build"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/remotes/doctors/jest.config.ts",
+        "tsConfig": "apps/remotes/doctors/tsconfig.spec.json"
+      }
+    },
+    "serve-static": {
+      "continuous": true,
+      "executor": "@nx/web:file-server",
+      "defaultConfiguration": "production",
+      "options": {
+        "buildTarget": "doctors:build",
+        "port": 2402,
+        "watch": false
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "doctors:build:development"
+        },
+        "production": {
+          "buildTarget": "doctors:build:production"
+        }
+      }
+    }
+  }
+}

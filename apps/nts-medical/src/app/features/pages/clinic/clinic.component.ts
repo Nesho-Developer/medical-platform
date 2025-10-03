@@ -1,0 +1,15 @@
+
+import { Component } from '@angular/core';
+import { MatSelectModule } from '@angular/material/select';
+import { RouterLink } from '@angular/router';
+import { routes } from '@nts/shared';
+
+@Component({
+  selector: 'app-clinic',
+  imports: [RouterLink, MatSelectModule],
+  templateUrl: './clinic.component.html',
+  styleUrl: './clinic.component.scss'
+})
+export class ClinicComponent {
+routes = routes
+}
