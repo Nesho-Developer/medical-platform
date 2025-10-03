@@ -10,13 +10,6 @@ export const routes: Routes = [
   //Features Routes//
 
   {
-    path: 'remote1',
-    loadChildren: () =>
-      loadRemote<typeof import('remote1/Routes')>('remote1/Routes').then(
-        (m) => m!.remoteRoutes,
-      ),
-  },
-  {
     path: '',
     loadComponent: () =>
       import('./features/features.component').then((m) => m.FeaturesComponent),

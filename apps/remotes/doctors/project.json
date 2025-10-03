@@ -8,12 +8,16 @@
   "targets": {
     "build": {
       "executor": "@nx/angular:webpack-browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/remotes/doctors",
         "index": "apps/remotes/doctors/src/index.html",
         "main": "apps/remotes/doctors/src/main.ts",
-        "polyfills": ["zone.js"],
+        "polyfills": [
+          "zone.js"
+        ],
         "tsConfig": "apps/remotes/doctors/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
@@ -22,7 +26,9 @@
             "input": "apps/remotes/doctors/public"
           }
         ],
-        "styles": ["apps/remotes/doctors/src/styles.scss"],
+        "styles": [
+          "apps/remotes/doctors/src/styles.scss"
+        ],
         "customWebpackConfig": {
           "path": "apps/remotes/doctors/webpack.config.ts"
         }
@@ -61,8 +67,8 @@
       "continuous": true,
       "executor": "@nx/angular:dev-server",
       "options": {
-        "port": 2402,
-        "publicHost": "http://localhost:2402"
+        "port": 2401,
+        "publicHost": "http://localhost:2401"
       },
       "configurations": {
         "production": {
@@ -73,7 +79,9 @@
         }
       },
       "defaultConfiguration": "development",
-      "dependsOn": ["nts-medical:serve"]
+      "dependsOn": [
+        "nts-medical:serve"
+      ]
     },
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
@@ -86,7 +94,9 @@
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
       "options": {
         "jestConfig": "apps/remotes/doctors/jest.config.ts",
         "tsConfig": "apps/remotes/doctors/tsconfig.spec.json"
@@ -98,7 +108,7 @@
       "defaultConfiguration": "production",
       "options": {
         "buildTarget": "doctors:build",
-        "port": 2402,
+        "port": 2401,
         "watch": false
       },
       "configurations": {
