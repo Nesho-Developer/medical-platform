@@ -6,6 +6,7 @@ export const patientsRoutes: Routes = [
     loadComponent: () =>
       import('../patients/patients.component').then((m) => m.PatientsComponent),
     children: [
+      { path: '', pathMatch: 'full', redirectTo: 'patient-dashboard' },
       {
         path: 'booking',
         loadComponent: () =>

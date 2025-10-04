@@ -15,6 +15,6 @@
     "src/**/*.spec.ts"
   ],
   "files": [
-    "src/app/remote-entry/entry.routes.ts"
+    "src/app/patients/patients.routes.ts"
   ]
 }

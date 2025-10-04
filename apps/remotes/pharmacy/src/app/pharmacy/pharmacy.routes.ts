@@ -6,6 +6,7 @@ export const pharmacyRoutes: Routes = [
     loadComponent: () =>
       import('../pharmacy/pharmacy.component').then((m) => m.PharmacyComponent),
     children: [
+      { path: '', pathMatch: 'full', redirectTo: 'pharmacy-index' },
       {
         path: 'pharmacy-index',
         loadComponent: () =>

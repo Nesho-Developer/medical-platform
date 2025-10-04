@@ -1,5 +1,5 @@
 import { bootstrapApplication } from '@angular/platform-browser';
 import { appConfig } from './app/app.config';
-import { DoctorsComponent } from './app/doctors/doctors.component';
+import { RemoteEntry } from './app/remote-entry/entry';
 
-bootstrapApplication(DoctorsComponent, appConfig).catch((err) => console.error(err));
+bootstrapApplication(RemoteEntry, appConfig).catch((err) => console.error(err));
