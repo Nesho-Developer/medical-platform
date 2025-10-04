@@ -1,50 +1,44 @@
-import { Component, HostListener, OnInit, inject } from '@angular/core';
+import { Component, HostListener, inject, OnInit } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
-import { OwlOptions } from 'ngx-owl-carousel-o';
+import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { routes } from '@nts/shared';
 
-import { FooterComponent } from './common/footer/footer.component';
-import { HeaderComponent } from './common/header/header.component';
-import { CarouselModule } from 'ngx-owl-carousel-o';
+import { FooterComponent, HeaderComponent } from '@nts/common';
 import { MatSelectModule } from '@angular/material/select';
 import { FormsModule } from '@angular/forms';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+
 interface data {
   value: string;
 }
 @Component({
-    selector: 'app-home8',
-    templateUrl: './home8.component.html',
-    styleUrls: ['./home8.component.scss'],
-    imports: [RouterLink, FooterComponent, HeaderComponent, CarouselModule, MatSelectModule, FormsModule, BsDatepickerModule],
+  selector: 'app-home8',
+  templateUrl: './home8.component.html',
+  styleUrls: ['./home8.component.scss'],
+  imports: [
+    RouterLink,
+    FooterComponent,
+    HeaderComponent,
+    CarouselModule,
+    MatSelectModule,
+    FormsModule,
+    BsDatepickerModule,
+  ],
 })
 export class Home8Component implements OnInit {
-  private router = inject(Router);
-
   public routes = routes;
   sticky = false;
   public white_bg = false;
   date = new Date();
-  myDateValue!: Date ;
-  ngOnInit() {
-    this.myDateValue = new Date();
-  }
-  onDateChange(newDate: Date) {
-    // console.log(newDate);
-  }
-
+  myDateValue!: Date;
   public selectedValue1 = '';
   public selectedValue2 = '';
-
   selectedList1: data[] = [
     { value: 'Choose any Service' },
     { value: 'Blood Tests' },
     { value: 'Diagnostic Tests' },
   ];
-  selectedList2: data[] = [
-    { value: 'Paediatrician' },
-    { value: 'Obstetric' },
-  ];
+  selectedList2: data[] = [{ value: 'Paediatrician' }, { value: 'Obstetric' }];
   public ourSliderOptions: OwlOptions = {
     loop: true,
     margin: 64,
@@ -127,11 +121,21 @@ export class Home8Component implements OnInit {
       },
     },
   };
+  elementPosition = 0;
+  private router = inject(Router);
+
+  ngOnInit() {
+    this.myDateValue = new Date();
+  }
+
+  onDateChange(newDate: Date) {
+    // console.log(newDate);
+  }
+
   public navigation() {
     this.router.navigate([routes.search2]);
   }
 
-  elementPosition = 0;
   @HostListener('window:scroll', ['$event'])
   handleScroll() {
     const windowScroll = window.pageYOffset;

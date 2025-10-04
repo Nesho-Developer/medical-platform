@@ -1,27 +1,24 @@
 import { CommonModule } from '@angular/common';
 import { Component, HostListener, inject } from '@angular/core';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
-import { CommonService } from '@nts/shared';
-import { DataService } from '@nts/shared';
-import { header } from '@nts/shared';
-import { routes } from '@nts/shared';
-import { SidebarService } from '@nts/shared';
+import {
+  CommonService,
+  DataService,
+  header,
+  routes,
+  SidebarService,
+} from '@nts/shared';
 
 @Component({
-    selector: 'app-pharmacyheader',
-    templateUrl: './pharmacyheader.component.html',
-    styleUrls: ['./pharmacyheader.component.scss'],
-    imports: [CommonModule,RouterLink,RouterLinkActive],
+  selector: 'app-pharmacyheader',
+  templateUrl: './pharmacyheader.component.html',
+  styleUrls: ['./pharmacyheader.component.scss'],
+  imports: [CommonModule, RouterLink, RouterLinkActive],
 })
 export class PharmacyheaderComponent {
-  private common = inject(CommonService);
-  private data = inject(DataService);
   sidebar = inject(SidebarService);
-  private router = inject(Router);
-
-  public routes = routes
-  public searchField  = false;
-
+  public routes = routes;
+  public searchField = false;
   public header: header[];
   base = '';
   page = '';
@@ -29,24 +26,12 @@ export class PharmacyheaderComponent {
   public white_bg = false;
   sticky = false;
   elementPosition = 0;
-  isdark=true;
-  islight=false;
+  isdark = true;
+  islight = false;
   themeColor = 'light-mode';
-
-  @HostListener('window:scroll', ['$event'])
-  handleScroll() {
-    const windowScroll = window.pageYOffset;
-    if (windowScroll >= this.elementPosition) {
-      this.sticky = true;
-    } else {
-      this.sticky = false;
-    }
-    if (windowScroll == 0) {
-      this.white_bg = false;
-    } else {
-      this.white_bg = true;
-    }
-  }
+  private common = inject(CommonService);
+  private data = inject(DataService);
+  private router = inject(Router);
 
   constructor() {
     this.common.base.subscribe((res: string) => {
@@ -61,14 +46,29 @@ export class PharmacyheaderComponent {
     this.header = this.data.header;
   }
 
+  @HostListener('window:scroll', ['$event'])
+  handleScroll(_: Event) {
+    const windowScroll = window.pageYOffset;
+    if (windowScroll >= this.elementPosition) {
+      this.sticky = true;
+    } else {
+      this.sticky = false;
+    }
+    if (windowScroll == 0) {
+      this.white_bg = false;
+    } else {
+      this.white_bg = true;
+    }
+  }
+
   public toggleSidebar(): void {
     this.sidebar.openSidebar();
   }
   public hideSidebar(): void {
     this.sidebar.closeSidebar();
   }
-  toggleSearch(){
-    this.searchField = !this.searchField
+  toggleSearch() {
+    this.searchField = !this.searchField;
   }
   public navigation() {
     this.router.navigate([routes.search1]);
@@ -77,9 +77,8 @@ export class PharmacyheaderComponent {
     const themeColor = localStorage.getItem('themeColor') || 'light-mode';
     this.sidebar.changeThemeColor(themeColor);
   }
-  darkMode():void{
-    this.isdark=!this.isdark;
-    this.islight=!this.islight;
+  darkMode(): void {
+    this.isdark = !this.isdark;
+    this.islight = !this.islight;
   }
-
 }

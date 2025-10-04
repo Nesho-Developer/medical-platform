@@ -43,10 +43,17 @@ export const routes: Routes = [
             (m) => m!.patientsRoutes,
           ),
       },
+      // {
+      //   path: 'pharmacy',
+      //   loadChildren: () =>
+      //     import('./features/pharmacy/pharmacy.routes').then((m) => m.routes),
+      // },
       {
         path: 'pharmacy',
         loadChildren: () =>
-          import('./features/pharmacy/pharmacy.routes').then((m) => m.routes),
+          loadRemote<typeof import('pharmacy/Routes')>('pharmacy/Routes').then(
+            (m) => m!.pharmacyRoutes,
+          ),
       },
       {
         path: 'pages',

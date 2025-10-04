@@ -1,23 +1,27 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { routes } from '@nts/shared';
 
-import { FooterComponent } from './common/footer/footer.component';
-import { HeaderComponent } from './common/header/header.component';
+import { FooterComponent, HeaderComponent } from '@nts/common';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+
 @Component({
-    selector: 'app-home9',
-    templateUrl: './home9.component.html',
-    styleUrls: ['./home9.component.scss'],
-    imports: [RouterLink, FooterComponent, HeaderComponent, CarouselModule, BsDatepickerModule],
+  selector: 'app-home9',
+  templateUrl: './home9.component.html',
+  styleUrls: ['./home9.component.scss'],
+  imports: [
+    RouterLink,
+    FooterComponent,
+    HeaderComponent,
+    CarouselModule,
+    BsDatepickerModule,
+  ],
 })
 export class Home9Component implements OnInit {
-  private router = inject(Router);
-
   public routes = routes;
   date = new Date();
-  myDateValue!: Date ;
+  myDateValue!: Date;
   public teamSliderOptions: OwlOptions = {
     loop: true,
     margin: 24,
@@ -107,11 +111,14 @@ export class Home9Component implements OnInit {
   };
   public fertilityOption: OwlOptions = {
     loop: true,
-			margin: 24,
-			dots: false,
-			nav: true,
-			smartSpeed: 2000,
-			navText: ['<i class="fa-solid fa-chevron-left "></i>', '<i class="fa-solid fa-chevron-right"></i>'],
+    margin: 24,
+    dots: false,
+    nav: true,
+    smartSpeed: 2000,
+    navText: [
+      '<i class="fa-solid fa-chevron-left "></i>',
+      '<i class="fa-solid fa-chevron-right"></i>',
+    ],
     responsive: {
       0: {
         items: 1,
@@ -129,11 +136,14 @@ export class Home9Component implements OnInit {
   };
   public ourDoctorOption: OwlOptions = {
     loop: true,
-			margin: 24,
-			dots: false,
-			nav: true,
-			smartSpeed: 2000,
-			navText: ['<i class="fa-solid fa-chevron-left "></i>', '<i class="fa-solid fa-chevron-right"></i>'],
+    margin: 24,
+    dots: false,
+    nav: true,
+    smartSpeed: 2000,
+    navText: [
+      '<i class="fa-solid fa-chevron-left "></i>',
+      '<i class="fa-solid fa-chevron-right"></i>',
+    ],
     responsive: {
       0: {
         items: 1,
@@ -155,24 +165,27 @@ export class Home9Component implements OnInit {
     dots: false,
     nav: true,
     smartSpeed: 2000,
-			navText: ['<i class="fa-solid fa-chevron-left "></i>', '<i class="fa-solid fa-chevron-right"></i>'],
-      responsive: {
-				0: {
-					items: 1
-				},
-				500: {
-					items: 1
-				},
-				768: {
-					items: 1
-				},
-				1000: {
-					items: 1
-				},
-				1300: {
-					items: 1
-				}
-			}
+    navText: [
+      '<i class="fa-solid fa-chevron-left "></i>',
+      '<i class="fa-solid fa-chevron-right"></i>',
+    ],
+    responsive: {
+      0: {
+        items: 1,
+      },
+      500: {
+        items: 1,
+      },
+      768: {
+        items: 1,
+      },
+      1000: {
+        items: 1,
+      },
+      1300: {
+        items: 1,
+      },
+    },
   };
   public blogsliderfourteenOption: OwlOptions = {
     loop: true,
@@ -180,28 +193,33 @@ export class Home9Component implements OnInit {
     dots: false,
     nav: true,
     smartSpeed: 2000,
-			navText: ['<i class="fa-solid fa-chevron-left "></i>', '<i class="fa-solid fa-chevron-right"></i>'],
-      responsive: {
-				0: {
-					items: 1
-				},
-				500: {
-					items: 1
-				},
-				575: {
-					items: 2
-				},
-				768: {
-					items: 2
-				},
-				1000: {
-					items: 3
-				},
-				1300: {
-					items: 3
-				}
-			}
+    navText: [
+      '<i class="fa-solid fa-chevron-left "></i>',
+      '<i class="fa-solid fa-chevron-right"></i>',
+    ],
+    responsive: {
+      0: {
+        items: 1,
+      },
+      500: {
+        items: 1,
+      },
+      575: {
+        items: 2,
+      },
+      768: {
+        items: 2,
+      },
+      1000: {
+        items: 3,
+      },
+      1300: {
+        items: 3,
+      },
+    },
   };
+  private router = inject(Router);
+
   public navigation() {
     this.router.navigate([routes.search2]);
   }

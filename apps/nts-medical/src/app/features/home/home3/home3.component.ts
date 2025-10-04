@@ -3,18 +3,25 @@ import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { routes } from '@nts/shared';
 import { RouterLink } from '@angular/router';
 
-import { FooterComponent } from './common/footer/footer.component';
-import { HeaderComponent } from './common/header/header.component';
+import { FooterComponent, HeaderComponent } from '@nts/common';
 import { MatSelectModule } from '@angular/material/select';
 import { FormsModule } from '@angular/forms';
+
 interface data {
   value: string;
 }
 @Component({
-    selector: 'app-home3',
-    templateUrl: './home3.component.html',
-    styleUrls: ['./home3.component.scss'],
-    imports: [RouterLink, FooterComponent, HeaderComponent, CarouselModule, MatSelectModule, FormsModule],
+  selector: 'app-home3',
+  templateUrl: './home3.component.html',
+  styleUrls: ['./home3.component.scss'],
+  imports: [
+    RouterLink,
+    FooterComponent,
+    HeaderComponent,
+    CarouselModule,
+    MatSelectModule,
+    FormsModule,
+  ],
 })
 export class Home3Component {
   public routes = routes;
@@ -30,31 +37,37 @@ export class Home3Component {
     margin: 15,
     dots: false,
     nav: true,
-    navText: ['<i class="fas fa-chevron-left custom-arrow"></i>', '<i class="fas fa-chevron-right custom-arrow"></i>'],
+    navText: [
+      '<i class="fas fa-chevron-left custom-arrow"></i>',
+      '<i class="fas fa-chevron-right custom-arrow"></i>',
+    ],
     responsive: {
       0: {
-        items: 1
+        items: 1,
       },
       500: {
-        items: 1
+        items: 1,
       },
       768: {
-        items: 3
+        items: 3,
       },
       1000: {
-        items: 6
+        items: 6,
       },
       1300: {
-        items: 6
-      }
-    }
+        items: 6,
+      },
+    },
   };
   public ourDoctorsOption: OwlOptions = {
     loop: true,
     margin: 15,
     dots: false,
     nav: true,
-    navText: ['<i class="fas fa-chevron-left custom-arrow"></i>', '<i class="fas fa-chevron-right custom-arrow"></i>'],
+    navText: [
+      '<i class="fas fa-chevron-left custom-arrow"></i>',
+      '<i class="fas fa-chevron-right custom-arrow"></i>',
+    ],
     responsive: {
       0: {
         items: 1,

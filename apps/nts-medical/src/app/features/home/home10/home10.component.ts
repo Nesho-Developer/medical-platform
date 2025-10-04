@@ -1,25 +1,31 @@
 import { AfterViewChecked, Component, ViewEncapsulation } from '@angular/core';
-import { OwlOptions } from 'ngx-owl-carousel-o';
+import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import lgZoom from 'lightgallery/plugins/zoom';
 import lgVideo from 'lightgallery/plugins/video';
 import { LightGallery } from 'lightgallery/lightgallery';
 import { routes } from '@nts/shared';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { FooterComponent } from './common/footer/footer.component';
-import { HeaderComponent } from './common/header/header.component';
-import { CarouselModule } from 'ngx-owl-carousel-o';
+import { FooterComponent, HeaderComponent } from '@nts/common';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { CountUpModule } from 'ngx-countup';
 import { LightgalleryModule } from 'lightgallery/angular';
+
 @Component({
-    selector: 'app-home10',
-    templateUrl: './home10.component.html',
-    styleUrls: ['./home10.component.scss'],
-    encapsulation: ViewEncapsulation.None,
-    imports: [CommonModule,RouterLink,FooterComponent,HeaderComponent,CarouselModule,SlickCarouselModule,CountUpModule
-      ,LightgalleryModule
-    ],
+  selector: 'app-home10',
+  templateUrl: './home10.component.html',
+  styleUrls: ['./home10.component.scss'],
+  encapsulation: ViewEncapsulation.None,
+  imports: [
+    CommonModule,
+    RouterLink,
+    FooterComponent,
+    HeaderComponent,
+    CarouselModule,
+    SlickCarouselModule,
+    CountUpModule,
+    LightgalleryModule,
+  ],
 })
 export class Home10Component implements AfterViewChecked {
   public routes = routes;
@@ -125,24 +131,9 @@ export class Home10Component implements AfterViewChecked {
     vertical: true,
     horizontalSwiping: true,
   };
-  toggleClass(index: number) {
-    this.isClassAdded[index] = !this.isClassAdded[index];
-  }
-
   settings = {
     counter: false,
     plugins: [lgZoom, lgVideo],
-  };
-  private lightGallery!: LightGallery;
-  private needRefresh = false;
-  ngAfterViewChecked(): void {
-    if (this.needRefresh) {
-      this.lightGallery.refresh();
-      this.needRefresh = false;
-    }
-  }
-  onInit = (detail: { instance: LightGallery }): void => {
-    this.lightGallery = detail.instance;
   };
   public popularChoiceSlider: OwlOptions = {
     loop: false,
@@ -171,5 +162,22 @@ export class Home10Component implements AfterViewChecked {
         items: 4,
       },
     },
+  };
+  private lightGallery!: LightGallery;
+  private needRefresh = false;
+
+  toggleClass(index: number) {
+    this.isClassAdded[index] = !this.isClassAdded[index];
+  }
+
+  ngAfterViewChecked(): void {
+    if (this.needRefresh) {
+      this.lightGallery.refresh();
+      this.needRefresh = false;
+    }
+  }
+
+  onInit = (detail: { instance: LightGallery }): void => {
+    this.lightGallery = detail.instance;
   };
 }

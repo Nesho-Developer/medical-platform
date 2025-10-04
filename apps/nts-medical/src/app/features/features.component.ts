@@ -1,37 +1,38 @@
-import { Component, ElementRef, ViewChild, inject } from '@angular/core';
-import { routes } from '@nts/shared';
-import { CommonService } from '@nts/shared';
-import { NavigationStart, Router, Event as RouterEvent, RouterModule } from '@angular/router';
-import { url } from '@nts/shared';
+import { Component, ElementRef, inject, ViewChild } from '@angular/core';
+import { CommonService, routes, SidebarService, url } from '@nts/shared';
+import {
+  Event as RouterEvent,
+  NavigationStart,
+  Router,
+  RouterModule,
+} from '@angular/router';
 import * as Aos from 'aos';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from './common/header/header.component';
-import { FooterComponent } from './common/footer/footer.component';
-import { SidebarService } from '@nts/shared';
+import { FooterComponent, HeaderComponent } from '@nts/common';
+
 @Component({
   selector: 'app-features',
-  imports: [CommonModule,RouterModule,HeaderComponent,FooterComponent],
+  imports: [CommonModule, RouterModule, HeaderComponent, FooterComponent],
   templateUrl: './features.component.html',
-  styleUrl: './features.component.scss'
+  styleUrl: './features.component.scss',
 })
 export class FeaturesComponent {
-  private common = inject(CommonService);
-  private router = inject(Router);
-  private elementRef = inject(ElementRef);
-  private sidebar = inject(SidebarService);
-
   public routes = routes;
   public footerActive = false;
   public headerActive = false;
   public base = '';
   public page = '';
   public last = '';
-  isMenuOpened=false;
-  // Scroll to the top of the page
-  scrollToTop(): void {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  isMenuOpened = false;
+  @ViewChild('cursorOuter', { static: false }) cursorOuter!: ElementRef;
+  @ViewChild('cursorInner', { static: false }) cursorInner!: ElementRef;
+  private common = inject(CommonService);
+  private router = inject(Router);
+  private elementRef = inject(ElementRef);
+  private sidebar = inject(SidebarService);
+  private cursorInnerElement!: HTMLElement;
+  private cursorOuterElement!: HTMLElement;
 
-  }
   constructor() {
     const router = this.router;
 
@@ -39,19 +40,24 @@ export class FeaturesComponent {
       if (event instanceof NavigationStart) {
         this.getRoutes(event);
         this.scrollToTop();
-        document.body.style.overflow=''
+        document.body.style.overflow = '';
       }
     });
-    this.common.base.subscribe((base : string) => {
+    this.common.base.subscribe((base: string) => {
       this.base = base;
-    })
-    this.common.page.subscribe((page : string) => {
+    });
+    this.common.page.subscribe((page: string) => {
       this.page = page;
-    })
-    this.common.last.subscribe((last : string) => {
+    });
+    this.common.last.subscribe((last: string) => {
       this.last = last;
-    })
+    });
     this.getRoutes(this.router);
+  }
+
+  // Scroll to the top of the page
+  scrollToTop(): void {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   public getRoutes(events: url) {
@@ -69,10 +75,10 @@ export class FeaturesComponent {
       events.url.split('/')[1] === 'home7' ||
       events.url.split('/')[1] === 'home8' ||
       events.url.split('/')[1] === 'home9' ||
-      events.url.split('/')[1] === 'home10'||
-      events.url.split('/')[1] === 'home11'||
-      events.url.split('/')[1] === 'home13'||
-      events.url.split('/')[1] === 'home14'||
+      events.url.split('/')[1] === 'home10' ||
+      events.url.split('/')[1] === 'home11' ||
+      events.url.split('/')[1] === 'home13' ||
+      events.url.split('/')[1] === 'home14' ||
       events.url.split('/')[2] === 'pharmacy-index' ||
       events.url.split('/')[1] === 'home12'
     ) {
@@ -83,19 +89,13 @@ export class FeaturesComponent {
       this.headerActive = true;
     }
   }
+
   ngOnInit(): void {
     Aos.init({
       duration: 1500,
       once: true,
     });
-
   }
-  @ViewChild('cursorOuter', { static: false }) cursorOuter!: ElementRef;
-  @ViewChild('cursorInner', { static: false }) cursorInner!: ElementRef;
-
-  private cursorInnerElement!: HTMLElement;
-  private cursorOuterElement!: HTMLElement;
-
 
   ngAfterViewInit(): void {
     this.cursorInnerElement = this.cursorInner.nativeElement;
@@ -111,7 +111,8 @@ export class FeaturesComponent {
       this.cursorInnerElement.style.transform = `translate(${event.clientX}px, ${event.clientY}px)`;
     });
 
-    const cursorPointerElements = this.elementRef.nativeElement.querySelectorAll('a, .cursor-pointer');
+    const cursorPointerElements =
+      this.elementRef.nativeElement.querySelectorAll('a, .cursor-pointer');
 
     cursorPointerElements.forEach((element: HTMLElement) => {
       element.addEventListener('mouseenter', () => {
@@ -130,5 +131,4 @@ export class FeaturesComponent {
     this.cursorInnerElement.style.visibility = 'visible';
     this.cursorOuterElement.style.visibility = 'visible';
   }
-
 }

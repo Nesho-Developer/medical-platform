@@ -1,35 +1,34 @@
-import { Component, OnInit, inject } from '@angular/core';
-import { DataService } from '@nts/shared';
-import { OwlOptions } from 'ngx-owl-carousel-o';
-import { routes } from '@nts/shared';
-import { aboutUs, doctorSliderOne, partnersSlider, specialitiesSliderOne } from '@nts/shared';
+import { Component, inject, OnInit } from '@angular/core';
+import { aboutUs, DataService, doctorSliderOne, partnersSlider, routes, specialitiesSliderOne } from '@nts/shared';
+import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { Router, RouterLink } from '@angular/router';
-
-
-import { CarouselModule } from 'ngx-owl-carousel-o';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { CountUpModule } from 'ngx-countup';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
-import { FooterComponent } from './common/footer/footer.component';
-import { HeaderComponent } from './common/header/header.component';
+import { FooterComponent, HeaderComponent } from '@nts/common';
+
 @Component({
-    selector: 'app-home1',
-    templateUrl: './home1.component.html',
-    styleUrls: ['./home1.component.scss'],
-    imports: [RouterLink, FooterComponent, HeaderComponent, CarouselModule, SlickCarouselModule, CountUpModule, BsDatepickerModule],
+  selector: 'app-home1',
+  templateUrl: './home1.component.html',
+  styleUrls: ['./home1.component.scss'],
+  imports: [
+    RouterLink,
+    FooterComponent,
+    HeaderComponent,
+    CarouselModule,
+    SlickCarouselModule,
+    CountUpModule,
+    BsDatepickerModule,
+  ],
 })
 export class Home1Component implements OnInit {
-  private data = inject(DataService);
-  private router = inject(Router);
-
   public routes = routes;
   date = new Date();
   public specialitiesSliderOne: specialitiesSliderOne[];
   public doctorSliderOne: doctorSliderOne[];
   public partnersSlider: partnersSlider[] = [];
   public aboutUs: aboutUs[];
-  myDateValue!: Date ;
-
+  myDateValue!: Date;
   public slideConfig = {
     dots: false,
     autoplay: false,
@@ -70,12 +69,6 @@ export class Home1Component implements OnInit {
       },
     ],
   };
-  constructor() {
-    this.specialitiesSliderOne = this.data.specialitiesSliderOne;
-    this.doctorSliderOne = this.data.doctorSliderOne;
-    this.aboutUs = this.data.aboutUs;
-    this.partnersSlider = this.data.partnersSlider;
-  }
   public specialitiesSlider: OwlOptions = {
     loop: true,
     margin: 24,
@@ -88,19 +81,19 @@ export class Home1Component implements OnInit {
     ],
     responsive: {
       0: {
-        items: 1
+        items: 1,
       },
       500: {
-        items: 1
+        items: 1,
       },
       768: {
-        items: 2
+        items: 2,
       },
       1000: {
-        items: 6
+        items: 6,
       },
       1200: {
-        items: 6
+        items: 6,
       },
     },
   };
@@ -140,20 +133,30 @@ export class Home1Component implements OnInit {
     autoplaySpeed: 2000,
     responsive: {
       0: {
-        items: 1
+        items: 1,
       },
 
       550: {
-        items: 1
+        items: 1,
       },
       700: {
-        items: 4
+        items: 4,
       },
       1000: {
-        items: 6
-      }
-    }
+        items: 6,
+      },
+    },
   };
+  private data = inject(DataService);
+  private router = inject(Router);
+
+  constructor() {
+    this.specialitiesSliderOne = this.data.specialitiesSliderOne;
+    this.doctorSliderOne = this.data.doctorSliderOne;
+    this.aboutUs = this.data.aboutUs;
+    this.partnersSlider = this.data.partnersSlider;
+  }
+
   public navigation() {
     this.router.navigate([routes.search2]);
   }

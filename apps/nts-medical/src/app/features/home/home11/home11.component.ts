@@ -1,50 +1,43 @@
-
-import { Component, Renderer2, inject } from '@angular/core';
+import { Component, inject, Renderer2 } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { routes } from '@nts/shared';
-import { FooterComponent } from './common/footer/footer.component';
-import { HeaderComponent } from './common/header/header.component';
-
+import { FooterComponent, HeaderComponent } from '@nts/common';
 
 @Component({
-    selector: 'app-home11',
-    templateUrl: './home11.component.html',
-    styleUrls: ['./home11.component.scss'],
-    imports: [RouterLink, FooterComponent, HeaderComponent, CarouselModule],
-
+  selector: 'app-home11',
+  templateUrl: './home11.component.html',
+  styleUrls: ['./home11.component.scss'],
+  imports: [RouterLink, FooterComponent, HeaderComponent, CarouselModule],
 })
-export class Home11Component  {
-  private renderer = inject(Renderer2);
-
-
+export class Home11Component {
   routes = routes;
   public discoverSliderOptions: OwlOptions = {
     loop: true,
-			margin: 10,
-			dots: true,
-			nav: false,
-			smartSpeed: 2000,
-			responsive: {
-				0: {
-					items: 1
-				},
-				500: {
-					items: 1
-				},
-				575: {
-					items: 2
-				},
-				768: {
-					items: 2
-				},
-				1000: {
-					items: 5
-				},
-				1200: {
-					items: 5
-				}
-			}
+    margin: 10,
+    dots: true,
+    nav: false,
+    smartSpeed: 2000,
+    responsive: {
+      0: {
+        items: 1,
+      },
+      500: {
+        items: 1,
+      },
+      575: {
+        items: 2,
+      },
+      768: {
+        items: 2,
+      },
+      1000: {
+        items: 5,
+      },
+      1200: {
+        items: 5,
+      },
+    },
   };
   public treatmentSliderOptions: OwlOptions = {
     loop: true,
@@ -81,91 +74,90 @@ export class Home11Component  {
     smartSpeed: 2000,
     responsive: {
       0: {
-        items: 1
+        items: 1,
       },
       500: {
-        items: 1
+        items: 1,
       },
       768: {
-        items: 2
+        items: 2,
       },
       1000: {
-        items: 3
+        items: 3,
       },
       1200: {
-        items: 3
-      }
-    }
+        items: 3,
+      },
+    },
   };
   public sliderSixteenOptions: OwlOptions = {
     margin: 0,
-		center: true,
-		loop: true,
-		nav: false,
-		dots: false,
-		responsive: {
-			0: {
-				items: 1
-			},
-			768: {
-				items: 1,
-				margin: 15,
-			},
-			1000: {
-				items: 3,
-			}
-		}
+    center: true,
+    loop: true,
+    nav: false,
+    dots: false,
+    responsive: {
+      0: {
+        items: 1,
+      },
+      768: {
+        items: 1,
+        margin: 15,
+      },
+      1000: {
+        items: 3,
+      },
+    },
   };
   public eyeTestiSliderOptions: OwlOptions = {
-    loop:true,
-    margin:15,
+    loop: true,
+    margin: 15,
     dots: true,
-    nav:false,
+    nav: false,
     smartSpeed: 2000,
-    navText: [ '<i class="fa-solid fa-arrow-left"></i>', '<i class="fa-solid fa-arrow-right"></i>' ],
-    responsive:{
-      0:{
-        items:1
+    navText: [
+      '<i class="fa-solid fa-arrow-left"></i>',
+      '<i class="fa-solid fa-arrow-right"></i>',
+    ],
+    responsive: {
+      0: {
+        items: 1,
       },
-      1300:{
-        items:1
-      }
-    }
+      1300: {
+        items: 1,
+      },
+    },
   };
   public bannersliderssurgery: OwlOptions = {
     loop: true,
     margin: 0,
     dots: false,
     nav: false,
-    autoplay:true,
+    autoplay: true,
     items: 4.5,
     smartSpeed: 500,
     center: true,
     responsive: {
       0: {
-        items: 1
+        items: 1,
       },
       500: {
-        items: 1
+        items: 1,
       },
       575: {
-        items: 2
+        items: 2,
       },
       768: {
-        items: 3
+        items: 3,
       },
       1000: {
-        items: 4
+        items: 4,
       },
       1300: {
-        items: 4.5
-      }
+        items: 4.5,
+      },
     },
-
   };
-  // onCarouselChange(event: any) {
-
-  //   this.brandSliderClasses();
   // }
   carouselImages = [
     { src: 'assets/img/cosmetic-banner-img3.png' },
@@ -173,10 +165,11 @@ export class Home11Component  {
     { src: 'assets/img/cosmetic-banner-img2.png' },
     { src: 'assets/img/cosmetic-banner-img.png' },
     { src: 'assets/img/cosmetic-banner-img4.png' },
-
-
-
   ];
+  // onCarouselChange(event: any) {
+
+  //   this.brandSliderClasses();
+  private renderer = inject(Renderer2);
   // brandSliderClasses() {
   //   const brandSlider = document.querySelector('.banner-sliderssurgery');
   //   if (brandSlider) {
@@ -189,6 +182,7 @@ export class Home11Component  {
   //       }
   //     });
   //   }
+
   // }
   onCarouselTranslated(_: any) {
     this.brandSliderClasses();

@@ -1,29 +1,25 @@
-
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
-import { DataService } from '@nts/shared';
-import { partnersSlider } from '@nts/shared';
-
-import { routes } from '@nts/shared';
-import { PharmacyfooterComponent } from '../../common/pharmacyfooter/pharmacyfooter.component';
+import { DataService, partnersSlider, routes } from '@nts/shared';
 import { FormsModule } from '@angular/forms';
-import { PharmacyheaderComponent } from '../../common/pharmacyheader/pharmacyheader.component';
+import { PharmacyfooterComponent, PharmacyheaderComponent } from '@nts/common';
+
 @Component({
-    selector: 'app-pharmacy-index',
-    templateUrl: './pharmacy-index.component.html',
-    styleUrls: ['./pharmacy-index.component.scss'],
-    imports: [RouterLink, PharmacyfooterComponent, CarouselModule, FormsModule, PharmacyheaderComponent]
+  selector: 'app-pharmacy-index',
+  templateUrl: './pharmacy-index.component.html',
+  styleUrls: ['./pharmacy-index.component.scss'],
+  imports: [
+    RouterLink,
+    PharmacyfooterComponent,
+    CarouselModule,
+    FormsModule,
+    PharmacyheaderComponent,
+  ],
 })
 export class PharmacyIndexComponent implements OnInit {
-  private data = inject(DataService);
-  private router = inject(Router);
-
   public routes = routes;
   public partnerSlider: partnersSlider[] = [];
-  constructor() {
-    this.partnerSlider = this.data.partnerSlider;
-  }
   public partnersSliderOption: OwlOptions = {
     loop: true,
     margin: 24,
@@ -32,32 +28,41 @@ export class PharmacyIndexComponent implements OnInit {
     smartSpeed: 2000,
     responsive: {
       0: {
-        items: 1
+        items: 1,
       },
 
       550: {
-        items: 1
+        items: 1,
       },
       700: {
-        items: 4
+        items: 4,
       },
       1000: {
-        items: 6
-      }
-    }
+        items: 6,
+      },
+    },
   };
   quantity = 0;
-
-  increaseQuantity() {
-    this.quantity++;
-  }
-  decreaseQuantity() {
-    this.quantity = Math.max(0, this.quantity - 1);
-  }
   countSection1 = 10;
   countSection2 = 10;
   countSection3 = 10;
   countSection4 = 10;
+  public strokeValue = 0;
+  public progress = 0;
+  private data = inject(DataService);
+  private router = inject(Router);
+
+  constructor() {
+    this.partnerSlider = this.data.partnerSlider;
+  }
+
+  increaseQuantity() {
+    this.quantity++;
+  }
+
+  decreaseQuantity() {
+    this.quantity = Math.max(0, this.quantity - 1);
+  }
 
   decreaseCount(section: number) {
     if (section === 1 && this.countSection1 > 0) {
@@ -82,11 +87,15 @@ export class PharmacyIndexComponent implements OnInit {
       this.countSection4++;
     }
   }
-  public strokeValue = 0;
-  public progress = 0;
+
   public scrollToTop(): void {
     window.scrollTo(0, 0);
   }
+
+  ngOnInit(): void {
+    this.calculateScrollPercentage();
+  }
+
   // function to calculate the scroll progress
   private calculateScrollPercentage(): void {
     window.addEventListener('scroll', () => {
@@ -98,7 +107,7 @@ export class PharmacyIndexComponent implements OnInit {
         body.offsetHeight,
         html.clientHeight,
         html.scrollHeight,
-        html.offsetHeight
+        html.offsetHeight,
       );
       // calculates the total stroke value
       this.progress = totalheight;
@@ -114,8 +123,5 @@ export class PharmacyIndexComponent implements OnInit {
         this.strokeValue = 0;
       }
     });
-  }
-  ngOnInit(): void {
-    this.calculateScrollPercentage();
   }
 }

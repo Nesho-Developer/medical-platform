@@ -1,22 +1,15 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, ViewEncapsulation, inject } from '@angular/core';
-import { OwlOptions } from 'ngx-owl-carousel-o';
-import { DataService } from '@nts/shared';
-import { swiperCarousel } from '@nts/shared';
-import { routes } from '@nts/shared';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, inject, ViewEncapsulation } from '@angular/core';
+import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
+import { DataService, routes, swiperCarousel } from '@nts/shared';
 import { CommonModule } from '@angular/common';
-import { FooterComponent } from './common/footer/footer.component';
-import { HeaderComponent } from './common/header/header.component';
-import { CarouselModule } from 'ngx-owl-carousel-o';
+import { FooterComponent, HeaderComponent } from '@nts/common';
 import { SwiperModule } from 'swiper/angular';
-import SwiperCore, {
-  SwiperOptions,
-  EffectCards,
-  Mousewheel,
-} from 'swiper';
+import SwiperCore, { EffectCards, Mousewheel } from 'swiper';
 import { RouterLink } from '@angular/router';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { CountUpModule } from 'ngx-countup';
 import { MatSelectModule } from '@angular/material/select';
+
 SwiperCore.use([EffectCards, Mousewheel]);
 
 interface data {
@@ -24,20 +17,24 @@ interface data {
 }
 
 @Component({
-    selector: 'app-home12',
-    templateUrl: './home12.component.html',
-    styleUrls: ['./home12.component.scss'],
-    encapsulation: ViewEncapsulation.None,
-    imports: [CommonModule,RouterLink,FooterComponent,HeaderComponent,CarouselModule,SwiperModule,SlickCarouselModule
-      ,CountUpModule,MatSelectModule
-    ],
-    schemas: [
-      CUSTOM_ELEMENTS_SCHEMA
-    ]
+  selector: 'app-home12',
+  templateUrl: './home12.component.html',
+  styleUrls: ['./home12.component.scss'],
+  encapsulation: ViewEncapsulation.None,
+  imports: [
+    CommonModule,
+    RouterLink,
+    FooterComponent,
+    HeaderComponent,
+    CarouselModule,
+    SwiperModule,
+    SlickCarouselModule,
+    CountUpModule,
+    MatSelectModule,
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class Home12Component {
-  private data = inject(DataService);
-
   public activeTab: Array<string> = [''];
   public routes = routes;
   public popularTestSlider: OwlOptions = {
@@ -250,10 +247,8 @@ export class Home12Component {
       },
     },
   };
-
   public selectedValue1 = '';
   public selectedValue2 = '';
-
   selectedList1: data[] = [
     { value: 'Select Speciality' },
     { value: 'Cardiology' },
@@ -265,7 +260,6 @@ export class Home12Component {
     { value: 'UK' },
     { value: 'USA' },
   ];
-
   config: any = {
     effect: 'cards',
     loop: false,
@@ -276,9 +270,9 @@ export class Home12Component {
       invert: false,
     },
   };
-
-
   public swiperCarousel: swiperCarousel[] = [];
+  private data = inject(DataService);
+
   constructor() {
     this.swiperCarousel = this.data.swiperCarousel;
   }
