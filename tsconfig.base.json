@@ -18,6 +18,9 @@
     "paths": {
       "@nts/common": ["libs/common/src/index.ts"],
       "@nts/shared": ["libs/shared/src/index.ts"],
+      "admin/Routes": [
+        "apps/remotes/admin/src/app/admin/admin.routes.ts"
+      ],
       "doctors/Routes": [
         "apps/remotes/doctors/src/app/doctors/doctors.routes.ts"
       ],

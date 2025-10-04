@@ -7,7 +7,7 @@
 // Plus imports for other components in your app.
 
 @use "node_modules/primeicons/primeicons.css";
-@use "../src/assets/admin/css/feathericon.min.css";
+@use "../../remotes/admin/public/css/feathericon.min.css";
 @use "node_modules/@fortawesome/fontawesome-free/css/all.min.css";
 @use "../src/assets/css/feather.css";
 @use "node_modules/ngx-bootstrap/datepicker/bs-datepicker.css";

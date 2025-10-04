@@ -78,9 +78,16 @@ export const routes: Routes = [
     loadChildren: () =>
       import('./authentication/authentication.routes').then((m) => m.routes),
   },
+  // {
+  //   path: 'admin',
+  //   loadChildren: () => import('./admin/admin.routes').then((m) => m.routes),
+  // },
   {
     path: 'admin',
-    loadChildren: () => import('./admin/admin.routes').then((m) => m.routes),
+    loadChildren: () =>
+      loadRemote<typeof import('admin/Routes')>('admin/Routes').then(
+        (m) => m!.adminRoutes,
+      ),
   },
   {
     path: 'pharmacy',
