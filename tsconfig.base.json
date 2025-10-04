@@ -10,20 +10,28 @@
     "importHelpers": true,
     "target": "ES2022",
     "module": "ES2022",
-    "lib": ["ES2022", "dom"],
+    "lib": [
+      "ES2022",
+      "dom"
+    ],
     "types": [],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@nts/shared": ["libs/shared/src/index.ts"],
-      "remote1/Routes": [
-        "apps/remotes/remote1/src/app/remote-entry/entry.routes.ts"
+      "@nts/shared": [
+        "libs/shared/src/index.ts"
       ],
       "doctors/Routes": [
         "apps/remotes/doctors/src/app/doctors/doctors.routes.ts"
+      ],
+      "patients/Routes": [
+        "apps/remotes/patients/src/app/patients/patients.routes.ts"
       ]
     }
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
 }

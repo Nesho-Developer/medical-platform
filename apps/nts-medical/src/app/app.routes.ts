@@ -31,10 +31,17 @@ export const routes: Routes = [
             (m) => m!.doctorsRoutes,
           ),
       },
+      // {
+      //   path: 'patients',
+      //   loadChildren: () =>
+      //     import('./features/patients/patients.routes').then((m) => m.routes),
+      // },
       {
         path: 'patients',
         loadChildren: () =>
-          import('./features/patients/patients.routes').then((m) => m.routes),
+          loadRemote<typeof import('patients/Routes')>('patients/Routes').then(
+            (m) => m!.patientsRoutes,
+          ),
       },
       {
         path: 'pharmacy',

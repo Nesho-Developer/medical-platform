@@ -1,3 +1,4 @@
 {
-  "doctors": "http://localhost:2401/mf-manifest.json"
+  "doctors": "http://localhost:2401/mf-manifest.json",
+  "patients": "http://localhost:4201/mf-manifest.json"
 }

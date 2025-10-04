@@ -3,7 +3,7 @@ import { RouterOutlet } from '@angular/router';
 
 @Component({
   imports: [RouterOutlet],
-  selector: 'nts-doctors',
-  template: ` <router-outlet />`,
+  selector: 'nts-patients-entry',
+  template: `<router-outlet />`,
 })
 export class RemoteEntry {}
